@@ -1,3 +1,5 @@
+import type { SourceId } from '@/features/evidence/sources'
+
 export type IndicatorKey =
   | 'market'
   | 'institution'
@@ -9,7 +11,12 @@ export type IndicatorKey =
 export type Indicator = {
   key: IndicatorKey
   label: string
+  labelKo: string
   score: number
-  uncertainty: number
-  sourceCount: number
+  /** Half-spread produced by perturbing this dimension's weight ±10%. */
+  sensitivity: number
+  c3Subindex: string
+  c3Dimension: string
+  sourceId: SourceId
+  color: string
 }

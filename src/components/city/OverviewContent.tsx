@@ -5,6 +5,9 @@ import type { City } from '@/types/city'
 import { ArtGlobe } from '@/components/globe/ArtGlobe'
 import { ActionLink } from '@/components/ui/ActionLink'
 import { CitySignalTiles } from '@/components/city/CitySignalTiles'
+import { cities } from '@/features/city-intelligence/service'
+import { sourceCount } from '@/features/evidence/sources'
+import { observedCityCount } from '@/features/evidence/observed'
 
 const workflow = [
   ['01 / EXPLORE', 'Find the right city cohort.', '외부 조건과 데이터 품질을 기준으로 비교 가능한 후보 도시를 찾습니다.'],
@@ -18,7 +21,7 @@ export function OverviewContent() {
 
   return (
     <>
-      <section className="section page-hero">
+      <section className="section page-hero compact-hero overview-hero">
         <div>
           <p className="eyebrow">01 / ART ECOSYSTEM INTELLIGENCE · UPDATED 09.18</p>
           <h1>Read how<br />art <span>works.</span></h1>
@@ -28,9 +31,9 @@ export function OverviewContent() {
             <ActionLink href="/compare" variant="outline">VIEW SAMPLE COMPARE</ActionLink>
           </div>
           <div className="hero-proof" aria-label="플랫폼 현황">
-            <div className="proof-item"><strong>20</strong><small>ANALYSIS-READY CITIES</small></div>
-            <div className="proof-item"><strong>6</strong><small>ART CITY DIMENSIONS</small></div>
-            <div className="proof-item"><strong>142</strong><small>TRACEABLE SOURCES</small></div>
+            <div className="proof-item"><strong>{cities.length}</strong><small>CITIES IN SET</small></div>
+            <div className="proof-item"><strong>{observedCityCount}</strong><small>WITH OBSERVED RANK</small></div>
+            <div className="proof-item"><strong>{sourceCount}</strong><small>CITED SOURCES</small></div>
           </div>
         </div>
         <ArtGlobe onSelectionChange={setFocusedCity} />

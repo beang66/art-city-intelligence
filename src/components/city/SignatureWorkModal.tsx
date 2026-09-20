@@ -61,7 +61,7 @@ export function SignatureWorkModal({ city, onClose }: { city: City; onClose: () 
                 )}
               </dl>
 
-              <p className="work-modal-state">DEMO DATA / INDICATIVE · {work.priceUsd ? '공인 경매 기준' : '미술관 소장 자료 기준'}</p>
+              <p className="work-modal-state">OBSERVED · {work.priceUsd ? `공인 경매 낙찰 기록 (${work.auction})` : `미술관 소장 자료 (${work.collection})`}</p>
             </div>
           </div>
 

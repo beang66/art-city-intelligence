@@ -1,5 +1,26 @@
 import { AdminSection } from '@/components/layout/AdminSection'
+import { sources } from '@/features/evidence/sources'
+
+const KIND_LABEL = { index: '지수', framework: '방법론', research: '연구', policy: '정책' } as const
 
 export default function AdminValidationPage() {
-  return <AdminSection eyebrow="ADMIN / VALIDATION" title="Review queue" description="새 데이터와 모델 변경을 공개 전에 검토합니다."><div className="admin-row table-head"><span>ITEM</span><span>CITY</span><span>OWNER</span><span>STATE</span></div>{[['2026 fair sales range', 'Seoul', 'MARKET TEAM', 'REVIEW'], ['Participation series', 'Berlin', 'DATA TEAM', 'READY'], ['Institution opening', 'Amsterdam', 'EDITORIAL', 'REVIEW'], ['Weight sensitivity', 'London', 'MODEL TEAM', 'STABLE']].map((row) => <div className="admin-row" key={row[0]}><strong>{row[0]}</strong><span>{row[1]}</span><span>{row[2]}</span><span className="status">{row[3]}</span></div>)}</AdminSection>
+  return (
+    <AdminSection
+      eyebrow="ADMIN / VALIDATION"
+      title="Source register"
+      description="모델이 인용하는 문헌과 각 문헌이 담당하는 역할입니다."
+    >
+      <div className="admin-row admin-row-sources table-head">
+        <span>SOURCE</span><span>KIND</span><span>YEAR</span><span>ROLE</span>
+      </div>
+      {sources.map((source) => (
+        <div className="admin-row admin-row-sources" key={source.id}>
+          <strong>{source.title}<em>{source.author}</em></strong>
+          <span>{KIND_LABEL[source.kind]}</span>
+          <span>{source.year}</span>
+          <span className="source-role">{source.use}</span>
+        </div>
+      ))}
+    </AdminSection>
+  )
 }

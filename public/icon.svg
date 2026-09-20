@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <style>
+    .mark-bar { fill: #0c0d0f; }
+    @media (prefers-color-scheme: dark) {
+      .mark-bar { fill: #f5f5f7; }
+    }
+  </style>
+  <g transform="translate(19.833, 15.601) scale(1.058)">
+    <polygon class="mark-bar" points="11.18,2 34.18,2 30.46,9 7.46,9" />
+    <polygon class="mark-bar" points="1.86,12 24.86,12 21.14,19 -1.86,19" />
+    <polygon class="mark-bar" points="-7.46,22 15.54,22 11.82,29 -11.18,29" />
+  </g>
+</svg>

@@ -1,15 +1,12 @@
 'use client'
 
 import { useRef, useState, useMemo } from 'react'
-import { cities } from '@/features/city-intelligence/service'
+import { cities, citiesByName } from '@/features/city-intelligence/service'
 import type { City } from '@/types/city'
 import { ScoreBar } from '@/components/charts/ScoreBar'
 import { GlobeInteraction, type GlobeController } from './GlobeInteraction'
 import { GlobeMarker } from './GlobeMarker'
 import { GlobeTooltip } from './GlobeTooltip'
-
-// Cities sorted alphabetically for the dropdown
-const sortedCities = [...cities].sort((a, b) => a.name.localeCompare(b.name))
 
 export function ArtGlobe({ onSelectionChange }: { onSelectionChange?: (city: City) => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -40,12 +37,12 @@ export function ArtGlobe({ onSelectionChange }: { onSelectionChange?: (city: Cit
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
     const base = q.length > 0
-      ? sortedCities.filter((c) =>
+      ? citiesByName.filter((c) =>
           c.name.toLowerCase().includes(q) ||
           c.code.toLowerCase().includes(q) ||
           c.country.toLowerCase().includes(q),
         )
-      : sortedCities
+      : citiesByName
     return base
   }, [query])
 

@@ -41,12 +41,25 @@ export type City = {
   type: string
   typeKo: string
   dna: string
+  dnaKo: string
   insightKo: string
+  /** 위치와 도시 조건이 만드는 특징. */
+  location: string
+  /** 문화 유산 · 변화 수용성 · 미래 전망 */
+  heritage: string
+  adaptability: string
+  outlook: string
+  /** 추세가 이 모양인 이유. */
+  trendNote: string
   signalScores: CitySignalScores
   market: MarketSignal
   cultural: CulturalSignal
   industry: string[]
+  industryKo: string[]
   opportunity: string
+  opportunityKo: string
+  /** 이 방향을 제안하는 근거. */
+  opportunityWhy: string
   trend: number[]
   signatureWork: SignatureWork
 }
