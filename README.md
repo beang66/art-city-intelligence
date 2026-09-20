@@ -22,10 +22,6 @@
 <img width="1094" height="611" alt="화면 캡처 2026-09-21 025633" src="https://github.com/user-attachments/assets/a7b0ca7e-69bc-4c00-8fbf-9cfac71fc8ce" />
 <img width="1093" height="616" alt="화면 캡처 2026-09-21 025646" src="https://github.com/user-attachments/assets/6dd73a1e-1782-4765-966d-f619d51093b9" />
 <img width="1094" height="615" alt="화면 캡처 2026-09-21 025659" src="https://github.com/user-attachments/assets/7abb870c-bc63-431b-b863-6e3dfff73485" />
-<img width="1098" height="613" alt="화면 캡처 2026-09-21 025712" src="https://github.com/user-attachments/assets/5e1c170a-5c98-43e8-a132-cb5fcbdf47f5" />
-<img width="1096" height="617" alt="화면 캡처 2026-09-21 025722" src="https://github.com/user-attachments/assets/4d391674-e056-4df6-810b-430a9cafb8dc" />
-<img width="1096" height="615" alt="화면 캡처 2026-09-21 025733" src="https://github.com/user-attachments/assets/129b13f1-eaf3-418c-b208-7f56c47425d0" />
-<img width="1094" height="616" alt="화면 캡처 2026-09-21 025743" src="https://github.com/user-attachments/assets/f4f2f715-83d3-4446-a88c-f95e5f60b6ef" />
 <img width="1097" height="615" alt="화면 캡처 2026-09-21 025754" src="https://github.com/user-attachments/assets/c0fafa7e-c7a9-4545-a8cd-fc00e144f42f" />
 <img width="1095" height="616" alt="화면 캡처 2026-09-21 025805" src="https://github.com/user-attachments/assets/62fa4922-6423-4f61-9817-6032f8297ea8" />
 <img width="1093" height="613" alt="화면 캡처 2026-09-21 025820" src="https://github.com/user-attachments/assets/37f1e93f-b887-403a-b18b-52891711c7af" />
