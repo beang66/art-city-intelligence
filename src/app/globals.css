@@ -15,6 +15,7 @@
 * { box-sizing: border-box; }
 ::selection { background: var(--accent); color: #fff; }
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 96px; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, Arial, sans-serif; letter-spacing: -.03em; }
 body.no-scroll { overflow: hidden; }
 button, a, input { font: inherit; color: inherit; }
@@ -104,7 +105,7 @@ a { text-decoration: none; }
 .page-hero { min-height: calc(100vh - 80px); display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); gap: 56px; align-items: center; padding-top: 88px; }
 .page-hero.compact-hero { min-height: 690px; }
 .page-hero:not(.compact-hero) { min-height: auto; align-items: stretch; }
-.overview-hero { padding-top: 150px; }
+.overview-hero { padding-top: 120px; }
 .eyebrow, .mono, .card-label, .panel-head, .footer, .table-head, .data-meta, .status, .field-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .02em; color: var(--muted); }
 h1, h2, h3, p { margin: 0; }
 h1 { font-size: clamp(64px, 7.8vw, 124px); line-height: .84; letter-spacing: -.08em; font-weight: 600; margin: 30px 0 34px; }
@@ -209,7 +210,7 @@ h1 span, h2 span, .accent-text { color: var(--accent); }
 .section-heading h2, .split-copy h2, .dim-board-left h2 { font-size: clamp(44px, 5vw, 76px); line-height: .9; letter-spacing: -.075em; font-weight: 500; margin-top: 24px; }
 .section-intro { max-width: 410px; color: var(--muted); line-height: 1.6; font-size: 15px; word-break: keep-all; }
 .workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.workflow-step { min-height: 210px; padding: 20px; position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.workflow-step { min-height: 210px; padding: 20px; position: relative; display: block; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
 .workflow-step.active { background: var(--dark); color: #fff; }
 .step-number { font: 11px 'DM Mono'; color: var(--accent); }
 .workflow-step h3 { font-size: 23px; line-height: 1; letter-spacing: -.06em; margin-top: 62px; }

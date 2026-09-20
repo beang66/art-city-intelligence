@@ -29,7 +29,7 @@ export default function ComparePage() {
         </p>
       </section>
 
-      <section className="compare-body">
+      <section className="compare-body" id="explorer">
         <CompareExplorer comparisons={comparisons} medians={medians} cityCount={cities.length} />
       </section>
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import type { City } from '@/types/city'
 import { ArtGlobe } from '@/components/globe/ArtGlobe'
 import { ActionLink } from '@/components/ui/ActionLink'
@@ -18,6 +19,13 @@ const workflow = [
 
 export function OverviewContent() {
   const [focusedCity, setFocusedCity] = useState<City | null>(null)
+  const citySlug = focusedCity?.slug ?? 'seoul'
+  const workflowHrefs = [
+    `/cities/${citySlug}#cohort`,
+    '/compare#explorer',
+    `/cities/${citySlug}#art-dna`,
+    `/cities/${citySlug}#opportunity`,
+  ] as const
 
   return (
     <>
@@ -49,7 +57,11 @@ export function OverviewContent() {
           <p className="section-intro">하나의 종합 순위 대신 도시의 작동 방식을 비교합니다. 모든 해석과 제안은 원천 데이터, 방법론, 불확실성으로 되돌아갈 수 있습니다.</p>
         </div>
         <div className="workflow-grid">
-          {workflow.map(([label, title, copy], index) => <article className={`workflow-step${index === 0 ? ' active' : ''}`} key={label}><span className="step-number">{label}</span><h3>{title}</h3><p>{copy}</p></article>)}
+          {workflow.map(([label, title, copy], index) => (
+            <Link className={`workflow-step${index === 0 ? ' active' : ''}`} href={workflowHrefs[index]} key={label}>
+              <span className="step-number">{label}</span><h3>{title}</h3><p>{copy}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

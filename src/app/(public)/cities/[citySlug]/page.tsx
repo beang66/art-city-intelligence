@@ -57,7 +57,7 @@ export default async function CityPage({ params }: Props) {
         <CityRanking city={city} rank={rank} total={ranked.length} />
       </section>
 
-      <section className="section section-border">
+      <section className="section section-border" id="opportunity">
         <div className="section-heading">
           <div>
             <p className="eyebrow">01 / SIGNAL DASHBOARD</p>
@@ -88,7 +88,7 @@ export default async function CityPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section section-border">
+      <section className="section section-border" id="observed">
         <div className="section-heading">
           <div><p className="eyebrow">02 / OBSERVED POSITION</p><h2>Published rankings<br /><span>for this city.</span></h2></div>
           {reading ? <p className="section-intro">{reading.headline}</p> : null}
@@ -96,7 +96,7 @@ export default async function CityPage({ params }: Props) {
         <ObservedPositionBoard city={city} />
       </section>
 
-      <section className="section section-border">
+      <section className="section section-border" id="art-dna">
         <div className="section-heading">
           <div><p className="eyebrow">03 / SIX DIMENSIONS</p><h2>Six axes,<br /><span>one shape.</span></h2></div>
           <span className="data-badge data-badge-illustrative"><i aria-hidden="true" />ILLUSTRATIVE</span>
@@ -104,7 +104,7 @@ export default async function CityPage({ params }: Props) {
         <CityDimensionBoard indicators={indicators} medians={medians} cityName={city.nameKo} />
       </section>
 
-      <section className="section section-border">
+      <section className="section section-border" id="trend">
         <div className="section-heading">
           <div><p className="eyebrow">04 / TREND</p><h2>What moved<br /><span>this line.</span></h2></div>
           <span className="data-badge data-badge-illustrative"><i aria-hidden="true" />ILLUSTRATIVE</span>
@@ -118,7 +118,7 @@ export default async function CityPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="section section-border">
+      <section className="section section-border" id="cohort">
         <div className="section-heading"><div><p className="eyebrow">05 / PEER CITIES</p><h2>Move across<br /><span>the cohort.</span></h2></div></div>
         <div className="city-link-grid">
           {citiesByName.map((item) => (
