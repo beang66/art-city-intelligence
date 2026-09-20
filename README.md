@@ -19,26 +19,50 @@
 ```
 "도시의 크기가 아니라, 예술이 생산되고 유통되고 소비되는 방식을 비교하고 추적합니다."
 
-<img width="1094" height="612" alt="화면 캡처 2026-09-21 025615" src="https://github.com/user-attachments/assets/0e73efab-8ebf-41c7-856f-ea757254ef78" />
-<img width="1094" height="611" alt="화면 캡처 2026-09-21 025633" src="https://github.com/user-attachments/assets/6ec12af6-9bb1-4af1-a94e-a7302f73af52" />
-<img width="1093" height="616" alt="화면 캡처 2026-09-21 025646" src="https://github.com/user-attachments/assets/5bbdb71f-a720-41fe-a459-c19c56e7cb37" />
-<img width="1094" height="615" alt="화면 캡처 2026-09-21 025659" src="https://github.com/user-attachments/assets/077edd9e-7ade-4229-9432-96d5e6fa4c52" />
-<img width="1098" height="613" alt="화면 캡처 2026-09-21 025712" src="https://github.com/user-attachments/assets/62235b6e-b83d-48bb-b227-1083afa6f05e" />
-<img width="1096" height="617" alt="화면 캡처 2026-09-21 025722" src="https://github.com/user-attachments/assets/62d30966-8870-49a3-b84c-a72964c70d2b" />
-<img width="1096" height="615" alt="화면 캡처 2026-09-21 025733" src="https://github.com/user-attachments/assets/cdcea1db-e936-486f-b673-15ddd4d0e773" />
-<img width="1094" height="616" alt="화면 캡처 2026-09-21 025743" src="https://github.com/user-attachments/assets/d7af88bb-f9d3-4279-99c3-22810e56580b" />
-<img width="1097" height="615" alt="화면 캡처 2026-09-21 025754" src="https://github.com/user-attachments/assets/e397265c-731f-441f-9dbe-df9b406dbc3b" />
-<img width="1095" height="616" alt="화면 캡처 2026-09-21 025805" src="https://github.com/user-attachments/assets/7d7d7dd5-7c07-405f-bd26-66d06c7c7e27" />
-<img width="1093" height="613" alt="화면 캡처 2026-09-21 025820" src="https://github.com/user-attachments/assets/df38f3ff-ab0f-4cd7-9133-a2bbe90d2cae" />
-<img width="1093" height="614" alt="화면 캡처 2026-09-21 025832" src="https://github.com/user-attachments/assets/11efc2df-c6f5-4b85-84b3-c39d1d79cad4" />
-<img width="1096" height="616" alt="화면 캡처 2026-09-21 025845" src="https://github.com/user-attachments/assets/7bf6f675-b678-4bf7-9f3d-6d0f2304effa" />
-<img width="1096" height="615" alt="화면 캡처 2026-09-21 025857" src="https://github.com/user-attachments/assets/e2399b12-bf64-4d36-948c-12cd4d9c432b" />
-<img width="1095" height="617" alt="화면 캡처 2026-09-21 025910" src="https://github.com/user-attachments/assets/1cca59ef-cc5b-4ea4-85dc-4a898017df77" />
-<img width="1097" height="617" alt="화면 캡처 2026-09-21 025919" src="https://github.com/user-attachments/assets/60b4f2d4-49b4-45e3-97fe-525cafc4a09b" />
-<img width="1095" height="616" alt="화면 캡처 2026-09-21 025931" src="https://github.com/user-attachments/assets/85e62cbf-6280-4305-b774-e96ef1916134" />
-<img width="1093" height="616" alt="화면 캡처 2026-09-21 025942" src="https://github.com/user-attachments/assets/2860722e-032d-4a6e-ab09-27f540ac0ab6" />
-<img width="1094" height="617" alt="화면 캡처 2026-09-21 025954" src="https://github.com/user-attachments/assets/03b4b670-d149-4b46-9be4-9e7427b18d05" />
-<img width="1097" height="618" alt="화면 캡처 2026-09-21 030007" src="https://github.com/user-attachments/assets/52aaf61e-32aa-4294-92d1-2d153c5b2a04" />
+<img width="1094" height="612" alt="화면 캡처 2026-09-21 025615" src="https://github.com/user-attachments/assets/29e67442-0211-4935-8551-0f44df8cdb99" />
+<img width="1094" height="611" alt="화면 캡처 2026-09-21 025633" src="https://github.com/user-attachments/assets/a7b0ca7e-69bc-4c00-8fbf-9cfac71fc8ce" />
+<img width="1093" height="616" alt="화면 캡처 2026-09-21 025646" src="https://github.com/user-attachments/assets/6dd73a1e-1782-4765-966d-f619d51093b9" />
+<img width="1094" height="615" alt="화면 캡처 2026-09-21 025659" src="https://github.com/user-attachments/assets/7abb870c-bc63-431b-b863-6e3dfff73485" />
+<img width="1098" height="613" alt="화면 캡처 2026-09-21 025712" src="https://github.com/user-attachments/assets/5e1c170a-5c98-43e8-a132-cb5fcbdf47f5" />
+<img width="1096" height="617" alt="화면 캡처 2026-09-21 025722" src="https://github.com/user-attachments/assets/4d391674-e056-4df6-810b-430a9cafb8dc" />
+<img width="1096" height="615" alt="화면 캡처 2026-09-21 025733" src="https://github.com/user-attachments/assets/129b13f1-eaf3-418c-b208-7f56c47425d0" />
+<img width="1094" height="616" alt="화면 캡처 2026-09-21 025743" src="https://github.com/user-attachments/assets/f4f2f715-83d3-4446-a88c-f95e5f60b6ef" />
+<img width="1097" height="615" alt="화면 캡처 2026-09-21 025754" src="https://github.com/user-attachments/assets/c0fafa7e-c7a9-4545-a8cd-fc00e144f42f" />
+<img width="1095" height="616" alt="화면 캡처 2026-09-21 025805" src="https://github.com/user-attachments/assets/62fa4922-6423-4f61-9817-6032f8297ea8" />
+<img width="1093" height="613" alt="화면 캡처 2026-09-21 025820" src="https://github.com/user-attachments/assets/37f1e93f-b887-403a-b18b-52891711c7af" />
+<img width="1093" height="614" alt="화면 캡처 2026-09-21 025832" src="https://github.com/user-attachments/assets/cea8b08f-7f9a-4c9a-a3f8-ab2c09324dd9" />
+<img width="1096" height="616" alt="화면 캡처 2026-09-21 025845" src="https://github.com/user-attachments/assets/3a9e860f-8a27-460e-a16f-7ab67321456a" />
+<img width="1096" height="615" alt="화면 캡처 2026-09-21 025857" src="https://github.com/user-attachments/assets/8e352485-2baa-4909-89f9-48ff1c66fcf0" />
+<img width="1095" height="617" alt="화면 캡처 2026-09-21 025910" src="https://github.com/user-attachments/assets/047ba314-2abb-4b65-9eef-2595886ed70f" />
+<img width="1097" height="617" alt="화면 캡처 2026-09-21 025919" src="https://github.com/user-attachments/assets/72df1264-d60f-4cbe-8703-756eaf4cad30" />
+<img width="1095" height="616" alt="화면 캡처 2026-09-21 025931" src="https://github.com/user-attachments/assets/65f868e2-6d52-40fc-97a1-7c47e5c0aeee" />
+<img width="1093" height="616" alt="화면 캡처 2026-09-21 025942" src="https://github.com/user-attachments/assets/dd5add4c-ab86-4d25-b899-8ced13fc46d3" />
+<img width="1094" height="617" alt="화면 캡처 2026-09-21 025954" src="https://github.com/user-attachments/assets/9d1901c6-931c-4217-a993-d31d06a47875" />
+<img width="1097" height="618" alt="화면 캡처 2026-09-21 030007" src="https://github.com/user-attachments/assets/aaf774a4-ace6-4e4a-9b74-97f7ee4e47fe" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
