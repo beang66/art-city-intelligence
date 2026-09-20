@@ -16,8 +16,7 @@
 
 단순한 도시 지표 나열을 넘어, 각 도시가 가진 고유한 문화적 DNA, 예술 생산 및 유통 구조, 시장 가격대, 제도적 인프라, 그리고 산업적 연계 기회를 투명한 관측 데이터와 시계열 지표로 시각화합니다.
 
-```
-"도시의 크기가 아니라, 예술이 생산되고 유통되고 소비되는 방식을 비교하고 추적합니다."
+
 
 <img width="1094" height="612" alt="화면 캡처 2026-09-21 025615" src="https://github.com/user-attachments/assets/29e67442-0211-4935-8551-0f44df8cdb99" />
 <img width="1094" height="611" alt="화면 캡처 2026-09-21 025633" src="https://github.com/user-attachments/assets/a7b0ca7e-69bc-4c00-8fbf-9cfac71fc8ce" />
