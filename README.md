@@ -1,10 +1,23 @@
-[h1] Art City Intelligence Platform [/h1]
+**세계 도시의 예술 생태계를 정량·정성 데이터로 분석하고, 문화·시장·산업 기회로 연결하는 도시 인텔리전스 플랫폼**
+[프로젝트 개요](#-소개) • [주요 기능](#-주요-기능) • [라우트 및 구조](#-라우트-및-페이지-구성) • [기술 스택](#-기술-스택) • [시작 가이드](#-시작-가이드)
 
+</div>
 
-배포 링크[(https://art-city-intelligence.onrender.com/overview)]
-PDF 파일 다운[([Art_City_Intelligence_Portfolio_With_Screenshots.pdf](https://github.com/user-attachments/files/32440538/Art_City_Intelligence_Portfolio_With_Screenshots.pdf))]
-PPT 파일 다운[(https://github.com/user-attachments/files/32440532/Art_City_Intelligence_Portfolio_With_Screenshots.pptx)]
+```
+🔗 [웹사이트 바로가기 (배포 링크)](https://art-city-intelligence.onrender.com/overview))  
+📁 [발표 자료 원본 다운로드 (PPTX)](https://github.com/user-attachments/files/32440703/Art_City_Intelligence_Portfolio_With_Screenshots.pptx)
+```
 
+---
+
+## 📌 소개
+
+**Art City Intelligence**는 전 세계 주요 18개 이상의 거점 도시(서울, 베를린, 런던, 뉴욕, 파리, 도쿄 등)의 예술 생태계를 입체적으로 조망하는 **Next.js App Router** 기반의 인터랙티브 인텔리전스 대시보드입니다.
+
+단순한 도시 지표 나열을 넘어, 각 도시가 가진 고유한 문화적 DNA, 예술 생산 및 유통 구조, 시장 가격대, 제도적 인프라, 그리고 산업적 연계 기회를 투명한 관측 데이터와 시계열 지표로 시각화합니다.
+
+```
+"도시의 크기가 아니라, 예술이 생산되고 유통되고 소비되는 방식을 비교하고 추적합니다."
 
 <img width="1094" height="612" alt="화면 캡처 2026-09-21 025615" src="https://github.com/user-attachments/assets/0e73efab-8ebf-41c7-856f-ea757254ef78" />
 <img width="1094" height="611" alt="화면 캡처 2026-09-21 025633" src="https://github.com/user-attachments/assets/6ec12af6-9bb1-4af1-a94e-a7302f73af52" />
