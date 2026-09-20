@@ -36,12 +36,6 @@ export default async function CityPage({ params }: Props) {
   const observation = getObservation(city.slug)
   const reading = readRank(observation)
 
-  const gaps = indicators
-    .map((indicator) => ({ indicator, gap: Math.round((indicator.score - medians[indicator.key]) * 10) / 10 }))
-    .sort((a, b) => b.gap - a.gap)
-  const top = gaps[0]
-  const bottom = gaps[gaps.length - 1]
-
   return (
     <>
       <section className="section page-hero compact-hero city-hero">
