@@ -1,24 +1,76 @@
-**세계 도시의 예술 생태계를 정량·정성 데이터로 분석하고, 문화·시장·산업 기회로 연결하는 도시 인텔리전스 플랫폼**
-[프로젝트 개요](#-소개) • [주요 기능](#-주요-기능) • [라우트 및 구조](#-라우트-및-페이지-구성) • [기술 스택](#-기술-스택) • [시작 가이드](#-시작-가이드)
-
+<div align="center">
+  <h1 align="center">
+    Art City Intelligence
+    <br />
+    <br />
+    <a href="https://art-city-intelligence.vercel.app/">
+      <img src="https://github.com/user-attachments/assets/29e67442-0211-4935-8551-0f44df8cdb99" alt="Art City Intelligence 첫 화면" width="880">
+    </a>
+  </h1>
 </div>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white" alt="Next.js 16">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React 19">
+  <img src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white" alt="TypeScript strict">
+  <img src="https://img.shields.io/badge/Vercel-deployed-000000?logo=vercel&logoColor=white" alt="Vercel deployed">
+  <img src="https://img.shields.io/badge/status-prototype-lightgrey" alt="status prototype">
+</p>
+
+<p align="center"><a href="https://art-city-intelligence.vercel.app/">웹사이트</a> · <a href="https://github.com/user-attachments/files/32440703/Art_City_Intelligence_Portfolio_With_Screenshots.pptx">발표 자료 (PPTX)</a></p>
+
+## Introduction
+
+세계 도시의 예술 생태계를 정량 · 정성 데이터로 비교하고, 팝업 · 쇼룸 같은 공간 · 브랜드 기회로 잇는 도시 인텔리전스 웹 프로토타입입니다. 서울, 베를린, 런던, 뉴욕, 파리, 도쿄 등 18개 이상의 도시를 다룹니다.
+
+- **지표를 문헌에서 설계했습니다**
+
+> UNESCO · EU · OECD 문헌을 바탕으로 문화 · 시장 · 제도 지표를 정했습니다.
+
+- **추천은 규칙 기반입니다**
+
+> 어떤 도시를 왜 추천하는지 규칙으로 설명할 수 있게 했습니다.
+
+- **모든 점수는 출처까지 추적됩니다**
+
+> 지표 값마다 관측 데이터와 출처를 따라갈 수 있습니다.
+
+## Installation
+
+Node.js가 필요합니다.
+
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build
+npm run typecheck
 ```
-🔗 [웹사이트 바로가기 (배포 링크)](https://art-city-intelligence.onrender.com/overview))  
-📁 [발표 자료 원본 다운로드 (PPTX)](https://github.com/user-attachments/files/32440703/Art_City_Intelligence_Portfolio_With_Screenshots.pptx)
+
+## 화면 구성
+
+| 경로 | 내용 |
+| --- | --- |
+| `/overview` | 지구본에서 비교군 도시를 고르고 신호를 읽는 첫 화면 |
+| `/cities/[citySlug]` | 도시별 문화 · 시장 · 산업 기회 상세 |
+| `/compare` | 도시 간 지표 비교 |
+| `/methodology` | 지표 설계와 데이터 출처 |
+| `/admin/*` | 도시 · 지표 · 출처 관리와 데이터 검증 (관리자) |
+
+## 구조
+
+```text
+src/
+├── app/            (public) · (admin) 라우트, api
+├── features/       city-intelligence · comparison · cultural-intelligence · market-intelligence · evidence
+├── components/     charts · city · globe · evidence · market · ui
+└── lib/            api · validation · utils
 ```
 
----
+## Screenshots
 
-## 📌 소개
+<details>
+<summary>화면 더 보기</summary>
 
-**Art City Intelligence**는 전 세계 주요 18개 이상의 거점 도시(서울, 베를린, 런던, 뉴욕, 파리, 도쿄 등)의 예술 생태계를 입체적으로 조망하는 **Next.js App Router** 기반의 인터랙티브 인텔리전스 대시보드입니다.
-
-단순한 도시 지표 나열을 넘어, 각 도시가 가진 고유한 문화적 DNA, 예술 생산 및 유통 구조, 시장 가격대, 제도적 인프라, 그리고 산업적 연계 기회를 투명한 관측 데이터와 시계열 지표로 시각화합니다.
-
-
-
-<img width="1094" height="612" alt="화면 캡처 2026-09-21 025615" src="https://github.com/user-attachments/assets/29e67442-0211-4935-8551-0f44df8cdb99" />
 <img width="1094" height="611" alt="화면 캡처 2026-09-21 025633" src="https://github.com/user-attachments/assets/a7b0ca7e-69bc-4c00-8fbf-9cfac71fc8ce" />
 <img width="1093" height="616" alt="화면 캡처 2026-09-21 025646" src="https://github.com/user-attachments/assets/6dd73a1e-1782-4765-966d-f619d51093b9" />
 <img width="1094" height="615" alt="화면 캡처 2026-09-21 025659" src="https://github.com/user-attachments/assets/7abb870c-bc63-431b-b863-6e3dfff73485" />
@@ -35,37 +87,12 @@
 <img width="1094" height="617" alt="화면 캡처 2026-09-21 025954" src="https://github.com/user-attachments/assets/9d1901c6-931c-4217-a993-d31d06a47875" />
 <img width="1097" height="618" alt="화면 캡처 2026-09-21 030007" src="https://github.com/user-attachments/assets/aaf774a4-ace6-4e4a-9b74-97f7ee4e47fe" />
 
+</details>
 
+## Status
 
+개인 프로젝트 웹 프로토타입입니다 (2026.09). 실제 사용자 성과는 측정하지 않았습니다.
 
+## Author
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+안정빈 — 기획 · 리서치 · 서비스 설계 · 구현 (개인)
