@@ -21,6 +21,11 @@ import imgSingapore from '@/img/Still Life with Big Durian.jpg'
 /** Sample years for every city's `trend` array — one year per value. */
 export const TREND_YEARS = [2000, 2005, 2010, 2015, 2020, 2025] as const
 
+/**
+ * 인터페이스 시연용 도시 데이터. index·signalScores·trend·가격 범위·추천 문구는
+ * 측정된 비교 지표나 검증된 시장 가격이 아니다. 발표용 숫자를 실측 데이터로 사용하지 말 것.
+ * 실제 문헌에 근거한 관측 순위는 features/evidence/observed.ts에서 별도로 관리한다.
+ */
 export const cities: readonly City[] = [
   {
     slug: 'seoul', code: 'SEO', name: 'Seoul', nameKo: '서울', country: 'South Korea', latitude: 37.5665, longitude: 126.978,
