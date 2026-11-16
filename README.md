@@ -1,3 +1,11 @@
+# art-city-intelligence
+
+> **README 구조 개편:** 2026-11-16 · 기존 설명·명령·이미지·원저작자 표기를 보존하고, 제품·의사결정·검증 기준으로 재배열했습니다. **이번 작업에서는 앱이나 테스트를 재실행하지 않았습니다.** 기재된 성과는 원본 README의 주장입니다.
+
+**읽는 순서:** 0~2 제품 설명 → 3~4 설계 판단 → 5~8 실행·검증·권리 → 9 다음 단계.
+
+## 0. 30초 요약·실행 상태
+
 <div align="center">
   <h1 align="center">
     Art City Intelligence
@@ -19,7 +27,7 @@
 
 <p align="center"><a href="https://art-city-intelligence.vercel.app/">웹사이트</a> · <a href="https://github.com/user-attachments/files/32440703/Art_City_Intelligence_Portfolio_With_Screenshots.pptx">발표 자료 (PPTX)</a></p>
 
-## Introduction
+### Introduction
 
 세계 도시의 예술 생태계를 정량 · 정성 데이터로 비교하고, 팝업 · 쇼룸 같은 공간 · 브랜드 기회로 잇는 도시 인텔리전스 웹 프로토타입입니다. 서울, 베를린, 런던, 뉴욕, 파리, 도쿄 등 18개 이상의 도시를 다룹니다.
 
@@ -35,18 +43,9 @@
 
 > 지표 값마다 관측 데이터와 출처를 따라갈 수 있습니다.
 
-## Installation
+## 1. 사용자 문제·프로젝트 목표
 
-Node.js가 필요합니다.
-
-```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run build
-npm run typecheck
-```
-
-## 기획
+### 기획
 
 **문제.** 기존 문화도시 지표는 ‘유명한 도시’를 보여 주지만, 브랜드 · 공간 기획자가 참고할 ‘가능성 있는 도시’는 보여 주지 못합니다. 데이터는 흩어져 있고, 대도시는 절대량에서 유리하며, 단일 순위는 도시마다 다른 강점의 조합을 설명하지 못합니다.
 
@@ -57,20 +56,9 @@ npm run typecheck
 | 범위 조정 | 40개 도시 → 12–15개 핵심 도시, 6개 차원 → 4개 축, 대규모 시뮬레이션 대신 Robust Z-score. 네트워크 · 텍스트 분석은 다음 단계로 미뤘습니다. |
 | 구현 | 개요 · 도시 상세 · 비교 · 방법론 화면을 만들고, 모든 점수가 원천 데이터와 출처로 돌아가도록 설계해 배포했습니다. |
 
-## 기술 스택
+## 2. 핵심 사용 흐름·기능
 
-| 구분 | 기술 |
-| --- | --- |
-| 프론트엔드 | Next.js 16 (App Router), React 19, TypeScript |
-| 시각화 | SVG · Canvas로 직접 그린 지구본과 차트, topojson-client (육지 경계 데이터) |
-| 데이터 · API | Next.js Route Handlers (도시 · 지표 · 문화 · 시장 API), 출처가 붙은 관측 데이터 모듈 |
-| 외부 서비스 · 배포 | Resend (문의 메일), Vercel |
-
-## 제작 방식
-
-혼자 기획 · 문헌 조사 · 서비스 설계를 하고, AI 코딩 도구로 구현한 뒤 코드를 검수해 배포했습니다.
-
-## 화면 구성
+### 화면 구성
 
 | 경로 | 내용 |
 | --- | --- |
@@ -80,17 +68,7 @@ npm run typecheck
 | `/methodology` | 지표 설계와 데이터 출처 |
 | `/admin/*` | 도시 · 지표 · 출처 관리와 데이터 검증 (관리자) |
 
-## 구조
-
-```text
-src/
-├── app/            (public) · (admin) 라우트, api
-├── features/       city-intelligence · comparison · cultural-intelligence · market-intelligence · evidence
-├── components/     charts · city · globe · evidence · market · ui
-└── lib/            api · validation · utils
-```
-
-## Screenshots
+### Screenshots
 
 <details>
 <summary>화면 더 보기</summary>
@@ -113,10 +91,66 @@ src/
 
 </details>
 
-## Status
+## 3. 시스템 구조·데이터·기술
+
+### 기술 스택
+
+| 구분 | 기술 |
+| --- | --- |
+| 프론트엔드 | Next.js 16 (App Router), React 19, TypeScript |
+| 시각화 | SVG · Canvas로 직접 그린 지구본과 차트, topojson-client (육지 경계 데이터) |
+| 데이터 · API | Next.js Route Handlers (도시 · 지표 · 문화 · 시장 API), 출처가 붙은 관측 데이터 모듈 |
+| 외부 서비스 · 배포 | Resend (문의 메일), Vercel |
+
+### 구조
+
+```text
+src/
+├── app/            (public) · (admin) 라우트, api
+├── features/       city-intelligence · comparison · cultural-intelligence · market-intelligence · evidence
+├── components/     charts · city · globe · evidence · market · ui
+└── lib/            api · validation · utils
+```
+
+## 4. 핵심 의사결정·대안
+
+### 제작 방식
+
+혼자 기획 · 문헌 조사 · 서비스 설계를 하고, AI 코딩 도구로 구현한 뒤 코드를 검수해 배포했습니다.
+
+## 5. 설치·실행·배포
+
+### Installation
+
+Node.js가 필요합니다.
+
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build
+npm run typecheck
+```
+
+## 6. 검증·측정 결과
+
+### Status
 
 개인 프로젝트 웹 프로토타입입니다 (2026.09). 실제 사용자 성과는 측정하지 않았습니다.
 
-## Author
+## 7. 담당 역할·협업
+
+### Author
 
 안정빈 — 기획 · 리서치 · 서비스 설계 · 구현 (개인)
+
+## 8. 한계·보안·라이선스
+
+> **확인 필요:** 실행/보안/개인정보/데이터·이미지·소스 라이선스 및 미완료 범위를 확인.
+
+## 9. 다음 단계·참고 문서
+
+> **확인 필요:** 다음 작업 1~3개와 완료 기준, 실제 존재하는 추가 문서 링크를 기록.
+
+---
+
+> 표준: [Vault README 가이드](https://github.com/beang66/Vault/blob/main/wiki/concepts/GitHub%20README%20%EA%B0%80%EC%9D%B4%EB%93%9C%20%E2%80%94%20%EC%A0%9C%ED%92%88%C2%B7%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95%C2%B7%EA%B2%80%EC%A6%9D.md). 확인 필요는 구현 완료를 의미하지 않습니다.
