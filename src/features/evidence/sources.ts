@@ -1,9 +1,9 @@
 /**
- * Bibliographic registry for everything shown on the site.
+ * Bibliographic registry for the city-index methodology and observed rankings.
  *
- * Every number rendered anywhere is either `observed` — traceable to one of these
- * published sources — or `illustrative` — generated to demonstrate the interface.
- * The UI must never present the two as the same kind of claim.
+ * 도시 비교 지표는 `observed`(보고서의 관측 순위)와 `illustrative`(UI 시연용 합성 지표)를 구분한다.
+ * 작품 제작 연도 등 그 밖의 서술형 숫자까지 모두 이 레지스트리로 검증한다는 뜻은 아니다.
+ * 화면에서는 관측 순위와 시연용 점수를 같은 검증 수준으로 제시하지 않아야 한다.
  */
 
 export type SourceId =
