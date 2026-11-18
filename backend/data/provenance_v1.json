@@ -1,0 +1,71 @@
+{
+ "version": "v1",
+ "updated": "2026-11-19",
+ "note": "What each number may and may not be used to claim. The UI badge, the API and any generated text read the same rules.",
+ "metrics": [
+  {
+   "field": "observations.*.world.rank / pillars / regional.rank",
+   "provenance": "observed",
+   "sources": [
+    "resonance-world-2026",
+    "resonance-europe-2026",
+    "resonance-americas-2026",
+    "resonance-asiapacific-2025"
+   ],
+   "comparisonAllowed": true,
+   "causalClaimAllowed": false,
+   "canSay": "Resonance 2026 기준 런던은 세계 2위다",
+   "cannotSay": "이 순위로 예술 시장 규모를 말하기"
+  },
+  {
+   "field": "cities.*.index · indicators.*.score",
+   "provenance": "illustrative",
+   "sources": [
+    "jrc-c3-2023"
+   ],
+   "comparisonAllowed": false,
+   "causalClaimAllowed": false,
+   "canSay": "이 화면에서 서울은 중앙값보다 높게 표시된다 (구성 예시)",
+   "cannotSay": "서울의 실험 역량이 측정상 베를린보다 높다"
+  },
+  {
+   "field": "cities.*.trend · signalScores",
+   "provenance": "illustrative",
+   "sources": [],
+   "comparisonAllowed": false,
+   "causalClaimAllowed": false,
+   "canSay": "화면 구성과 읽는 법의 예시",
+   "cannotSay": "연도별 실제 변화"
+  },
+  {
+   "field": "cities.*.market.priceRange · artists",
+   "provenance": "indicative",
+   "sources": [],
+   "comparisonAllowed": false,
+   "causalClaimAllowed": false,
+   "canSay": "도시를 대표하는 작가와 대략의 가격대 예시",
+   "cannotSay": "시장 가격 산정 근거"
+  },
+  {
+   "field": "cities.*.opportunity*",
+   "provenance": "proposed",
+   "sources": [],
+   "comparisonAllowed": false,
+   "causalClaimAllowed": false,
+   "canSay": "도시 특성에서 나온 기획 가설",
+   "cannotSay": "수요가 검증된 사업 기회"
+  },
+  {
+   "field": "indicators.*.sensitivity",
+   "provenance": "derived",
+   "sources": [
+    "jrc-c3-2023",
+    "oecd-jrc-2008"
+   ],
+   "comparisonAllowed": true,
+   "causalClaimAllowed": false,
+   "canSay": "가중치를 ±10% 바꿀 때 점수가 움직이는 폭",
+   "cannotSay": "측정 오차"
+  }
+ ]
+}
