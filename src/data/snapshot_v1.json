@@ -1726,11 +1726,11 @@
  "observations": {
   "seoul": {
    "world": {
-    "rank": 14,
+    "rank": 13,
     "pillars": {
-     "livability": 11,
-     "lovability": 25,
-     "prosperity": 14
+     "livability": 12,
+     "lovability": 16,
+     "prosperity": 16
     },
     "sourceId": "resonance-world-2026"
    },
@@ -1742,43 +1742,43 @@
   },
   "berlin": {
    "world": {
-    "rank": 10,
+    "rank": 9,
     "pillars": {
-     "livability": 6,
-     "lovability": 7,
-     "prosperity": 23
+     "livability": 10,
+     "lovability": 10,
+     "prosperity": 7
     },
     "sourceId": "resonance-world-2026"
    },
    "regional": {
     "scope": "Europe",
-    "rank": 4,
+    "rank": 3,
     "sourceId": "resonance-europe-2026"
    }
   },
   "london": {
+   "world": {
+    "rank": 1,
+    "pillars": {
+     "livability": 3,
+     "lovability": 2,
+     "prosperity": 1
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Europe",
+    "rank": 1,
+    "sourceId": "resonance-europe-2026"
+   }
+  },
+  "new-york": {
    "world": {
     "rank": 2,
     "pillars": {
      "livability": 2,
      "lovability": 3,
      "prosperity": 2
-    },
-    "sourceId": "resonance-world-2026"
-   },
-   "regional": {
-    "scope": "Europe",
-    "rank": 2,
-    "sourceId": "resonance-europe-2026"
-   }
-  },
-  "new-york": {
-   "world": {
-    "rank": 3,
-    "pillars": {
-     "livability": 1,
-     "lovability": 1,
-     "prosperity": 4
     },
     "sourceId": "resonance-world-2026"
    },
@@ -1817,6 +1817,22 @@
   },
   "amsterdam": {
    "world": {
+    "rank": 14,
+    "pillars": {
+     "livability": 11,
+     "lovability": 25,
+     "prosperity": 14
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Europe",
+    "rank": 7,
+    "sourceId": "resonance-europe-2026"
+   }
+  },
+  "beijing": {
+   "world": {
     "rank": 15,
     "pillars": {
      "livability": 34,
@@ -1826,32 +1842,24 @@
     "sourceId": "resonance-world-2026"
    },
    "regional": {
-    "scope": "Europe",
-    "rank": 8,
-    "sourceId": "resonance-europe-2026"
-   }
-  },
-  "beijing": {
-   "regional": {
     "scope": "Asia-Pacific",
     "rank": 5,
     "sourceId": "resonance-asiapacific-2025"
-   },
-   "worldNote": "글로벌 표에서 순위 행을 확인하지 못해 권역 순위만 표기합니다."
+   }
   },
   "barcelona": {
    "world": {
-    "rank": 11,
+    "rank": 10,
     "pillars": {
-     "livability": 8,
-     "lovability": 20,
-     "prosperity": 8
+     "livability": 6,
+     "lovability": 7,
+     "prosperity": 23
     },
     "sourceId": "resonance-world-2026"
    },
    "regional": {
     "scope": "Europe",
-    "rank": 6,
+    "rank": 5,
     "sourceId": "resonance-europe-2026"
    }
   },
@@ -1873,11 +1881,11 @@
   },
   "dubai": {
    "world": {
-    "rank": 9,
+    "rank": 8,
     "pillars": {
-     "livability": 10,
-     "lovability": 10,
-     "prosperity": 7
+     "livability": 17,
+     "lovability": 9,
+     "prosperity": 6
     },
     "sourceId": "resonance-world-2026"
    }
@@ -1900,17 +1908,17 @@
   },
   "paris": {
    "world": {
-    "rank": 4,
+    "rank": 3,
     "pillars": {
-     "livability": 4,
-     "lovability": 4,
-     "prosperity": 3
+     "livability": 1,
+     "lovability": 1,
+     "prosperity": 4
     },
     "sourceId": "resonance-world-2026"
    },
    "regional": {
     "scope": "Europe",
-    "rank": 3,
+    "rank": 2,
     "sourceId": "resonance-europe-2026"
    }
   },
@@ -1932,11 +1940,11 @@
   },
   "tokyo": {
    "world": {
-    "rank": 5,
+    "rank": 4,
     "pillars": {
-     "livability": 7,
-     "lovability": 6,
-     "prosperity": 10
+     "livability": 4,
+     "lovability": 4,
+     "prosperity": 3
     },
     "sourceId": "resonance-world-2026"
    },
@@ -1964,11 +1972,11 @@
   },
   "singapore": {
    "world": {
-    "rank": 7,
+    "rank": 6,
     "pillars": {
-     "livability": 5,
-     "lovability": 5,
-     "prosperity": 34
+     "livability": 9,
+     "lovability": 12,
+     "prosperity": 5
     },
     "sourceId": "resonance-world-2026"
    },
@@ -2140,7 +2148,7 @@
    ],
    "comparisonAllowed": true,
    "causalClaimAllowed": false,
-   "canSay": "Resonance 2026 기준 런던은 세계 2위다",
+   "canSay": "Resonance 2026 기준 런던은 세계 1위다",
    "cannotSay": "이 순위로 예술 시장 규모를 말하기"
   },
   {
@@ -3946,32 +3954,45 @@
  },
  "readings": {
   "seoul": {
-   "headline": "글로벌 14위. 세 축 가운데 정주 여건이 11위로 가장 앞서고, 도시 선호도가 25위로 가장 뒤처집니다.",
-   "detail": "축 사이 격차는 14단계입니다. 한쪽으로 치우쳐 있지만 종합 순위를 크게 흔들 정도는 아닙니다.",
+   "headline": "글로벌 13위. 세 축 가운데 정주 여건이 12위로 가장 앞서고, 경제 활력이 16위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차가 4단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
    "best": {
     "key": "livability",
-    "rank": 11
-   },
-   "worst": {
-    "key": "lovability",
-    "rank": 25
-   },
-   "spread": 14
-  },
-  "berlin": {
-   "headline": "글로벌 10위. 세 축 가운데 정주 여건이 6위로 가장 앞서고, 경제 활력이 23위로 가장 뒤처집니다.",
-   "detail": "축 사이 격차는 17단계입니다. 한쪽으로 치우쳐 있지만 종합 순위를 크게 흔들 정도는 아닙니다.",
-   "best": {
-    "key": "livability",
-    "rank": 6
+    "rank": 12
    },
    "worst": {
     "key": "prosperity",
-    "rank": 23
+    "rank": 16
    },
-   "spread": 17
+   "spread": 4
+  },
+  "berlin": {
+   "headline": "글로벌 9위. 세 축 가운데 경제 활력이 7위로 가장 앞서고, 도시 선호도가 10위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차가 3단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
+   "best": {
+    "key": "prosperity",
+    "rank": 7
+   },
+   "worst": {
+    "key": "lovability",
+    "rank": 10
+   },
+   "spread": 3
   },
   "london": {
+   "headline": "글로벌 1위. 세 축 가운데 경제 활력이 1위로 가장 앞서고, 정주 여건이 3위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차가 2단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
+   "best": {
+    "key": "prosperity",
+    "rank": 1
+   },
+   "worst": {
+    "key": "livability",
+    "rank": 3
+   },
+   "spread": 2
+  },
+  "new-york": {
    "headline": "글로벌 2위. 세 축 가운데 정주 여건이 2위로 가장 앞서고, 도시 선호도가 3위로 가장 뒤처집니다.",
    "detail": "축 사이 격차가 1단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
    "best": {
@@ -3983,19 +4004,6 @@
     "rank": 3
    },
    "spread": 1
-  },
-  "new-york": {
-   "headline": "글로벌 3위. 세 축 가운데 정주 여건이 1위로 가장 앞서고, 경제 활력이 4위로 가장 뒤처집니다.",
-   "detail": "축 사이 격차가 3단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
-   "best": {
-    "key": "livability",
-    "rank": 1
-   },
-   "worst": {
-    "key": "prosperity",
-    "rank": 4
-   },
-   "spread": 3
   },
   "mexico-city": {
    "headline": "글로벌 30위. 세 축 가운데 도시 선호도가 11위로 가장 앞서고, 정주 여건이 90위로 가장 뒤처집니다.",
@@ -4024,6 +4032,19 @@
    "spread": 21
   },
   "amsterdam": {
+   "headline": "글로벌 14위. 세 축 가운데 정주 여건이 11위로 가장 앞서고, 도시 선호도가 25위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차는 14단계입니다. 한쪽으로 치우쳐 있지만 종합 순위를 크게 흔들 정도는 아닙니다.",
+   "best": {
+    "key": "livability",
+    "rank": 11
+   },
+   "worst": {
+    "key": "lovability",
+    "rank": 25
+   },
+   "spread": 14
+  },
+  "beijing": {
    "headline": "글로벌 15위. 세 축 가운데 경제 활력이 12위로 가장 앞서고, 정주 여건이 34위로 가장 뒤처집니다.",
    "detail": "축 사이 격차가 22단계로 크게 벌어져 있습니다. 종합 순위만 보면 놓치게 되는 불균형으로, 정주 여건이 이 도시의 실질적 약점입니다.",
    "best": {
@@ -4036,19 +4057,18 @@
    },
    "spread": 22
   },
-  "beijing": null,
   "barcelona": {
-   "headline": "글로벌 11위. 세 축 가운데 정주 여건이 8위로 가장 앞서고, 도시 선호도가 20위로 가장 뒤처집니다.",
-   "detail": "축 사이 격차는 12단계입니다. 한쪽으로 치우쳐 있지만 종합 순위를 크게 흔들 정도는 아닙니다.",
+   "headline": "글로벌 10위. 세 축 가운데 정주 여건이 6위로 가장 앞서고, 경제 활력이 23위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차는 17단계입니다. 한쪽으로 치우쳐 있지만 종합 순위를 크게 흔들 정도는 아닙니다.",
    "best": {
     "key": "livability",
-    "rank": 8
+    "rank": 6
    },
    "worst": {
-    "key": "lovability",
-    "rank": 20
+    "key": "prosperity",
+    "rank": 23
    },
-   "spread": 12
+   "spread": 17
   },
   "chicago": {
    "headline": "글로벌 35위. 세 축 가운데 경제 활력이 28위로 가장 앞서고, 정주 여건이 49위로 가장 뒤처집니다.",
@@ -4064,17 +4084,17 @@
    "spread": 21
   },
   "dubai": {
-   "headline": "글로벌 9위. 세 축 가운데 경제 활력이 7위로 가장 앞서고, 도시 선호도가 10위로 가장 뒤처집니다.",
-   "detail": "축 사이 격차가 3단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
+   "headline": "글로벌 8위. 세 축 가운데 경제 활력이 6위로 가장 앞서고, 정주 여건이 17위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차는 11단계입니다. 한쪽으로 치우쳐 있지만 종합 순위를 크게 흔들 정도는 아닙니다.",
    "best": {
     "key": "prosperity",
-    "rank": 7
+    "rank": 6
    },
    "worst": {
-    "key": "lovability",
-    "rank": 10
+    "key": "livability",
+    "rank": 17
    },
-   "spread": 3
+   "spread": 11
   },
   "hong-kong": {
    "headline": "글로벌 19위. 세 축 가운데 경제 활력이 22위로 가장 앞서고, 정주 여건이 29위로 가장 뒤처집니다.",
@@ -4090,6 +4110,21 @@
    "spread": 7
   },
   "paris": {
+   "headline": "글로벌 3위. 세 축 가운데 정주 여건이 1위로 가장 앞서고, 경제 활력이 4위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차가 3단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
+   "best": {
+    "key": "livability",
+    "rank": 1
+   },
+   "worst": {
+    "key": "prosperity",
+    "rank": 4
+   },
+   "spread": 3
+  },
+  "venice": null,
+  "basel": null,
+  "tokyo": {
    "headline": "글로벌 4위. 세 축 가운데 경제 활력이 3위로 가장 앞서고, 도시 선호도가 4위로 가장 뒤처집니다.",
    "detail": "축 사이 격차가 1단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
    "best": {
@@ -4101,21 +4136,6 @@
     "rank": 4
    },
    "spread": 1
-  },
-  "venice": null,
-  "basel": null,
-  "tokyo": {
-   "headline": "글로벌 5위. 세 축 가운데 도시 선호도가 6위로 가장 앞서고, 경제 활력이 10위로 가장 뒤처집니다.",
-   "detail": "축 사이 격차가 4단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
-   "best": {
-    "key": "lovability",
-    "rank": 6
-   },
-   "worst": {
-    "key": "prosperity",
-    "rank": 10
-   },
-   "spread": 4
   },
   "shanghai": {
    "headline": "글로벌 16위. 세 축 가운데 경제 활력이 9위로 가장 앞서고, 정주 여건이 40위로 가장 뒤처집니다.",
@@ -4131,17 +4151,17 @@
    "spread": 31
   },
   "singapore": {
-   "headline": "글로벌 7위. 세 축 가운데 정주 여건이 5위로 가장 앞서고, 경제 활력이 34위로 가장 뒤처집니다.",
-   "detail": "축 사이 격차가 29단계로 크게 벌어져 있습니다. 종합 순위만 보면 놓치게 되는 불균형으로, 경제 활력이 이 도시의 실질적 약점입니다.",
+   "headline": "글로벌 6위. 세 축 가운데 경제 활력이 5위로 가장 앞서고, 도시 선호도가 12위로 가장 뒤처집니다.",
+   "detail": "축 사이 격차가 7단계에 그쳐 세 방향이 고르게 발달한 편입니다.",
    "best": {
-    "key": "livability",
+    "key": "prosperity",
     "rank": 5
    },
    "worst": {
-    "key": "prosperity",
-    "rank": 34
+    "key": "lovability",
+    "rank": 12
    },
-   "spread": 29
+   "spread": 7
   }
  },
  "cohortMedians": {

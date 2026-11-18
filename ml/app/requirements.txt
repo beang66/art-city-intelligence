@@ -1,0 +1,7 @@
+# Serving (Streamlit). scikit-learn must match the version the model was trained with (see ml/models/model_card.json).
+streamlit>=1.40
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+plotly>=5.24
+joblib>=1.4

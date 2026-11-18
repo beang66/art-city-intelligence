@@ -1,0 +1,2202 @@
+{
+ "London": [
+  {
+   "city": "Washington D.C.",
+   "similarity": 0.567
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.545
+  },
+  {
+   "city": "Istanbul",
+   "similarity": 0.545
+  },
+  {
+   "city": "Birmingham",
+   "similarity": 0.529
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.528
+  }
+ ],
+ "New York": [
+  {
+   "city": "San Francisco",
+   "similarity": 0.528
+  },
+  {
+   "city": "Baltimore",
+   "similarity": 0.499
+  },
+  {
+   "city": "Sydney",
+   "similarity": 0.484
+  },
+  {
+   "city": "Chicago",
+   "similarity": 0.469
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.458
+  }
+ ],
+ "Paris": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.731
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.679
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.64
+  },
+  {
+   "city": "Istanbul",
+   "similarity": 0.629
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.624
+  }
+ ],
+ "Tokyo": [
+  {
+   "city": "Osaka",
+   "similarity": 0.556
+  },
+  {
+   "city": "Helsinki",
+   "similarity": 0.533
+  },
+  {
+   "city": "Cape Town",
+   "similarity": 0.514
+  },
+  {
+   "city": "Jakarta",
+   "similarity": 0.511
+  },
+  {
+   "city": "Busan",
+   "similarity": 0.494
+  }
+ ],
+ "Madrid": [
+  {
+   "city": "Paris",
+   "similarity": 0.679
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.678
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.627
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.625
+  },
+  {
+   "city": "Santiago",
+   "similarity": 0.623
+  }
+ ],
+ "Singapore": [
+  {
+   "city": "Kuala Lumpur",
+   "similarity": 0.582
+  },
+  {
+   "city": "Mumbai",
+   "similarity": 0.493
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.49
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.48
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.467
+  }
+ ],
+ "Rome": [
+  {
+   "city": "Barcelona",
+   "similarity": 0.643
+  },
+  {
+   "city": "Kraków",
+   "similarity": 0.594
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.55
+  },
+  {
+   "city": "Warsaw",
+   "similarity": 0.533
+  },
+  {
+   "city": "Budapest",
+   "similarity": 0.519
+  }
+ ],
+ "Dubai": [
+  {
+   "city": "Dallas",
+   "similarity": 0.603
+  },
+  {
+   "city": "Abu Dhabi",
+   "similarity": 0.581
+  },
+  {
+   "city": "Doha",
+   "similarity": 0.521
+  },
+  {
+   "city": "Shanghai",
+   "similarity": 0.519
+  },
+  {
+   "city": "Porto",
+   "similarity": 0.507
+  }
+ ],
+ "Berlin": [
+  {
+   "city": "Hamburg",
+   "similarity": 0.659
+  },
+  {
+   "city": "The Ruhr",
+   "similarity": 0.645
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.633
+  },
+  {
+   "city": "Munich",
+   "similarity": 0.629
+  },
+  {
+   "city": "Stockholm",
+   "similarity": 0.607
+  }
+ ],
+ "Barcelona": [
+  {
+   "city": "Madrid",
+   "similarity": 0.678
+  },
+  {
+   "city": "Milan",
+   "similarity": 0.66
+  },
+  {
+   "city": "Rome",
+   "similarity": 0.643
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.615
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.602
+  }
+ ],
+ "Sydney": [
+  {
+   "city": "Perth",
+   "similarity": 0.658
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.643
+  },
+  {
+   "city": "Brisbane",
+   "similarity": 0.637
+  },
+  {
+   "city": "San Francisco",
+   "similarity": 0.518
+  },
+  {
+   "city": "Dublin",
+   "similarity": 0.511
+  }
+ ],
+ "Los Angeles": [
+  {
+   "city": "San Francisco",
+   "similarity": 0.55
+  },
+  {
+   "city": "Athens",
+   "similarity": 0.508
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.5
+  },
+  {
+   "city": "Washington D.C.",
+   "similarity": 0.499
+  },
+  {
+   "city": "Manchester",
+   "similarity": 0.486
+  }
+ ],
+ "Seoul": [
+  {
+   "city": "Hong Kong",
+   "similarity": 0.528
+  },
+  {
+   "city": "Busan",
+   "similarity": 0.528
+  },
+  {
+   "city": "Beijing",
+   "similarity": 0.501
+  },
+  {
+   "city": "Taipei",
+   "similarity": 0.485
+  },
+  {
+   "city": "Munich",
+   "similarity": 0.482
+  }
+ ],
+ "Amsterdam": [
+  {
+   "city": "Vienna",
+   "similarity": 0.537
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.534
+  },
+  {
+   "city": "Athens",
+   "similarity": 0.517
+  },
+  {
+   "city": "Brussels",
+   "similarity": 0.503
+  },
+  {
+   "city": "Bucharest",
+   "similarity": 0.503
+  }
+ ],
+ "Beijing": [
+  {
+   "city": "Hong Kong",
+   "similarity": 0.685
+  },
+  {
+   "city": "Delhi",
+   "similarity": 0.638
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.611
+  },
+  {
+   "city": "Hangzhou",
+   "similarity": 0.591
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.558
+  }
+ ],
+ "Shanghai": [
+  {
+   "city": "Orlando",
+   "similarity": 0.55
+  },
+  {
+   "city": "Guangzhou",
+   "similarity": 0.527
+  },
+  {
+   "city": "Beijing",
+   "similarity": 0.525
+  },
+  {
+   "city": "Dubai",
+   "similarity": 0.519
+  },
+  {
+   "city": "Taipei",
+   "similarity": 0.505
+  }
+ ],
+ "Toronto": [
+  {
+   "city": "Ottawa",
+   "similarity": 0.662
+  },
+  {
+   "city": "Vancouver",
+   "similarity": 0.654
+  },
+  {
+   "city": "Montreal",
+   "similarity": 0.615
+  },
+  {
+   "city": "Calgary",
+   "similarity": 0.531
+  },
+  {
+   "city": "London",
+   "similarity": 0.513
+  }
+ ],
+ "São Paulo": [
+  {
+   "city": "Buenos Aires",
+   "similarity": 0.641
+  },
+  {
+   "city": "Bogotá",
+   "similarity": 0.639
+  },
+  {
+   "city": "Santiago",
+   "similarity": 0.6
+  },
+  {
+   "city": "Lima",
+   "similarity": 0.595
+  },
+  {
+   "city": "Rio de Janeiro",
+   "similarity": 0.59
+  }
+ ],
+ "Hong Kong": [
+  {
+   "city": "Beijing",
+   "similarity": 0.685
+  },
+  {
+   "city": "Hangzhou",
+   "similarity": 0.591
+  },
+  {
+   "city": "Vancouver",
+   "similarity": 0.555
+  },
+  {
+   "city": "Busan",
+   "similarity": 0.554
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.553
+  }
+ ],
+ "Istanbul": [
+  {
+   "city": "Paris",
+   "similarity": 0.629
+  },
+  {
+   "city": "Rotterdam",
+   "similarity": 0.62
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.612
+  },
+  {
+   "city": "Jakarta",
+   "similarity": 0.611
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.574
+  }
+ ],
+ "Melbourne": [
+  {
+   "city": "Brisbane",
+   "similarity": 0.654
+  },
+  {
+   "city": "Sydney",
+   "similarity": 0.643
+  },
+  {
+   "city": "Perth",
+   "similarity": 0.626
+  },
+  {
+   "city": "Dublin",
+   "similarity": 0.587
+  },
+  {
+   "city": "Montreal",
+   "similarity": 0.565
+  }
+ ],
+ "Bangkok": [
+  {
+   "city": "Jakarta",
+   "similarity": 0.616
+  },
+  {
+   "city": "Dublin",
+   "similarity": 0.568
+  },
+  {
+   "city": "Taipei",
+   "similarity": 0.563
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.525
+  },
+  {
+   "city": "Istanbul",
+   "similarity": 0.523
+  }
+ ],
+ "Osaka": [
+  {
+   "city": "Tokyo",
+   "similarity": 0.556
+  },
+  {
+   "city": "Shanghai",
+   "similarity": 0.504
+  },
+  {
+   "city": "Taipei",
+   "similarity": 0.498
+  },
+  {
+   "city": "Hangzhou",
+   "similarity": 0.467
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.435
+  }
+ ],
+ "Oslo": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.662
+  },
+  {
+   "city": "Jakarta",
+   "similarity": 0.555
+  },
+  {
+   "city": "Rotterdam",
+   "similarity": 0.543
+  },
+  {
+   "city": "Budapest",
+   "similarity": 0.542
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.537
+  }
+ ],
+ "Stockholm": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.633
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.611
+  },
+  {
+   "city": "Berlin",
+   "similarity": 0.607
+  },
+  {
+   "city": "Hamburg",
+   "similarity": 0.6
+  },
+  {
+   "city": "The Ruhr",
+   "similarity": 0.58
+  }
+ ],
+ "Miami": [
+  {
+   "city": "Lima",
+   "similarity": 0.592
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.591
+  },
+  {
+   "city": "Busan",
+   "similarity": 0.549
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.501
+  },
+  {
+   "city": "Santiago",
+   "similarity": 0.498
+  }
+ ],
+ "Vienna": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.74
+  },
+  {
+   "city": "Zürich",
+   "similarity": 0.645
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.64
+  },
+  {
+   "city": "Frankfurt",
+   "similarity": 0.639
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.627
+  }
+ ],
+ "San Francisco": [
+  {
+   "city": "San Jose",
+   "similarity": 0.693
+  },
+  {
+   "city": "Boston",
+   "similarity": 0.554
+  },
+  {
+   "city": "Los Angeles",
+   "similarity": 0.55
+  },
+  {
+   "city": "Chicago",
+   "similarity": 0.543
+  },
+  {
+   "city": "New York",
+   "similarity": 0.528
+  }
+ ],
+ "Bengaluru": [
+  {
+   "city": "Shenzhen",
+   "similarity": 0.61
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.549
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.504
+  },
+  {
+   "city": "Hyderabad",
+   "similarity": 0.502
+  },
+  {
+   "city": "Mumbai",
+   "similarity": 0.474
+  }
+ ],
+ "Mexico City": [
+  {
+   "city": "Zürich",
+   "similarity": 0.505
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.49
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.488
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.482
+  },
+  {
+   "city": "Milan",
+   "similarity": 0.476
+  }
+ ],
+ "Munich": [
+  {
+   "city": "Frankfurt",
+   "similarity": 0.646
+  },
+  {
+   "city": "Berlin",
+   "similarity": 0.629
+  },
+  {
+   "city": "The Ruhr",
+   "similarity": 0.606
+  },
+  {
+   "city": "Hamburg",
+   "similarity": 0.563
+  },
+  {
+   "city": "Düsseldorf",
+   "similarity": 0.542
+  }
+ ],
+ "Dublin": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.642
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.587
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.579
+  },
+  {
+   "city": "Auckland",
+   "similarity": 0.57
+  },
+  {
+   "city": "Bangkok",
+   "similarity": 0.568
+  }
+ ],
+ "Copenhagen": [
+  {
+   "city": "Vienna",
+   "similarity": 0.74
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.731
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.67
+  },
+  {
+   "city": "Oslo",
+   "similarity": 0.662
+  },
+  {
+   "city": "Budapest",
+   "similarity": 0.656
+  }
+ ],
+ "Zürich": [
+  {
+   "city": "Milan",
+   "similarity": 0.662
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.645
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.645
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.644
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.584
+  }
+ ],
+ "Chicago": [
+  {
+   "city": "Paris",
+   "similarity": 0.606
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.577
+  },
+  {
+   "city": "Boston",
+   "similarity": 0.558
+  },
+  {
+   "city": "San Francisco",
+   "similarity": 0.543
+  },
+  {
+   "city": "Denver",
+   "similarity": 0.543
+  }
+ ],
+ "Milan": [
+  {
+   "city": "Lisbon",
+   "similarity": 0.68
+  },
+  {
+   "city": "Zürich",
+   "similarity": 0.662
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.66
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.602
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.594
+  }
+ ],
+ "Lisbon": [
+  {
+   "city": "Milan",
+   "similarity": 0.68
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.67
+  },
+  {
+   "city": "Zürich",
+   "similarity": 0.645
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.64
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.64
+  }
+ ],
+ "Prague": [
+  {
+   "city": "Budapest",
+   "similarity": 0.617
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.616
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.615
+  },
+  {
+   "city": "Cape Town",
+   "similarity": 0.6
+  },
+  {
+   "city": "Helsinki",
+   "similarity": 0.585
+  }
+ ],
+ "Buenos Aires": [
+  {
+   "city": "Lima",
+   "similarity": 0.664
+  },
+  {
+   "city": "Rio de Janeiro",
+   "similarity": 0.645
+  },
+  {
+   "city": "São Paulo",
+   "similarity": 0.641
+  },
+  {
+   "city": "Santiago",
+   "similarity": 0.632
+  },
+  {
+   "city": "Bogotá",
+   "similarity": 0.604
+  }
+ ],
+ "Mumbai": [
+  {
+   "city": "Milan",
+   "similarity": 0.494
+  },
+  {
+   "city": "Singapore",
+   "similarity": 0.493
+  },
+  {
+   "city": "Bengaluru",
+   "similarity": 0.474
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.47
+  },
+  {
+   "city": "Perth",
+   "similarity": 0.466
+  }
+ ],
+ "Vancouver": [
+  {
+   "city": "Toronto",
+   "similarity": 0.654
+  },
+  {
+   "city": "Ottawa",
+   "similarity": 0.625
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.555
+  },
+  {
+   "city": "Montreal",
+   "similarity": 0.554
+  },
+  {
+   "city": "Calgary",
+   "similarity": 0.548
+  }
+ ],
+ "Rio de Janeiro": [
+  {
+   "city": "Buenos Aires",
+   "similarity": 0.645
+  },
+  {
+   "city": "São Paulo",
+   "similarity": 0.59
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.565
+  },
+  {
+   "city": "Bogotá",
+   "similarity": 0.553
+  },
+  {
+   "city": "Santiago",
+   "similarity": 0.538
+  }
+ ],
+ "Warsaw": [
+  {
+   "city": "Kraków",
+   "similarity": 0.695
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.586
+  },
+  {
+   "city": "Budapest",
+   "similarity": 0.58
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.568
+  },
+  {
+   "city": "Athens",
+   "similarity": 0.565
+  }
+ ],
+ "Hamburg": [
+  {
+   "city": "The Ruhr",
+   "similarity": 0.666
+  },
+  {
+   "city": "Berlin",
+   "similarity": 0.659
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.632
+  },
+  {
+   "city": "Rotterdam",
+   "similarity": 0.621
+  },
+  {
+   "city": "Frankfurt",
+   "similarity": 0.618
+  }
+ ],
+ "Shenzhen": [
+  {
+   "city": "San Jose",
+   "similarity": 0.637
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.621
+  },
+  {
+   "city": "Bengaluru",
+   "similarity": 0.61
+  },
+  {
+   "city": "San Francisco",
+   "similarity": 0.516
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.514
+  }
+ ],
+ "Montreal": [
+  {
+   "city": "Ottawa",
+   "similarity": 0.663
+  },
+  {
+   "city": "Toronto",
+   "similarity": 0.615
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.571
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.565
+  },
+  {
+   "city": "Helsinki",
+   "similarity": 0.559
+  }
+ ],
+ "Budapest": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.656
+  },
+  {
+   "city": "Bucharest",
+   "similarity": 0.629
+  },
+  {
+   "city": "Prague",
+   "similarity": 0.617
+  },
+  {
+   "city": "Frankfurt",
+   "similarity": 0.602
+  },
+  {
+   "city": "Brussels",
+   "similarity": 0.596
+  }
+ ],
+ "Brussels": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.645
+  },
+  {
+   "city": "Budapest",
+   "similarity": 0.596
+  },
+  {
+   "city": "Bucharest",
+   "similarity": 0.586
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.573
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.565
+  }
+ ],
+ "Riyadh": [
+  {
+   "city": "Abu Dhabi",
+   "similarity": 0.54
+  },
+  {
+   "city": "Porto",
+   "similarity": 0.498
+  },
+  {
+   "city": "Dubai",
+   "similarity": 0.494
+  },
+  {
+   "city": "Mecca",
+   "similarity": 0.489
+  },
+  {
+   "city": "Warsaw",
+   "similarity": 0.479
+  }
+ ],
+ "Kuala Lumpur": [
+  {
+   "city": "Singapore",
+   "similarity": 0.582
+  },
+  {
+   "city": "Dublin",
+   "similarity": 0.536
+  },
+  {
+   "city": "Munich",
+   "similarity": 0.53
+  },
+  {
+   "city": "Delhi",
+   "similarity": 0.524
+  },
+  {
+   "city": "Bangkok",
+   "similarity": 0.518
+  }
+ ],
+ "Bogotá": [
+  {
+   "city": "São Paulo",
+   "similarity": 0.639
+  },
+  {
+   "city": "Buenos Aires",
+   "similarity": 0.604
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.595
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.573
+  },
+  {
+   "city": "Rio de Janeiro",
+   "similarity": 0.553
+  }
+ ],
+ "Guangzhou": [
+  {
+   "city": "Taipei",
+   "similarity": 0.583
+  },
+  {
+   "city": "Las Vegas",
+   "similarity": 0.53
+  },
+  {
+   "city": "Shanghai",
+   "similarity": 0.527
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.522
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.517
+  }
+ ],
+ "Jakarta": [
+  {
+   "city": "Bangkok",
+   "similarity": 0.616
+  },
+  {
+   "city": "Istanbul",
+   "similarity": 0.611
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.575
+  },
+  {
+   "city": "Oslo",
+   "similarity": 0.555
+  },
+  {
+   "city": "São Paulo",
+   "similarity": 0.549
+  }
+ ],
+ "Delhi": [
+  {
+   "city": "Beijing",
+   "similarity": 0.638
+  },
+  {
+   "city": "Hyderabad",
+   "similarity": 0.557
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.546
+  },
+  {
+   "city": "Kuala Lumpur",
+   "similarity": 0.524
+  },
+  {
+   "city": "Jakarta",
+   "similarity": 0.52
+  }
+ ],
+ "Las Vegas": [
+  {
+   "city": "Guangzhou",
+   "similarity": 0.53
+  },
+  {
+   "city": "Dallas",
+   "similarity": 0.484
+  },
+  {
+   "city": "Dubai",
+   "similarity": 0.475
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.457
+  },
+  {
+   "city": "Orlando",
+   "similarity": 0.442
+  }
+ ],
+ "Boston": [
+  {
+   "city": "Chicago",
+   "similarity": 0.558
+  },
+  {
+   "city": "San Francisco",
+   "similarity": 0.554
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.53
+  },
+  {
+   "city": "The Ruhr",
+   "similarity": 0.527
+  },
+  {
+   "city": "London",
+   "similarity": 0.519
+  }
+ ],
+ "Washington D.C.": [
+  {
+   "city": "London",
+   "similarity": 0.567
+  },
+  {
+   "city": "Chicago",
+   "similarity": 0.526
+  },
+  {
+   "city": "Los Angeles",
+   "similarity": 0.499
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.497
+  },
+  {
+   "city": "Seattle",
+   "similarity": 0.469
+  }
+ ],
+ "Houston": [
+  {
+   "city": "Denver",
+   "similarity": 0.693
+  },
+  {
+   "city": "Austin",
+   "similarity": 0.58
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.57
+  },
+  {
+   "city": "Birmingham",
+   "similarity": 0.514
+  },
+  {
+   "city": "San Francisco",
+   "similarity": 0.512
+  }
+ ],
+ "Auckland": [
+  {
+   "city": "Dublin",
+   "similarity": 0.57
+  },
+  {
+   "city": "Brisbane",
+   "similarity": 0.556
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.536
+  },
+  {
+   "city": "Perth",
+   "similarity": 0.532
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.522
+  }
+ ],
+ "San Jose": [
+  {
+   "city": "San Francisco",
+   "similarity": 0.693
+  },
+  {
+   "city": "Shenzhen",
+   "similarity": 0.637
+  },
+  {
+   "city": "Chicago",
+   "similarity": 0.577
+  },
+  {
+   "city": "Houston",
+   "similarity": 0.57
+  },
+  {
+   "city": "San Diego",
+   "similarity": 0.538
+  }
+ ],
+ "Helsinki": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.618
+  },
+  {
+   "city": "Prague",
+   "similarity": 0.585
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.58
+  },
+  {
+   "city": "Milan",
+   "similarity": 0.574
+  },
+  {
+   "city": "Kraków",
+   "similarity": 0.56
+  }
+ ],
+ "Orlando": [
+  {
+   "city": "Shanghai",
+   "similarity": 0.55
+  },
+  {
+   "city": "Miami",
+   "similarity": 0.497
+  },
+  {
+   "city": "Busan",
+   "similarity": 0.494
+  },
+  {
+   "city": "Dallas",
+   "similarity": 0.488
+  },
+  {
+   "city": "Guangzhou",
+   "similarity": 0.458
+  }
+ ],
+ "Taipei": [
+  {
+   "city": "Chengdu",
+   "similarity": 0.621
+  },
+  {
+   "city": "Guangzhou",
+   "similarity": 0.583
+  },
+  {
+   "city": "Bangkok",
+   "similarity": 0.563
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.546
+  },
+  {
+   "city": "Beijing",
+   "similarity": 0.528
+  }
+ ],
+ "Frankfurt": [
+  {
+   "city": "Munich",
+   "similarity": 0.646
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.639
+  },
+  {
+   "city": "The Ruhr",
+   "similarity": 0.637
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.626
+  },
+  {
+   "city": "Hamburg",
+   "similarity": 0.618
+  }
+ ],
+ "Lima": [
+  {
+   "city": "Buenos Aires",
+   "similarity": 0.664
+  },
+  {
+   "city": "Santiago",
+   "similarity": 0.62
+  },
+  {
+   "city": "São Paulo",
+   "similarity": 0.595
+  },
+  {
+   "city": "Miami",
+   "similarity": 0.592
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.57
+  }
+ ],
+ "Atlanta": [
+  {
+   "city": "San Diego",
+   "similarity": 0.528
+  },
+  {
+   "city": "Munich",
+   "similarity": 0.496
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.473
+  },
+  {
+   "city": "Austin",
+   "similarity": 0.448
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.422
+  }
+ ],
+ "Seattle": [
+  {
+   "city": "Busan",
+   "similarity": 0.554
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.541
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.532
+  },
+  {
+   "city": "Rotterdam",
+   "similarity": 0.528
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.526
+  }
+ ],
+ "Perth": [
+  {
+   "city": "Brisbane",
+   "similarity": 0.8
+  },
+  {
+   "city": "Sydney",
+   "similarity": 0.658
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.626
+  },
+  {
+   "city": "Auckland",
+   "similarity": 0.532
+  },
+  {
+   "city": "Seattle",
+   "similarity": 0.513
+  }
+ ],
+ "Manchester": [
+  {
+   "city": "Berlin",
+   "similarity": 0.579
+  },
+  {
+   "city": "Kraków",
+   "similarity": 0.548
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.529
+  },
+  {
+   "city": "London",
+   "similarity": 0.511
+  },
+  {
+   "city": "Birmingham",
+   "similarity": 0.508
+  }
+ ],
+ "Cape Town": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.63
+  },
+  {
+   "city": "Prague",
+   "similarity": 0.6
+  },
+  {
+   "city": "Brussels",
+   "similarity": 0.557
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.534
+  },
+  {
+   "city": "Oslo",
+   "similarity": 0.533
+  }
+ ],
+ "Kraków": [
+  {
+   "city": "Warsaw",
+   "similarity": 0.695
+  },
+  {
+   "city": "Rome",
+   "similarity": 0.594
+  },
+  {
+   "city": "Cologne",
+   "similarity": 0.58
+  },
+  {
+   "city": "Budapest",
+   "similarity": 0.578
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.561
+  }
+ ],
+ "Valencia": [
+  {
+   "city": "Madrid",
+   "similarity": 0.601
+  },
+  {
+   "city": "Santiago",
+   "similarity": 0.536
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.501
+  },
+  {
+   "city": "Lima",
+   "similarity": 0.478
+  },
+  {
+   "city": "Shanghai",
+   "similarity": 0.467
+  }
+ ],
+ "Ottawa": [
+  {
+   "city": "Montreal",
+   "similarity": 0.663
+  },
+  {
+   "city": "Toronto",
+   "similarity": 0.662
+  },
+  {
+   "city": "Vancouver",
+   "similarity": 0.625
+  },
+  {
+   "city": "Calgary",
+   "similarity": 0.588
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.498
+  }
+ ],
+ "Athens": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.579
+  },
+  {
+   "city": "Warsaw",
+   "similarity": 0.565
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.561
+  },
+  {
+   "city": "Kraków",
+   "similarity": 0.554
+  },
+  {
+   "city": "Rotterdam",
+   "similarity": 0.537
+  }
+ ],
+ "Santiago": [
+  {
+   "city": "Buenos Aires",
+   "similarity": 0.632
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.623
+  },
+  {
+   "city": "Lima",
+   "similarity": 0.62
+  },
+  {
+   "city": "São Paulo",
+   "similarity": 0.6
+  },
+  {
+   "city": "Medellín",
+   "similarity": 0.591
+  }
+ ],
+ "Medellín": [
+  {
+   "city": "Santiago",
+   "similarity": 0.591
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.553
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.523
+  },
+  {
+   "city": "San Diego",
+   "similarity": 0.523
+  },
+  {
+   "city": "São Paulo",
+   "similarity": 0.523
+  }
+ ],
+ "Cologne": [
+  {
+   "city": "Kraków",
+   "similarity": 0.58
+  },
+  {
+   "city": "Berlin",
+   "similarity": 0.573
+  },
+  {
+   "city": "The Ruhr",
+   "similarity": 0.544
+  },
+  {
+   "city": "Hamburg",
+   "similarity": 0.523
+  },
+  {
+   "city": "Warsaw",
+   "similarity": 0.518
+  }
+ ],
+ "Dallas": [
+  {
+   "city": "Dubai",
+   "similarity": 0.603
+  },
+  {
+   "city": "Porto",
+   "similarity": 0.541
+  },
+  {
+   "city": "Austin",
+   "similarity": 0.511
+  },
+  {
+   "city": "Cape Town",
+   "similarity": 0.498
+  },
+  {
+   "city": "Orlando",
+   "similarity": 0.488
+  }
+ ],
+ "Brisbane": [
+  {
+   "city": "Perth",
+   "similarity": 0.8
+  },
+  {
+   "city": "Melbourne",
+   "similarity": 0.654
+  },
+  {
+   "city": "Sydney",
+   "similarity": 0.637
+  },
+  {
+   "city": "Auckland",
+   "similarity": 0.556
+  },
+  {
+   "city": "Vancouver",
+   "similarity": 0.537
+  }
+ ],
+ "Hangzhou": [
+  {
+   "city": "Beijing",
+   "similarity": 0.591
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.591
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.53
+  },
+  {
+   "city": "Shanghai",
+   "similarity": 0.483
+  },
+  {
+   "city": "Shenzhen",
+   "similarity": 0.48
+  }
+ ],
+ "San Diego": [
+  {
+   "city": "San Jose",
+   "similarity": 0.538
+  },
+  {
+   "city": "Munich",
+   "similarity": 0.538
+  },
+  {
+   "city": "Atlanta",
+   "similarity": 0.528
+  },
+  {
+   "city": "Medellín",
+   "similarity": 0.523
+  },
+  {
+   "city": "Shenzhen",
+   "similarity": 0.499
+  }
+ ],
+ "Hyderabad": [
+  {
+   "city": "Delhi",
+   "similarity": 0.557
+  },
+  {
+   "city": "Beijing",
+   "similarity": 0.524
+  },
+  {
+   "city": "Bengaluru",
+   "similarity": 0.502
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.5
+  },
+  {
+   "city": "Chengdu",
+   "similarity": 0.485
+  }
+ ],
+ "Chengdu": [
+  {
+   "city": "Shenzhen",
+   "similarity": 0.621
+  },
+  {
+   "city": "Taipei",
+   "similarity": 0.621
+  },
+  {
+   "city": "Beijing",
+   "similarity": 0.611
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.553
+  },
+  {
+   "city": "Bengaluru",
+   "similarity": 0.549
+  }
+ ],
+ "Denver": [
+  {
+   "city": "Houston",
+   "similarity": 0.693
+  },
+  {
+   "city": "Austin",
+   "similarity": 0.625
+  },
+  {
+   "city": "Chicago",
+   "similarity": 0.543
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.536
+  },
+  {
+   "city": "San Jose",
+   "similarity": 0.521
+  }
+ ],
+ "Calgary": [
+  {
+   "city": "Ottawa",
+   "similarity": 0.588
+  },
+  {
+   "city": "Vancouver",
+   "similarity": 0.548
+  },
+  {
+   "city": "Toronto",
+   "similarity": 0.531
+  },
+  {
+   "city": "Montreal",
+   "similarity": 0.515
+  },
+  {
+   "city": "Chicago",
+   "similarity": 0.502
+  }
+ ],
+ "Abu Dhabi": [
+  {
+   "city": "Dubai",
+   "similarity": 0.581
+  },
+  {
+   "city": "Riyadh",
+   "similarity": 0.54
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.539
+  },
+  {
+   "city": "Doha",
+   "similarity": 0.488
+  },
+  {
+   "city": "Kuala Lumpur",
+   "similarity": 0.434
+  }
+ ],
+ "Austin": [
+  {
+   "city": "Denver",
+   "similarity": 0.625
+  },
+  {
+   "city": "Houston",
+   "similarity": 0.58
+  },
+  {
+   "city": "Dallas",
+   "similarity": 0.511
+  },
+  {
+   "city": "Montreal",
+   "similarity": 0.464
+  },
+  {
+   "city": "Atlanta",
+   "similarity": 0.448
+  }
+ ],
+ "Philadelphia": [
+  {
+   "city": "San Diego",
+   "similarity": 0.456
+  },
+  {
+   "city": "London",
+   "similarity": 0.454
+  },
+  {
+   "city": "Boston",
+   "similarity": 0.44
+  },
+  {
+   "city": "Toronto",
+   "similarity": 0.432
+  },
+  {
+   "city": "Baltimore",
+   "similarity": 0.411
+  }
+ ],
+ "Baltimore": [
+  {
+   "city": "Rome",
+   "similarity": 0.5
+  },
+  {
+   "city": "New York",
+   "similarity": 0.499
+  },
+  {
+   "city": "San Francisco",
+   "similarity": 0.499
+  },
+  {
+   "city": "Birmingham",
+   "similarity": 0.459
+  },
+  {
+   "city": "Houston",
+   "similarity": 0.45
+  }
+ ],
+ "Stuttgart": [
+  {
+   "city": "Paris",
+   "similarity": 0.607
+  },
+  {
+   "city": "Frankfurt",
+   "similarity": 0.597
+  },
+  {
+   "city": "Berlin",
+   "similarity": 0.596
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.595
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.576
+  }
+ ],
+ "Rotterdam": [
+  {
+   "city": "Copenhagen",
+   "similarity": 0.652
+  },
+  {
+   "city": "Hamburg",
+   "similarity": 0.621
+  },
+  {
+   "city": "Istanbul",
+   "similarity": 0.62
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.591
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.548
+  }
+ ],
+ "Lyon": [
+  {
+   "city": "Paris",
+   "similarity": 0.55
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.517
+  },
+  {
+   "city": "Hamburg",
+   "similarity": 0.513
+  },
+  {
+   "city": "Rotterdam",
+   "similarity": 0.493
+  },
+  {
+   "city": "Berlin",
+   "similarity": 0.47
+  }
+ ],
+ "The Ruhr": [
+  {
+   "city": "Hamburg",
+   "similarity": 0.666
+  },
+  {
+   "city": "Berlin",
+   "similarity": 0.645
+  },
+  {
+   "city": "Frankfurt",
+   "similarity": 0.637
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.615
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.607
+  }
+ ],
+ "Busan": [
+  {
+   "city": "Hong Kong",
+   "similarity": 0.554
+  },
+  {
+   "city": "Seattle",
+   "similarity": 0.554
+  },
+  {
+   "city": "Miami",
+   "similarity": 0.549
+  },
+  {
+   "city": "Seoul",
+   "similarity": 0.528
+  },
+  {
+   "city": "Tokyo",
+   "similarity": 0.494
+  }
+ ],
+ "Düsseldorf": [
+  {
+   "city": "Berlin",
+   "similarity": 0.557
+  },
+  {
+   "city": "Munich",
+   "similarity": 0.542
+  },
+  {
+   "city": "Frankfurt",
+   "similarity": 0.541
+  },
+  {
+   "city": "Budapest",
+   "similarity": 0.533
+  },
+  {
+   "city": "Copenhagen",
+   "similarity": 0.532
+  }
+ ],
+ "Mecca": [
+  {
+   "city": "Riyadh",
+   "similarity": 0.489
+  },
+  {
+   "city": "Oslo",
+   "similarity": 0.48
+  },
+  {
+   "city": "Tokyo",
+   "similarity": 0.469
+  },
+  {
+   "city": "Hong Kong",
+   "similarity": 0.429
+  },
+  {
+   "city": "Kraków",
+   "similarity": 0.422
+  }
+ ],
+ "Porto": [
+  {
+   "city": "Lisbon",
+   "similarity": 0.584
+  },
+  {
+   "city": "Dallas",
+   "similarity": 0.541
+  },
+  {
+   "city": "Paris",
+   "similarity": 0.515
+  },
+  {
+   "city": "Dubai",
+   "similarity": 0.507
+  },
+  {
+   "city": "Riyadh",
+   "similarity": 0.498
+  }
+ ],
+ "Bucharest": [
+  {
+   "city": "Budapest",
+   "similarity": 0.629
+  },
+  {
+   "city": "Lisbon",
+   "similarity": 0.597
+  },
+  {
+   "city": "Brussels",
+   "similarity": 0.586
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.578
+  },
+  {
+   "city": "Vienna",
+   "similarity": 0.574
+  }
+ ],
+ "Birmingham": [
+  {
+   "city": "London",
+   "similarity": 0.529
+  },
+  {
+   "city": "Houston",
+   "similarity": 0.514
+  },
+  {
+   "city": "Manchester",
+   "similarity": 0.508
+  },
+  {
+   "city": "Athens",
+   "similarity": 0.485
+  },
+  {
+   "city": "Madrid",
+   "similarity": 0.459
+  }
+ ],
+ "Doha": [
+  {
+   "city": "Dubai",
+   "similarity": 0.521
+  },
+  {
+   "city": "Abu Dhabi",
+   "similarity": 0.488
+  },
+  {
+   "city": "Barcelona",
+   "similarity": 0.47
+  },
+  {
+   "city": "Kraków",
+   "similarity": 0.468
+  },
+  {
+   "city": "Dallas",
+   "similarity": 0.463
+  }
+ ]
+}

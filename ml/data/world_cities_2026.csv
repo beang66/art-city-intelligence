@@ -1,0 +1,101 @@
+rank,city,country,region,population,livability,lovability,prosperity,highlight1,highlight1_rank,highlight2,highlight2_rank
+1,London,United Kingdom,Europe,12451000,3,2,1,Airports,1,Large Companies,1
+2,New York,USA,North America,19940000,2,3,2,Google Trends,1,Large Companies,2
+3,Paris,France,Europe,13171000,1,1,4,Google Trends,2,Museums,3
+4,Tokyo,Japan,Asia-Pacific,36635000,4,4,3,Restaurants,1,Museums,1
+5,Madrid,Spain,Europe,6983000,7,6,10,Nightlife,2,Theaters & Concerts,7
+6,Singapore,Singapore,Asia-Pacific,6038000,9,12,5,Standard of Living,1,University,4
+7,Rome,Italy,Europe,4306000,5,5,34,Sights & Landmarks,4,Museums,11
+8,Dubai,UAE,Middle East & Africa,6000000,17,9,6,Labor Force Participation,2,Facebook Check-ins,2
+9,Berlin,Germany,Europe,5106000,10,10,7,Biking,4,Walkability,5
+10,Barcelona,Spain,Europe,5094000,6,7,23,Public Transit,3,Walkability,12
+11,Sydney,Australia,Asia-Pacific,5450000,8,20,8,Air Quality,8,University,16
+12,Los Angeles,USA,North America,12928000,13,13,13,Instagram Posts,3,University,3
+13,Seoul,South Korea,Asia-Pacific,24160000,12,16,16,Restaurants,2,Museums,9
+14,Amsterdam,Netherlands,Europe,2989000,11,25,14,Museums,13,Airports,14
+15,Beijing,China,Asia-Pacific,21312000,34,15,12,Nightlife,3,Shopping,5
+16,Shanghai,China,Asia-Pacific,28482000,40,17,9,Convention Center,2,Nightlife,4
+17,Toronto,Canada,North America,7605000,14,29,15,Educational Attainment,4,University,11
+18,São Paulo,Brazil,Latin America,22421000,54,8,40,Nightlife,1,Instagram Posts,1
+19,Hong Kong,China,Asia-Pacific,7617000,29,27,22,Google Trends,4,Large Companies,5
+20,Istanbul,Türkiye,Europe,14206000,41,14,51,Shopping,1,Nature & Parks,2
+21,Melbourne,Australia,Asia-Pacific,5207000,22,42,21,Air Quality,12,University,13
+22,Bangkok,Thailand,Asia-Pacific,10891000,42,18,42,Unemployment Rate,3,Facebook Check-ins,4
+23,Osaka,Japan,Asia-Pacific,16692000,21,24,52,Google Trends,17,Family-Friendly Attractions,19
+24,Oslo,Norway,Europe,1651000,15,62,17,Climate Risk,14,Green Space,16
+25,Stockholm,Sweden,Europe,2455000,19,56,18,Educational Attainment,8,Green Space,14
+26,Miami,USA,North America,6458000,26,30,30,Airports,11,Air Quality,15
+27,Vienna,Austria,Europe,3136000,18,32,47,Biking,4,Health,7
+28,San Francisco,USA,North America,4648000,43,69,11,Business Ecosystem,1,Economic Output,2
+29,Bengaluru,India,Asia-Pacific,13172000,46,19,57,Sights & Landmarks,1,Family-Friendly Attractions,1
+30,Mexico City,Mexico,North America,20535000,90,11,77,Theaters & Concerts,1,Nature & Parks,1
+31,Munich,Germany,Europe,3066000,27,54,19,Biking,4,Walkability,5
+32,Dublin,Ireland,Europe,2267000,23,55,25,Standard of Living,2,Biking,4
+33,Copenhagen,Denmark,Europe,2198000,16,74,27,Biking,1,Walkability,2
+34,Zürich,Switzerland,Europe,1613000,20,98,24,Biking,1,Walkability,1
+35,Chicago,USA,North America,9409000,49,38,28,Google Trends,7,Airports,8
+36,Milan,Italy,Europe,4981000,38,39,31,Walkability,2,Biking,4
+37,Lisbon,Portugal,Europe,3115000,24,31,85,Biking,4,Public Transit,5
+38,Prague,Czechia,Europe,2217000,25,33,81,Health,5,Standard of Living,6
+39,Buenos Aires,Argentina,Latin America,15365000,39,21,127,Nature & Parks,5,Nightlife,6
+40,Mumbai,India,Asia-Pacific,20947000,65,26,60,Sights & Landmarks,3,Large Companies,4
+41,Vancouver,Canada,North America,2731000,28,63,32,Air Quality,5,Educational Attainment,6
+42,Rio de Janeiro,Brazil,Latin America,13630000,37,22,142,Nightlife,11,Theaters & Concerts,11
+43,Warsaw,Poland,Europe,3395000,33,58,29,Educational Attainment,7,Health,8
+44,Hamburg,Germany,Europe,3493000,30,59,43,Climate Risk,7,Standard of Living,9
+45,Shenzhen,China,Asia-Pacific,12819000,193,34,26,Convention Center,3,Shopping,4
+46,Montreal,Canada,North America,4637000,36,65,39,Educational Attainment,9,Biking,20
+47,Budapest,Hungary,Europe,2969000,31,57,65,Health,12,Educational Attainment,17
+48,Brussels,Belgium,Europe,3408000,44,92,33,Standard of Living,8,Airports,19
+49,Riyadh,Saudi Arabia,Middle East & Africa,7531000,155,45,35,Nature & Parks,3,TikTok Videos,4
+50,Kuala Lumpur,Malaysia,Asia-Pacific,8410000,88,51,44,Labor Force Participation,5,Standard of Living,20
+51,Bogotá,Colombia,Latin America,9389000,97,35,80,Nightlife,8,Shopping,24
+52,Guangzhou,China,Asia-Pacific,13949000,198,40,38,Convention Center,1,Shopping,9
+53,Jakarta,Indonesia,Asia-Pacific,32260000,238,28,61,Family-Friendly Attractions,7,TikTok Videos,8
+54,Delhi,India,Asia-Pacific,32023000,252,23,87,Sights & Landmarks,5,Facebook Check-ins,7
+55,Las Vegas,USA,North America,2399000,149,36,71,Google Trends,13,Convention Center,14
+56,Boston,USA,North America,5026000,53,113,36,Weather,1,University,1
+57,Washington D.C.,USA,North America,6436000,64,100,41,Educational Attainment,1,Health,2
+58,Houston,USA,North America,7796000,174,48,48,Large Companies,16,Economic Output,19
+59,Auckland,New Zealand,Asia-Pacific,1666000,32,102,75,Air Quality,3,Labor Force Participation,17
+60,San Jose,USA,North America,1995000,104,264,20,Economic Output,1,Business Ecosystem,1
+61,Helsinki,Finland,Europe,1598000,35,133,58,Climate Risk,8,Air Quality,13
+62,Orlando,USA,North America,2941000,102,52,66,Family-Friendly Attractions,2,Air Quality,10
+63,Taipei,Taiwan,Asia-Pacific,2741000,51,67,83,Restaurants,16,Family-Friendly Attractions,17
+64,Frankfurt,Germany,Europe,2722000,62,135,37,Convention Center,6,Airports,21
+65,Lima,Peru,Latin America,11037000,159,37,101,Nature & Parks,10,Nightlife,10
+66,Atlanta,USA,North America,6411000,135,68,50,Green Space,6,Large Companies,20
+67,Seattle,USA,North America,4145000,72,110,49,Economic Output,3,Air Quality,4
+68,Perth,Australia,Asia-Pacific,2309000,52,120,56,Air Quality,5,Standard of Living,7
+69,Manchester,United Kingdom,Europe,3399000,60,109,54,Climate Risk,9,Airports,12
+70,Cape Town,South Africa,Middle East & Africa,3740000,56,50,147,Nature & Parks,14,TikTok Videos,46
+71,Kraków,Poland,Europe,1501000,48,79,100,Museums,22,Unemployment Rate,32
+72,Valencia,Spain,Europe,1776000,45,75,117,Convention Center,15,Biking,20
+73,Ottawa,Canada,North America,1591000,47,139,63,Educational Attainment,4,Weather,30
+74,Athens,Greece,Europe,3594000,59,47,177,Health,3,Biking,20
+75,Santiago,Chile,Latin America,8213000,95,53,102,Shopping,18,Nature & Parks,19
+76,Medellín,Colombia,Latin America,4124000,80,49,139,Public Transit,7,Nightlife,19
+77,Cologne,Germany,Europe,2234000,69,104,64,Convention Center,10,Biking,20
+78,Dallas,USA,North America,8344000,180,86,45,Weather,8,Airports,10
+79,Brisbane,Australia,Asia-Pacific,2707000,66,141,68,Air Quality,2,Weather,4
+80,Hangzhou,China,Asia-Pacific,8035000,146,78,74,Weather,19,University,22
+81,San Diego,USA,North America,3299000,120,88,73,Economic Output,15,University,18
+82,Hyderabad,India,Asia-Pacific,10521000,172,43,149,Sights & Landmarks,2,Family-Friendly Attractions,4
+83,Chengdu,China,Asia-Pacific,9470000,141,64,94,Internet Infrastructure,6,Convention Center,17
+84,Denver,USA,North America,3052000,109,128,59,Economic Output,9,Labor Force Participation,16
+85,Calgary,Canada,North America,1679000,85,132,70,Educational Attainment,9,Labor Force Participation,30
+86,Abu Dhabi,UAE,Middle East & Africa,1539000,224,94,46,Labor Force Participation,2,Standard of Living,12
+87,Austin,USA,North America,2551000,125,125,62,Economic Output,12,Business Ecosystem,18
+88,Philadelphia,USA,North America,6330000,108,115,76,University,4,Weather,25
+89,Baltimore,USA,North America,2859000,67,222,67,Health,1,Educational Attainment,1
+90,Stuttgart,Germany,Europe,2558000,61,180,88,Biking,4,Walkability,12
+91,Rotterdam,Netherlands,Europe,1896000,112,191,55,Airports,14,Weather,25
+92,Lyon,France,Europe,2309000,70,134,105,Biking,4,Walkability,5
+93,The Ruhr,Germany,Europe,5114000,73,126,118,Weather,7,Biking,20
+94,Busan,South Korea,Asia-Pacific,3468000,78,112,126,Restaurants,31,Nature & Parks,70
+95,Düsseldorf,Germany,Europe,1482000,74,193,79,Convention Center,11,Walkability,19
+96,Mecca,Saudi Arabia,Middle East & Africa,2113000,119,66,166,TikTok Videos,40,Sights & Landmarks,49
+97,Porto,Portugal,Europe,1340000,55,123,173,Health,16,Public Transit,55
+98,Bucharest,Romania,Europe,2164000,77,137,120,Health,11,Biking,20
+99,Birmingham,United Kingdom,Europe,3123000,106,174,78,Convention Center,23,Public Transit,36
+100,Doha,Qatar,Middle East & Africa,2650000,185,187,53,Labor Force Participation,1,Unemployment Rate,1

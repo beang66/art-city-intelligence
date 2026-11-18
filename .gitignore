@@ -12,3 +12,8 @@ coverage/
 __pycache__/
 .venv/
 
+
+# Resonance report text (copyrighted) used only for embeddings
+ml/data/private/
+.ipynb_checkpoints/
+

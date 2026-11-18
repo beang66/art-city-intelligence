@@ -77,6 +77,9 @@ def main() -> int:
     health = client.get("/health").json() == {"status": "ok"}
     built = snapshot.build()
     old_calc = json.loads((ROOT / "backend/tests/baseline/ts_calculations_v0.json").read_text(encoding="utf-8"))
+    # readings come from observed ranks, which were re-extracted from the report tables in observations v1.1;
+    # the TypeScript record holds readings of the old (shifted) transcription, so they are not compared.
+    old_calc.pop("readings")
     calc_diff = [key for key, value in old_calc.items() if built[key] != value]
 
     print(f"API parity: {len(cases) - len(failures)}/{len(cases)} cases match")
