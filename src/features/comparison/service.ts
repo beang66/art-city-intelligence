@@ -47,6 +47,13 @@ export const DIMENSIONS: readonly DimensionSpec[] = [
  */
 const WEIGHT_PERTURBATION = 0.1
 
+function median(values: readonly number[]): number {
+  const sorted = [...values].sort((a, b) => a - b)
+  const mid = Math.floor(sorted.length / 2)
+  const value = sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid]
+  return Math.round(value * 10) / 10
+}
+
 function scoreFor(index: number, weight: number) {
   return Math.min(99, Math.round(index * weight * 10) / 10)
 }
@@ -77,20 +84,14 @@ export function getCityIndicators(citySlug: string): readonly Indicator[] {
 export function getCohortMedians(): Record<IndicatorKey, number> {
   const result = {} as Record<IndicatorKey, number>
   for (const dimension of DIMENSIONS) {
-    const values = cities.map((city) => scoreFor(city.index, dimension.weight)).sort((a, b) => a - b)
-    const mid = Math.floor(values.length / 2)
-    const median = values.length % 2 === 0 ? (values[mid - 1] + values[mid]) / 2 : values[mid]
-    result[dimension.key] = Math.round(median * 10) / 10
+    result[dimension.key] = median(cities.map((city) => scoreFor(city.index, dimension.weight)))
   }
   return result
 }
 
 /** Median of the illustrative Art City Index across every city. */
 export function getIndexMedian(): number {
-  const values = cities.map((city) => city.index).sort((a, b) => a - b)
-  const mid = Math.floor(values.length / 2)
-  const median = values.length % 2 === 0 ? (values[mid - 1] + values[mid]) / 2 : values[mid]
-  return Math.round(median * 10) / 10
+  return median(cities.map((city) => city.index))
 }
 
 export type SignalKey = 'market' | 'cultural' | 'opportunity'
@@ -120,9 +121,7 @@ export function getSignalStats(citySlug: string): readonly SignalStat[] {
   return (Object.keys(SIGNAL_LABELS) as SignalKey[]).map((key) => {
     const score = city.signalScores[key]
     const all = cities.map((item) => item.signalScores[key])
-    const sorted = [...all].sort((a, b) => a - b)
-    const mid = Math.floor(sorted.length / 2)
-    const median = sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid]
+    const cohortMedian = median(all)
     const rank = [...all].sort((a, b) => b - a).indexOf(score) + 1
     return {
       key,
@@ -130,8 +129,8 @@ export function getSignalStats(citySlug: string): readonly SignalStat[] {
       label: SIGNAL_LABELS[key].en,
       score,
       rank,
-      median: Math.round(median * 10) / 10,
-      delta: Math.round((score - median) * 10) / 10,
+      median: cohortMedian,
+      delta: Math.round((score - cohortMedian) * 10) / 10,
     }
   })
 }

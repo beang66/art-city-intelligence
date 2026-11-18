@@ -31,7 +31,7 @@ export function OverviewContent() {
     <>
       <section className="section page-hero compact-hero overview-hero">
         <div>
-          <p className="eyebrow">01 / ART ECOSYSTEM INTELLIGENCE · UPDATED 09.18</p>
+          <p className="eyebrow">01 / ART ECOSYSTEM INTELLIGENCE</p>
           <h1>Read how<br />art <span>works.</span></h1>
           <p className="lede">세계 도시의 예술 생태계를 유사한 조건 안에서 비교하고, 도시의 예술 DNA를 제품·공간·브랜드 기회로 전환합니다.</p>
           <div className="hero-actions">
@@ -66,25 +66,16 @@ export function OverviewContent() {
       </section>
 
       <section className="section">
-        <div className="section-heading"><div><p className="eyebrow">03 / YOUR WORKSPACE</p><h2>Continue where<br /><span>you left off.</span></h2></div><ActionLink href="/cities/seoul" variant="outline">＋ NEW PROJECT</ActionLink></div>
-        <div className="card-grid">
-          <article className="project-card dark"><span className="status">IN PROGRESS / 72%</span><h3>Furniture cities<br />2027</h3><p>서울·밀라노·베를린의 생산 및 실험 차원을 비교하는 신규 쇼룸 프로젝트.</p><div className="card-bottom"><span>UPDATED 12 MIN AGO</span><ActionLink href="/compare" variant="outline">CONTINUE ↗</ActionLink></div></article>
-          <article className="project-card"><span className="status">SAVED REPORT</span><h3>Seoul hospitality<br />experience</h3><p>참여와 지역 분포를 중심으로 호텔 문화 경험의 기회를 검토했습니다.</p><div className="card-bottom"><span>8 EVIDENCE ITEMS</span><ActionLink href="/cities/seoul" variant="outline">OPEN ↗</ActionLink></div></article>
-          <article className="project-card"><span className="status">DATA UPDATE</span><h3>3 cities have<br />new evidence.</h3><p>리스본, 멜버른, 멕시코시티의 기관 및 참여 데이터가 갱신되었습니다.</p><div className="card-bottom"><span>QUALITY CHECKED</span><ActionLink href="/methodology" variant="outline">REVIEW ↗</ActionLink></div></article>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-heading"><div><p className="eyebrow">04 / TRUST BY DESIGN</p><h2>Every claim has<br /><span>a way back.</span></h2></div><p className="section-intro">AI가 만든 문장, 모델이 발견한 관계, 데이터에서 직접 관측한 사실을 구분해 보여줍니다.</p></div>
+        <div className="section-heading"><div><p className="eyebrow">03 / TRUST BY DESIGN</p><h2>Every claim has<br /><span>a way back.</span></h2></div><p className="section-intro">발행된 관측값, 비교로 읽은 관계, 기획 가설을 구분해 보여줍니다.</p></div>
         <div className="insight-strip">
           <article className="insight-cell dark"><span className="mono">EVIDENCE STATE</span><strong>Observed</strong><p>원천 데이터에서 직접 확인된 사실</p></article>
-          <article className="insight-cell"><span className="mono">ANALYSIS STATE</span><strong>Inferred</strong><p>비교·군집·민감도 분석에서 발견된 관계</p></article>
+          <article className="insight-cell"><span className="mono">ANALYSIS STATE</span><strong>Inferred</strong><p>중앙값 비교·민감도 분석으로 읽은 관계</p></article>
           <article className="insight-cell"><span className="mono">IDEATION STATE</span><strong>Proposed</strong><p>근거에 기반해 제안된 기획 가설</p></article>
           <article className="insight-cell"><span className="mono">QUALITY STATE</span><strong>Stable</strong><p>가중치와 방법 변화에도 유지되는 결과</p></article>
         </div>
       </section>
 
-      <section className="cta-section"><h2>Start with<br />the right city.</h2><div><p>40개 후보 도시에서 데이터 품질과 조건이 맞는 도시를 찾고 첫 비교를 시작하세요.</p><ActionLink href="/cities/seoul">EXPLORE CITIES <span className="arrow">↗</span></ActionLink></div></section>
+      <section className="cta-section"><h2>Start with<br />the right city.</h2><div><p>{cities.length}개 도시에서 조건이 맞는 도시를 찾고 첫 비교를 시작하세요.</p><ActionLink href="/cities/seoul">EXPLORE CITIES <span className="arrow">↗</span></ActionLink></div></section>
     </>
   )
 }

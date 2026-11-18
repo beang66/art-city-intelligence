@@ -11,6 +11,7 @@ import { cities, citiesByName, findCity, rankCities } from '@/features/city-inte
 import { getCityIndicators, getCohortMedians } from '@/features/comparison/service'
 import { getObservation } from '@/features/evidence/observed'
 import { readRank } from '@/features/evidence/describe'
+import { withObject } from '@/lib/korean'
 
 type Props = { params: Promise<{ citySlug: string }> }
 
@@ -42,7 +43,7 @@ export default async function CityPage({ params }: Props) {
         <div>
           <p className="eyebrow">CITY INTELLIGENCE / {city.country.toUpperCase()}</p>
           <h1>{city.name}<br /><span>signals.</span></h1>
-          <p className="lede">{city.typeKo}. {city.dnaKo}를 중심으로 시장, 문화, 산업 기회의 연결 구조를 읽습니다.</p>
+          <p className="lede">{city.typeKo}. {withObject(city.dnaKo)} 중심으로 시장, 문화, 산업 기회의 연결 구조를 읽습니다.</p>
           <div className="hero-actions">
             <Link className="dark-button action-link" href="/compare">ADD TO COMPARE <span className="arrow">↗</span></Link>
             <Link className="outline-button action-link" href="/methodology">READ METHODOLOGY</Link>

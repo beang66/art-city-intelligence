@@ -488,6 +488,8 @@ export const GlobeInteraction = forwardRef<GlobeController, GlobeInteractionProp
     }
 
     const onWheel = (event: WheelEvent) => {
+      // Plain wheel scrolls the page; Ctrl/⌘ + wheel and trackpad pinch (sent with ctrlKey) zoom the globe.
+      if (!event.ctrlKey && !event.metaKey) return
       event.preventDefault()
       const delta = event.deltaY > 0 ? -0.08 : 0.08
       targetZoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, targetZoom + delta))
