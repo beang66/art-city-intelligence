@@ -13,6 +13,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+from formats import COMPONENT_LABELS, FORMATS, fit_scores
+
 ROOT = Path(__file__).resolve().parents[2]
 DATA, MODELS = ROOT / "ml/data", ROOT / "ml/models"
 ACCENT, SLATE, INK = "#FF5438", "#3F5570", "#141413"
@@ -63,9 +65,9 @@ df["유형"] = df.cluster.map(cluster_labels(df))
 
 st.title("🌍 기회 도시 탐색기")
 st.markdown(
-    "**질문:** 경제 규모와 정주 여건에 비해 **문화적 끌림이 큰 도시**는 어디인가? "
+    "**질문:** 팝업·비상설 전시·상설 전시를 열 도시로, 경제 규모와 정주 여건에 비해 **문화적 끌림이 큰 도시**는 어디인가? "
     "Resonance *World's Best Cities 2026* 상위 100개 도시로 문화 매력(Lovability) 순위를 예측하고, "
-    "예측보다 실제가 앞선 만큼을 **기회 점수**로 봅니다."
+    "예측보다 실제가 앞선 만큼을 **기회 점수**로 봅니다. 형식마다 중요한 조건이 달라 **형식별 적합도**를 따로 계산합니다."
 )
 
 with st.sidebar:
@@ -90,7 +92,31 @@ c2.metric("교차 검증 R²", f"{best['R2']:.2f}")
 c3.metric("Spearman ρ", f"{best['Spearman']:.2f}")
 c4.metric("MAE (log 순위)", f"{best['MAE_log']:.2f}", delta=f"{best['MAE_log'] - baseline['MAE_log']:.2f} vs 평균 예측", delta_color="inverse")
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["💡 기회 도시", "📈 기대 vs 실제", "🧭 도시 유형", "🏙️ 도시 상세", "🎛️ What-if"])
+tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(["🎯 형식별 추천", "💡 기회 도시", "📈 기대 vs 실제", "🧭 도시 유형", "🏙️ 도시 상세", "🎛️ What-if"])
+
+with tab0:
+    key = st.radio("공간 형식", list(FORMATS), format_func=lambda k: FORMATS[k]["label"], horizontal=True)
+    spec = FORMATS[key]
+    st.caption(spec["why"])
+    with st.expander("가중치 조정 — 성과 데이터가 쌓이기 전까지는 설계 가정입니다"):
+        cols = st.columns(len(spec["weights"]))
+        weights = {k: col.slider(COMPONENT_LABELS[k], 0.0, 1.0, float(w), 0.05, key=f"{key}-{k}")
+                   for col, (k, w) in zip(cols, spec["weights"].items())}
+    if sum(weights.values()) == 0:
+        st.warning("가중치를 하나 이상 0보다 크게 두세요.")
+    else:
+        ranked = fit_scores(view, weights).sort_values("fit", ascending=False).head(15)
+        parts = pd.DataFrame({COMPONENT_LABELS[k]: ranked[f"c_{k}"] * w / sum(weights.values()) * 100
+                              for k, w in weights.items() if w > 0})
+        parts.index = ranked.city
+        fig = px.bar(parts[::-1], orientation="h", labels={"value": "적합도 (0–100)", "city": "", "variable": "구성"},
+                     color_discrete_sequence=[ACCENT, SLATE, "#FF8360", "#7D92AB", "#B9B2A4", INK])
+        fig.update_layout(height=540, margin=dict(l=0, r=0, t=10, b=0), legend=dict(orientation="h", y=-0.12))
+        st.plotly_chart(fig, use_container_width=True)
+        st.dataframe(ranked[["city", "country", "fit", "유형", "livability", "lovability", "prosperity", "opportunity",
+                             "highlight1", "highlight2"]].rename(columns={"fit": "적합도", "opportunity": "기회 점수"}),
+                     hide_index=True, use_container_width=True)
+        st.caption("막대는 구성 요소별 기여입니다. 강점 카테고리는 도시마다 보고서에 실린 상위 2개만 있어, 해당이 없으면 0으로 계산됩니다.")
 
 with tab1:
     top = view.sort_values("opportunity", ascending=False).head(15)
