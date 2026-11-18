@@ -35,7 +35,7 @@ export default async function CityPage({ params }: Props) {
   const indicators = getCityIndicators(city.slug)
   const medians = getCohortMedians()
   const observation = getObservation(city.slug)
-  const reading = readRank(observation)
+  const reading = readRank(city.slug)
 
   return (
     <>

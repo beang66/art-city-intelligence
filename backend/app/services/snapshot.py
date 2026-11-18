@@ -1,0 +1,24 @@
+"""Everything the static pages need, computed once by the same functions the API uses."""
+from app import data
+from app.services import observed, scoring
+
+
+def build() -> dict:
+    slugs = [city["slug"] for city in data.cities()]
+    observations = data.load("observations")
+    return {
+        "version": "v1",
+        "trendYears": data.load("cities")["trendYears"],
+        "cities": data.cities(),
+        "dimensions": data.load("dimensions")["dimensions"],
+        "observations": observations["observations"],
+        "pillars": observations["pillars"],
+        "sources": data.load("sources")["sources"],
+        "provenance": data.load("provenance")["metrics"],
+        "indicators": {slug: scoring.city_indicators(slug) for slug in slugs},
+        "signalStats": {slug: scoring.signal_stats(slug) for slug in slugs},
+        "readings": {slug: observed.read_rank(slug) for slug in slugs},
+        "cohortMedians": scoring.cohort_medians(),
+        "indexMedian": scoring.index_median(),
+        "ranking": scoring.ranking(),
+    }

@@ -1,0 +1,46 @@
+{
+ "trained_at": "2026-11-18T17:51:51+00:00",
+ "data": "ml/data/world_cities_2026.csv (Resonance World's Best Cities 2026, 100 cities)",
+ "target": "log(lovability rank)",
+ "features": [
+  "livability",
+  "prosperity",
+  "population",
+  "region"
+ ],
+ "model": "GradientBoosting",
+ "cv": "5-fold KFold(shuffle, seed=42)",
+ "sklearn_version": "1.9.1",
+ "scores": [
+  {
+   "model": "MLP (PyTorch)",
+   "MAE_log": 0.343,
+   "R2": 0.817,
+   "Spearman": 0.87
+  },
+  {
+   "model": "GradientBoosting",
+   "MAE_log": 0.35,
+   "R2": 0.83,
+   "Spearman": 0.874
+  },
+  {
+   "model": "RandomForest",
+   "MAE_log": 0.36,
+   "R2": 0.816,
+   "Spearman": 0.878
+  },
+  {
+   "model": "Ridge",
+   "MAE_log": 0.375,
+   "R2": 0.802,
+   "Spearman": 0.864
+  },
+  {
+   "model": "Mean (baseline)",
+   "MAE_log": 0.859,
+   "R2": -0.055,
+   "Spearman": -0.302
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+ "version": "v1",
+ "updated": "2026-11-19",
+ "fields": [
+  {
+   "name": "slug",
+   "type": "string",
+   "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+   "meaning": "도시 키. 화면 주소와 모든 API가 같은 값을 쓴다"
+  },
+  {
+   "name": "index",
+   "type": "number",
+   "range": "0–100",
+   "provenance": "illustrative",
+   "meaning": "Art City Index (시연용 종합 지수)"
+  },
+  {
+   "name": "signalScores.market|cultural|opportunity",
+   "type": "number",
+   "range": "0–100",
+   "provenance": "illustrative",
+   "meaning": "신호 타일의 세 점수"
+  },
+  {
+   "name": "trend",
+   "type": "number[6]",
+   "years": [
+    2000,
+    2005,
+    2010,
+    2015,
+    2020,
+    2025
+   ],
+   "provenance": "illustrative",
+   "meaning": "지수 추세"
+  },
+  {
+   "name": "indicator.score",
+   "type": "number",
+   "range": "0–99",
+   "provenance": "illustrative",
+   "meaning": "차원 점수 = min(99, round1(index × weight))"
+  },
+  {
+   "name": "indicator.sensitivity",
+   "type": "number",
+   "provenance": "derived",
+   "meaning": "가중치 ±10%일 때 점수 변동 폭의 절반"
+  },
+  {
+   "name": "cohortMedian",
+   "type": "number",
+   "provenance": "derived",
+   "meaning": "18개 도시 중앙값 (짝수 개면 가운데 두 값의 평균)"
+  },
+  {
+   "name": "signalStat.rank",
+   "type": "integer",
+   "meaning": "18개 도시 중 순위 (동점은 같은 순위)"
+  },
+  {
+   "name": "observation.world.rank",
+   "type": "integer|null",
+   "provenance": "observed",
+   "unit": "rank, lower is better",
+   "meaning": "Resonance 세계 100위 표 순위. 표에 없으면 null"
+  },
+  {
+   "name": "observation.world.pillars.livability|lovability|prosperity",
+   "type": "integer",
+   "provenance": "observed",
+   "unit": "rank",
+   "meaning": "세 축 순위"
+  },
+  {
+   "name": "observation.regional.rank",
+   "type": "integer|null",
+   "provenance": "observed",
+   "unit": "rank",
+   "meaning": "권역(유럽·미주·아시아태평양) 순위"
+  },
+  {
+   "name": "market.priceRange",
+   "type": "string",
+   "provenance": "indicative",
+   "unit": "USD",
+   "meaning": "대표 작가 작품의 대략적 가격대"
+  },
+  {
+   "name": "signatureWork.imageFile",
+   "type": "string",
+   "meaning": "src/img의 파일 이름. 이미지는 프런트엔드 자산이라 API는 이 필드를 내보내지 않는다"
+  }
+ ]
+}

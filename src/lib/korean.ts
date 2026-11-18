@@ -11,11 +11,6 @@ export function withTopic(word: string): string {
   return `${word}${hasFinalConsonant(word) ? '은' : '는'}`
 }
 
-/** Appends the correct subject particle: 이 after a final consonant, 가 otherwise. */
-export function withSubject(word: string): string {
-  return `${word}${hasFinalConsonant(word) ? '이' : '가'}`
-}
-
 /** Appends the correct object particle: 을 after a final consonant, 를 otherwise. */
 export function withObject(word: string): string {
   return `${word}${hasFinalConsonant(word) ? '을' : '를'}`

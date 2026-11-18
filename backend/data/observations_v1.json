@@ -1,0 +1,287 @@
+{
+ "version": "v1.1",
+ "updated": "2026-11-19",
+ "provenance": "observed",
+ "notice": "Ranks and pillar ranks from the summary tables of the Resonance Best Cities reports (World 2026 p.58–61, Europe 2026, Asia-Pacific 2025, Americas 2026), re-extracted with ml/scripts/extract_resonance.py. Lower is better: these are ranks, not scores.",
+ "pillars": [
+  {
+   "key": "livability",
+   "labelKo": "정주 여건",
+   "meaning": "자연·건조 환경, 공원, 치안, 교통 등 사는 조건"
+  },
+  {
+   "key": "lovability",
+   "labelKo": "도시 선호도",
+   "meaning": "식음, 야간 활동, 문화 시설 등 머무르고 싶게 만드는 매력"
+  },
+  {
+   "key": "prosperity",
+   "labelKo": "경제 활력",
+   "meaning": "고용, 기업 본사, 소득 등 경제적 기회"
+  }
+ ],
+ "observations": {
+  "seoul": {
+   "world": {
+    "rank": 13,
+    "pillars": {
+     "livability": 12,
+     "lovability": 16,
+     "prosperity": 16
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Asia-Pacific",
+    "rank": 3,
+    "sourceId": "resonance-asiapacific-2025"
+   }
+  },
+  "berlin": {
+   "world": {
+    "rank": 9,
+    "pillars": {
+     "livability": 10,
+     "lovability": 10,
+     "prosperity": 7
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Europe",
+    "rank": 3,
+    "sourceId": "resonance-europe-2026"
+   }
+  },
+  "london": {
+   "world": {
+    "rank": 1,
+    "pillars": {
+     "livability": 3,
+     "lovability": 2,
+     "prosperity": 1
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Europe",
+    "rank": 1,
+    "sourceId": "resonance-europe-2026"
+   }
+  },
+  "new-york": {
+   "world": {
+    "rank": 2,
+    "pillars": {
+     "livability": 2,
+     "lovability": 3,
+     "prosperity": 2
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Americas",
+    "rank": 1,
+    "sourceId": "resonance-americas-2026"
+   }
+  },
+  "mexico-city": {
+   "world": {
+    "rank": 30,
+    "pillars": {
+     "livability": 90,
+     "lovability": 11,
+     "prosperity": 77
+    },
+    "sourceId": "resonance-world-2026"
+   }
+  },
+  "melbourne": {
+   "world": {
+    "rank": 21,
+    "pillars": {
+     "livability": 22,
+     "lovability": 42,
+     "prosperity": 21
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Asia-Pacific",
+    "rank": 9,
+    "sourceId": "resonance-asiapacific-2025"
+   }
+  },
+  "amsterdam": {
+   "world": {
+    "rank": 14,
+    "pillars": {
+     "livability": 11,
+     "lovability": 25,
+     "prosperity": 14
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Europe",
+    "rank": 7,
+    "sourceId": "resonance-europe-2026"
+   }
+  },
+  "beijing": {
+   "world": {
+    "rank": 15,
+    "pillars": {
+     "livability": 34,
+     "lovability": 15,
+     "prosperity": 12
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Asia-Pacific",
+    "rank": 5,
+    "sourceId": "resonance-asiapacific-2025"
+   }
+  },
+  "barcelona": {
+   "world": {
+    "rank": 10,
+    "pillars": {
+     "livability": 6,
+     "lovability": 7,
+     "prosperity": 23
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Europe",
+    "rank": 5,
+    "sourceId": "resonance-europe-2026"
+   }
+  },
+  "chicago": {
+   "world": {
+    "rank": 35,
+    "pillars": {
+     "livability": 49,
+     "lovability": 38,
+     "prosperity": 28
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Americas",
+    "rank": 3,
+    "sourceId": "resonance-americas-2026"
+   }
+  },
+  "dubai": {
+   "world": {
+    "rank": 8,
+    "pillars": {
+     "livability": 17,
+     "lovability": 9,
+     "prosperity": 6
+    },
+    "sourceId": "resonance-world-2026"
+   }
+  },
+  "hong-kong": {
+   "world": {
+    "rank": 19,
+    "pillars": {
+     "livability": 29,
+     "lovability": 27,
+     "prosperity": 22
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Asia-Pacific",
+    "rank": 4,
+    "sourceId": "resonance-asiapacific-2025"
+   }
+  },
+  "paris": {
+   "world": {
+    "rank": 3,
+    "pillars": {
+     "livability": 1,
+     "lovability": 1,
+     "prosperity": 4
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Europe",
+    "rank": 2,
+    "sourceId": "resonance-europe-2026"
+   }
+  },
+  "venice": {
+   "regional": {
+    "scope": "Europe",
+    "rank": 48,
+    "sourceId": "resonance-europe-2026"
+   },
+   "worldNote": "광역 인구 100만 명 미만으로 글로벌 100위 표 대상이 아닙니다."
+  },
+  "basel": {
+   "regional": {
+    "scope": "Europe",
+    "rank": 46,
+    "sourceId": "resonance-europe-2026"
+   },
+   "worldNote": "광역 인구 100만 명 미만으로 글로벌 100위 표 대상이 아닙니다."
+  },
+  "tokyo": {
+   "world": {
+    "rank": 4,
+    "pillars": {
+     "livability": 4,
+     "lovability": 4,
+     "prosperity": 3
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Asia-Pacific",
+    "rank": 2,
+    "sourceId": "resonance-asiapacific-2025"
+   }
+  },
+  "shanghai": {
+   "world": {
+    "rank": 16,
+    "pillars": {
+     "livability": 40,
+     "lovability": 17,
+     "prosperity": 9
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Asia-Pacific",
+    "rank": 8,
+    "sourceId": "resonance-asiapacific-2025"
+   }
+  },
+  "singapore": {
+   "world": {
+    "rank": 6,
+    "pillars": {
+     "livability": 9,
+     "lovability": 12,
+     "prosperity": 5
+    },
+    "sourceId": "resonance-world-2026"
+   },
+   "regional": {
+    "scope": "Asia-Pacific",
+    "rank": 1,
+    "sourceId": "resonance-asiapacific-2025"
+   }
+  }
+ }
+}
