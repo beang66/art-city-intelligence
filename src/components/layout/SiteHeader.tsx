@@ -25,9 +25,7 @@ export function SiteHeader() {
   const pathname = usePathname()
   const dialogRef = useRef<HTMLDivElement>(null)
   const tabsRef = useRef<HTMLElement>(null)
-  const languageRef = useRef<HTMLDivElement>(null)
   const [isOpen, setIsOpen] = useState(false)
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false)
   const [invalidFields, setInvalidFields] = useState<FieldName[]>([])
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
   const [submitMessage, setSubmitMessage] = useState('')
@@ -63,21 +61,6 @@ export function SiteHeader() {
     window.addEventListener('keydown', closeOnEscape)
     return () => window.removeEventListener('keydown', closeOnEscape)
   }, [isOpen])
-
-  useEffect(() => {
-    if (!isLanguageOpen) return
-    const closeLanguageMenu = (event: MouseEvent | KeyboardEvent) => {
-      if (event instanceof KeyboardEvent && event.key !== 'Escape') return
-      if (event instanceof MouseEvent && languageRef.current?.contains(event.target as Node)) return
-      setIsLanguageOpen(false)
-    }
-    document.addEventListener('mousedown', closeLanguageMenu)
-    document.addEventListener('keydown', closeLanguageMenu)
-    return () => {
-      document.removeEventListener('mousedown', closeLanguageMenu)
-      document.removeEventListener('keydown', closeLanguageMenu)
-    }
-  }, [isLanguageOpen])
 
   const moveTabCursor = (event: PointerEvent<HTMLElement>) => {
     const target = (event.target as HTMLElement).closest<HTMLAnchorElement>('.tab')
@@ -152,19 +135,6 @@ export function SiteHeader() {
           })}
         </nav>
         <div className="top-actions">
-          <div className={`language-picker${isLanguageOpen ? ' is-open' : ''}`} ref={languageRef}>
-            <button className="language-button" type="button" aria-label="언어 선택" aria-haspopup="menu" aria-expanded={isLanguageOpen} onClick={() => setIsLanguageOpen((open) => !open)}>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="9" />
-                <path d="M3 12h18M12 3c3 3.4 3 14.6 0 18M12 3c-3 3.4-3 14.6 0 18" />
-              </svg>
-              <span className="language-chevron" aria-hidden="true" />
-            </button>
-            <div className="language-menu" role="menu" aria-label="언어 목록">
-              <button type="button" role="menuitem" onClick={() => setIsLanguageOpen(false)}>EN</button>
-              <button type="button" role="menuitem" className="selected" onClick={() => setIsLanguageOpen(false)}>KR</button>
-            </div>
-          </div>
           <button className="accent-button how-start-button" type="button" onClick={() => setIsOpen(true)}>
             <span>HOW TO START?</span>
           </button>
