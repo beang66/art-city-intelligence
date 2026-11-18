@@ -1,7 +1,0 @@
-export function ok<T>(data: T, init?: ResponseInit) {
-  return Response.json({ data }, { status: 200, ...init })
-}
-
-export function fail(message: string, status = 400) {
-  return Response.json({ error: message }, { status })
-}

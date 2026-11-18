@@ -56,10 +56,6 @@ export const cities: readonly City[] = (snapshot.cities as unknown as CityRecord
   signatureWork: { ...work, image: images[imageFile] },
 }))
 
-export function listCities(): readonly City[] {
-  return cities
-}
-
 export function findCity(slug: string): City | undefined {
   return cities.find((city) => city.slug === slug)
 }
