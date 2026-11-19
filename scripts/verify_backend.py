@@ -59,6 +59,23 @@ def check_contact_delivery() -> bool:
     return accepted.status_code == 200 and rejected.status_code == 502 and escaped
 
 
+def check_opportunity() -> bool:
+    """Model endpoints: ranking matches the shared format logic, what-if prediction is sane, bad input is 400."""
+    ranking = client.get("/api/opportunity?format=permanent&limit=3").json()["data"]["cities"]
+    post = lambda body: client.post("/api/opportunity/predict", json=body)
+    good = post({"livability": 13, "prosperity": 16, "population": 24_160_000, "region": "Asia-Pacific"})
+    better = post({"livability": 3, "prosperity": 2, "population": 24_160_000, "region": "Asia-Pacific"})
+    bad = [post({"livability": 0, "prosperity": 5, "population": 1e6, "region": "Europe"}),
+           post({"livability": 5, "prosperity": 5, "population": 1e6, "region": "Mars"}),
+           client.get("/api/opportunity?format=gallery")]
+    return (
+        [c["city"] for c in ranking] == ["London", "New York", "Paris"]
+        and good.status_code == 200 and 1 <= good.json()["data"]["predictedLovability"] <= 300
+        and better.json()["data"]["predictedLovability"] < good.json()["data"]["predictedLovability"]
+        and all(r.status_code == 400 for r in bad)
+    )
+
+
 def main() -> int:
     cases = json.loads((ROOT / "backend/tests/baseline/api_baseline_v0.json").read_text(encoding="utf-8"))
     failures = []
@@ -91,8 +108,10 @@ def main() -> int:
     print(f"Snapshot matches API calculations: {snap_ok}")
     print(f"Health: {health}")
     delivery = check_contact_delivery()
+    model_ok = check_opportunity()
+    print(f"Opportunity API (format ranking, what-if prediction, 400 on bad input): {model_ok}")
     print(f"Contact delivery (mocked provider 200 → 200, 422 → 502, HTML escaped): {delivery}")
-    return 0 if not failures and not calc_diff and snap_ok and health and delivery else 1
+    return 0 if not failures and not calc_diff and snap_ok and health and delivery and model_ok else 1
 
 
 if __name__ == "__main__":

@@ -12,6 +12,7 @@ import { getCityIndicators, getCohortMedians } from '@/features/comparison/servi
 import { getObservation } from '@/features/evidence/observed'
 import { readRank } from '@/features/evidence/describe'
 import { withObject } from '@/lib/korean'
+import { CityModelBoard } from '@/components/opportunity/CityModelBoard'
 
 type Props = { params: Promise<{ citySlug: string }> }
 
@@ -113,8 +114,16 @@ export default async function CityPage({ params }: Props) {
         </div>
       </section>
 
+      <section className="section section-border" id="model">
+        <div className="section-heading">
+          <div><p className="eyebrow">05 / OPPORTUNITY MODEL</p><h2>Ahead of<br /><span>its size?</span></h2></div>
+          <p className="section-intro">머신러닝으로 예측한 문화 매력 기대치와 실제의 차이, 팝업·비상설 전시·상설 전시 적합도, 소개 글 임베딩으로 찾은 비슷한 도시입니다.</p>
+        </div>
+        <CityModelBoard slug={city.slug} cityNameKo={city.nameKo} />
+      </section>
+
       <section className="section section-border" id="cohort">
-        <div className="section-heading"><div><p className="eyebrow">05 / PEER CITIES</p><h2>Move across<br /><span>the cohort.</span></h2></div></div>
+        <div className="section-heading"><div><p className="eyebrow">06 / PEER CITIES</p><h2>Move across<br /><span>the cohort.</span></h2></div></div>
         <div className="city-link-grid">
           {citiesByName.map((item) => (
             <Link className={`city-link${item.slug === city.slug ? ' active' : ''}`} href={`/cities/${item.slug}`} key={item.slug}>

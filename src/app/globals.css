@@ -30,7 +30,7 @@ a { text-decoration: none; }
 .brand-mark i:nth-child(1) { top: 2px; }
 .brand-mark i:nth-child(2) { top: 12px; left: 0; }
 .brand-mark i:nth-child(3) { top: 22px; left: -4px; }
-.category-tabs { --tab-width: 96px; --header-control-height: 40px; height: var(--header-control-height); display: grid; grid-template-columns: repeat(5, var(--tab-width)); gap: 3px; background: #050506; border: 2px solid #050506; border-radius: 9px; padding: 0; overflow: hidden; }
+.category-tabs { --tab-width: 96px; --header-control-height: 40px; height: var(--header-control-height); display: grid; grid-template-columns: repeat(6, var(--tab-width)); gap: 3px; background: #050506; border: 2px solid #050506; border-radius: 9px; padding: 0; overflow: hidden; }
 .category-tabs { position: relative; }
 .tab { position: relative; width: var(--tab-width); height: 36px; padding: 0; display: grid; place-items: center; border-radius: 6px; background: #1e2025; color: #c7c9ce; font-size: 11px; font-weight: 600; white-space: nowrap; transition: color .25s ease, background .25s ease; }
 .tab > span { position: relative; z-index: 2; }
@@ -755,7 +755,7 @@ small { font-size: 14px; }
 :focus-visible { outline: 3px solid rgba(255,84,56,.55); outline-offset: 3px; }
 
 @media (max-width: 1000px) {
-  .category-tabs { --tab-width: 90px; grid-template-columns: repeat(5, var(--tab-width)); }
+  .category-tabs { --tab-width: 90px; grid-template-columns: repeat(6, var(--tab-width)); }
   .tab { width: var(--tab-width); }
   .page-hero { grid-template-columns: 1fr; padding-top: 105px; min-height: auto; }
   .page-hero.compact-hero { min-height: auto; }
@@ -940,3 +940,35 @@ small { font-size: 14px; }
   .contact-form-footer { grid-template-columns: 1fr; gap: 22px; }
   .contact-submit { min-height: 78px; }
 }
+
+
+/* opportunity model */
+.model-board { display: grid; gap: 12px; }
+.model-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 12px; }
+.model-panel { padding: 24px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.model-panel h3 { font-size: 17px; letter-spacing: -.03em; margin-bottom: 16px; }
+.model-panel p { font-size: 13px; line-height: 1.75; color: #45484b; word-break: keep-all; }
+.model-type { font-size: 21px !important; line-height: 1.2; }
+.insight-cell strong small { font-size: 15px; color: var(--muted); letter-spacing: -.02em; }
+.insight-cell.dark p { color: #b9bbbf; }
+.model-fit { margin-bottom: 14px; }
+.model-fit label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+.model-fit label b, .model-ranking b, .model-similar b, .model-weights b { font-family: ui-monospace, monospace; font-weight: 500; }
+.model-fit i, .model-ranking i { display: block; height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--accent) var(--value), var(--soft) var(--value)); }
+.model-note { margin-top: 12px; font-size: 12px !important; color: var(--muted) !important; }
+.model-similar, .model-weights, .model-ranking { list-style: none; padding: 0; margin: 0; }
+.model-similar li, .model-weights li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--soft); font-size: 14px; }
+.model-ranking li { display: grid; grid-template-columns: 28px minmax(0, 1.1fr) minmax(0, 1fr) 44px; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--soft); font-size: 14px; }
+.model-ranking small { display: block; font-size: 11px; color: var(--muted); }
+.model-ranking b { text-align: right; }
+.model-foot { font-size: 12px; color: var(--muted); }
+.model-link { color: var(--accent); font-weight: 600; margin-left: 6px; }
+.model-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.model-tabs button { height: 40px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); font-size: 13px; font-weight: 600; cursor: pointer; }
+.model-tabs button.active { background: var(--dark); color: #fff; border-color: var(--dark); }
+.model-fields { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.model-fields label { display: grid; gap: 6px; font-size: 12px; color: var(--muted); }
+.model-fields input, .model-fields select { height: 40px; min-width: 150px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); font-size: 14px; color: var(--ink); }
+.model-result { margin-top: 14px; min-height: 22px; }
+.model-result b { color: var(--accent); font-size: 18px; }
+@media (max-width: 900px) { .model-grid { grid-template-columns: 1fr; } }
