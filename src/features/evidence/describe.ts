@@ -6,8 +6,6 @@ const pillars = snapshot.pillars as { key: PillarKey; labelKo: string; meaning: 
 
 const PILLAR_KO = Object.fromEntries(pillars.map((p) => [p.key, p.labelKo])) as Record<PillarKey, string>
 
-export const PILLAR_MEANING = Object.fromEntries(pillars.map((p) => [p.key, p.meaning])) as Record<PillarKey, string>
-
 export type RankReading = {
   headline: string
   detail: string
