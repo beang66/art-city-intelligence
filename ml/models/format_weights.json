@@ -1,0 +1,174 @@
+{
+ "trained_at": "2026-11-19T07:29:41+00:00",
+ "method": "non-negative least squares on 0–1 components, weights normalised to 1; 20×5-fold CV",
+ "cities": 100,
+ "formats": {
+  "popup": {
+   "target": "국제 방문객 수",
+   "source": "Euromonitor Top 100 City Destinations 2018 (일부 Mastercard 2016), Wikipedia 표",
+   "cities_listed": 74,
+   "weights": {
+    "lovability": 0.63,
+    "prosperity": 0.16,
+    "opportunity": 0.08,
+    "base": 0.07,
+    "buzz": 0.06
+   },
+   "weights_90ci": {
+    "lovability": [
+     0.23,
+     0.74
+    ],
+    "livability": [
+     0.0,
+     0.22
+    ],
+    "prosperity": [
+     0.0,
+     0.31
+    ],
+    "population": [
+     0.0,
+     0.14
+    ],
+    "opportunity": [
+     0.0,
+     0.23
+    ],
+    "buzz": [
+     0.0,
+     0.14
+    ],
+    "culture": [
+     0.0,
+     0.08
+    ],
+    "base": [
+     0.0,
+     0.13
+    ]
+   },
+   "cv_spearman": {
+    "learned": 0.699,
+    "design": 0.605
+   }
+  },
+  "temporary": {
+   "target": "미술관 연간 관람객 합",
+   "source": "The Art Newspaper Visitor Figures 2025, 상위 150개 미술관",
+   "cities_listed": 45,
+   "weights": {
+    "livability": 0.39,
+    "prosperity": 0.22,
+    "culture": 0.14,
+    "opportunity": 0.14,
+    "population": 0.11
+   },
+   "weights_90ci": {
+    "lovability": [
+     0.0,
+     0.27
+    ],
+    "livability": [
+     0.2,
+     0.57
+    ],
+    "prosperity": [
+     0.0,
+     0.38
+    ],
+    "population": [
+     0.0,
+     0.2
+    ],
+    "opportunity": [
+     0.0,
+     0.23
+    ],
+    "buzz": [
+     0.0,
+     0.0
+    ],
+    "culture": [
+     0.04,
+     0.23
+    ],
+    "base": [
+     0.0,
+     0.09
+    ]
+   },
+   "cv_spearman": {
+    "learned": 0.564,
+    "design": 0.434
+   }
+  },
+  "permanent": {
+   "target": "상위 150 안의 미술관 수",
+   "source": "The Art Newspaper Visitor Figures 2025, 상위 150개 미술관",
+   "cities_listed": 45,
+   "weights": {
+    "livability": 0.29,
+    "prosperity": 0.28,
+    "lovability": 0.27,
+    "opportunity": 0.08,
+    "culture": 0.08
+   },
+   "weights_90ci": {
+    "lovability": [
+     0.0,
+     0.38
+    ],
+    "livability": [
+     0.13,
+     0.53
+    ],
+    "prosperity": [
+     0.04,
+     0.44
+    ],
+    "population": [
+     0.0,
+     0.17
+    ],
+    "opportunity": [
+     0.0,
+     0.21
+    ],
+    "buzz": [
+     0.0,
+     0.0
+    ],
+    "culture": [
+     0.0,
+     0.18
+    ],
+    "base": [
+     0.0,
+     0.1
+    ]
+   },
+   "cv_spearman": {
+    "learned": 0.576,
+    "design": 0.466
+   }
+  }
+ },
+ "target_correlation": {
+  "popup": {
+   "popup": 1.0,
+   "temporary": 0.43,
+   "permanent": 0.42
+  },
+  "temporary": {
+   "popup": 0.43,
+   "temporary": 1.0,
+   "permanent": 0.98
+  },
+  "permanent": {
+   "popup": 0.42,
+   "temporary": 0.98,
+   "permanent": 1.0
+  }
+ }
+}

@@ -69,7 +69,7 @@ def check_opportunity() -> bool:
            post({"livability": 5, "prosperity": 5, "population": 1e6, "region": "Mars"}),
            client.get("/api/opportunity?format=gallery")]
     return (
-        [c["city"] for c in ranking] == ["London", "New York", "Paris"]
+        [c["city"] for c in ranking] == ["Paris", "London", "New York"]
         and good.status_code == 200 and 1 <= good.json()["data"]["predictedLovability"] <= 300
         and better.json()["data"]["predictedLovability"] < good.json()["data"]["predictedLovability"]
         and all(r.status_code == 400 for r in bad)

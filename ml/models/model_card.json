@@ -1,5 +1,5 @@
 {
- "trained_at": "2026-11-18T17:51:51+00:00",
+ "trained_at": "2026-11-19T07:29:16+00:00",
  "data": "ml/data/world_cities_2026.csv (Resonance World's Best Cities 2026, 100 cities)",
  "target": "log(lovability rank)",
  "features": [
