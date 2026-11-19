@@ -54,8 +54,12 @@ def cases() -> list[dict]:
     return [_normalise(c) for c in _file()["cases"]]
 
 
-def _expected(fit: float, format_key: str, exclude_id: str | None = None) -> dict:
-    peers = [c for c in cases() if c["format"] == format_key and c["id"] != exclude_id]
+def _kind(case: dict) -> str:
+    return case.get("kind", "brand")  # 'fair' = multi-brand trade/motor show or expo, far larger than one brand's show
+
+
+def _expected(fit: float, format_key: str, exclude_id: str | None = None, kind: str = "brand") -> dict:
+    peers = [c for c in cases() if c["format"] == format_key and _kind(c) == kind and c["id"] != exclude_id]
     if len(peers) < MIN_PEERS:
         return {"expectedPerDay": None, "peers": len(peers)}
     base_per_day = median(c["perDay"] for c in peers)
@@ -64,18 +68,18 @@ def _expected(fit: float, format_key: str, exclude_id: str | None = None) -> dic
 
 
 def _with_expectation(case: dict) -> dict:
-    exp = _expected(case["fit"], case["format"], exclude_id=case["id"])  # leave-one-out: a case never sets its own bar
+    exp = _expected(case["fit"], case["format"], exclude_id=case["id"], kind=_kind(case))  # leave-one-out: a case never sets its own bar
     ratio = round(case["perDay"] / exp["expectedPerDay"], 2) if exp.get("expectedPerDay") else None
     return {**case, **exp, "ratio": ratio}
 
 
 def summary() -> dict:
     rows = [_with_expectation(c) for c in cases()]
-    by_format = {key: sum(r["format"] == key for r in rows) for key in FORMATS}
+    by_format = {key: sum(r["format"] == key and _kind(r) == "brand" for r in rows) for key in FORMATS}
     return {
         "updatedAt": _file()["updatedAt"], "note": _file()["note"], "total": len(rows),
         "signalOnly": len(rows) < SIGNAL_BELOW, "minPeers": MIN_PEERS,
-        "casesByFormat": by_format, "cases": rows, "cityOptions": sorted(scores().city.tolist()),
+        "casesByFormat": by_format, "fairCount": sum(_kind(r) == "fair" for r in rows), "cases": rows, "cityOptions": sorted(scores().city.tolist()),
         "themeOptions": [{"id": t["id"], "labelKo": t["labelKo"]} for t in _themes()],
     }
 

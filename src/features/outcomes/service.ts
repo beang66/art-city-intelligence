@@ -11,6 +11,7 @@ export type OutcomeCase = {
   title: string
   format: FormatKey
   theme: string
+  kind?: 'brand' | 'fair'
   note?: string
   city: string
   venue: string
@@ -38,6 +39,7 @@ export type OutcomeSummary = {
   signalOnly: boolean
   minPeers: number
   casesByFormat: Record<FormatKey, number>
+  fairCount: number
   cases: OutcomeCase[]
   cityOptions: string[]
   themeOptions: { id: string; labelKo: string }[]

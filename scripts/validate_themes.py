@@ -8,7 +8,9 @@ theme_text_v1.json:
 Reports Spearman rho(x, y), a label-shuffling permutation p-value, hit rate of the top 3 among cases that beat
 expectation, and the top-3 vs rest gap. With fewer than 20 usable cases the result is a signal, not a test.
 
-Usage: backend\\.venv\\Scripts\\python.exe scripts\\validate_themes.py [--perm 5000]
+Multi-brand fairs (kind = fair: CES, motor shows, expos) are left out unless --with-fairs is given.
+
+Usage: backend\\.venv\\Scripts\\python.exe scripts\\validate_themes.py [--perm 5000] [--with-fairs]
 """
 import json
 import math
@@ -51,9 +53,11 @@ def centred(theme_text: dict) -> dict:
     return out
 
 
-def usable_rows(sims: dict) -> tuple[list[dict], list[str]]:
+def usable_rows(sims: dict, with_fairs: bool = False) -> tuple[list[dict], list[str]]:
     rows, skipped = [], []
     for c in outcomes.summary()["cases"]:
+        if c.get("kind") == "fair" and not with_fairs:
+            continue  # a multi-brand fair's theme is the show's, not one brand's choice
         slug = c["city"].lower().replace(" ", "-")
         if not c.get("theme") or not c.get("ratio") or slug not in sims:
             skipped.append(f'{c["id"]} ({"no ratio" if not c.get("ratio") else "city or theme missing"})')
@@ -75,8 +79,10 @@ def main() -> None:
     self_check()
     theme_text = json.loads((ROOT / "backend/data/theme_text_v1.json").read_text(encoding="utf-8"))
     sims = centred(theme_text)
-    rows, skipped = usable_rows(sims)
+    with_fairs = "--with-fairs" in sys.argv
+    rows, skipped = usable_rows(sims, with_fairs)
     n = len(rows)
+    print(f"Cases: {'brand exhibitions and fairs' if with_fairs else 'brand exhibitions only (add --with-fairs for fairs)'}")
     print(f"Usable cases: {n} (skipped {len(skipped)}: {', '.join(skipped) or '-'})")
     print(f"Distinct themes: {len({r['theme'] for r in rows})}, cities: {len({r['slug'] for r in rows})}")
     if n < 5:

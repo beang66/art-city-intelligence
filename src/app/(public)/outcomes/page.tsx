@@ -17,7 +17,8 @@ const STAGES = [
 
 export default function OutcomesPage() {
   const s = outcomeSummary
-  const rows = [...s.cases].sort((a, b) => a.format.localeCompare(b.format) || b.perDay - a.perDay)
+  const isFair = (c: { kind?: string }) => c.kind === 'fair'
+  const rows = [...s.cases].sort((a, b) => Number(isFair(a)) - Number(isFair(b)) || a.format.localeCompare(b.format) || b.perDay - a.perDay)
   const themeLabel = Object.fromEntries(s.themeOptions.map((t) => [t.id, t.labelKo]))
   return (
     <>
@@ -32,9 +33,9 @@ export default function OutcomesPage() {
           </p>
         </div>
         <div className="insight-strip">
-          <article className="insight-cell dark"><span className="mono">CASES</span><strong>{s.total}</strong><p>관람객 수가 공개된 브랜드 전시·팝업</p></article>
+          <article className="insight-cell dark"><span className="mono">CASES</span><strong>{s.total}</strong><p>관람객 수가 공개된 브랜드 전시 {s.total - s.fairCount}건 · 박람회 {s.fairCount}건</p></article>
           {FORMAT_ORDER.map((key) => (
-            <article className="insight-cell" key={key}><span className="mono">{key.toUpperCase()}</span><strong>{s.casesByFormat[key]}</strong><p>{FORMAT_LABEL[key]} 사례</p></article>
+            <article className="insight-cell" key={key}><span className="mono">{key.toUpperCase()}</span><strong>{s.casesByFormat[key]}</strong><p>{FORMAT_LABEL[key]} 브랜드 사례</p></article>
           ))}
         </div>
       </section>
@@ -62,7 +63,7 @@ export default function OutcomesPage() {
           <div><p className="eyebrow">03 / PUBLIC CASES</p><h2>Visitors per day,<br /><span>against the format.</span></h2></div>
           <p className="section-intro">
             기대 하루 방문객 = 같은 형식 다른 사례의 하루 방문객 중앙값 × (이 도시 적합도 ÷ 그 사례들의 적합도 중앙값). 자기 자신은 기준에서 뺍니다.
-            비교할 사례가 {s.minPeers}건 미만이면 기대치를 만들지 않습니다.
+            비교할 사례가 {s.minPeers}건 미만이면 기대치를 만들지 않습니다. CES·모빌리티쇼 같은 박람회는 여러 브랜드가 모인 행사라 박람회끼리만 비교합니다.
           </p>
         </div>
         <div className="outcome-table-wrap">
@@ -75,7 +76,7 @@ export default function OutcomesPage() {
                 <tr key={c.id}>
                   <td><b>{c.brand}</b><small>{c.title}</small><small>주제: {themeLabel[c.theme] ?? c.theme}</small></td>
                   <td>{c.city}<small>{c.venue}</small></td>
-                  <td>{FORMAT_LABEL[c.format]}<small>{c.admission === 'free' ? '무료' : c.admission === 'paid' ? '유료' : ''}</small></td>
+                  <td>{isFair(c) ? `박람회 · ${FORMAT_LABEL[c.format]}` : FORMAT_LABEL[c.format]}<small>{c.admission === 'free' ? '무료' : c.admission === 'paid' ? '유료' : ''}</small></td>
                   <td className="num">{c.days}일<small>{c.start.slice(0, 7)}</small></td>
                   <td className="num">{reportedVisitors(c)}</td>
                   <td className="num"><b>{c.perDay.toLocaleString()}</b></td>

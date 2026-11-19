@@ -88,7 +88,8 @@ def check_outcomes() -> bool:
     data = good.json().get("data", {})
     return (
         listed["total"] >= 30 and all(c["fitRank"] >= 1 and c["perDay"] > 0 for c in listed["cases"])
-        and all(c["ratio"] for c in listed["cases"])  # every format has 3+ peers → leave-one-out baseline for all
+        and all(c["ratio"] for c in listed["cases"] if c.get("kind", "brand") == "brand")  # 3+ brand peers per format
+        and sum(bool(c["ratio"]) for c in listed["cases"] if c.get("kind") == "fair") >= 3  # fairs vs fairs only
         and len({c["theme"] for c in listed["cases"]}) >= 10  # theme validation needs different themes
         and good.status_code == 200 and data.get("perDay") == 2000 and data.get("perDayPerM2") == 6.67
         and all(r.status_code == 400 for r in bad)
