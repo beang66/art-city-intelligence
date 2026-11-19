@@ -8,7 +8,13 @@ export type FormatKey = 'popup' | 'temporary' | 'permanent'
 
 export const FORMAT_ORDER: readonly FormatKey[] = ['popup', 'temporary', 'permanent']
 
-export type FormatSpec = { label: string; why: string; weights: Record<string, number> }
+export type FormatSpec = {
+  label: string
+  why: string
+  weights: Record<string, number>
+  /** null when the hand-set fallback weights are in use */
+  learned: { target: string; source: string; cities_listed: number; cv_spearman: { learned: number; design: number } } | null
+}
 
 export type RankedCity = { rank: number; city: string; country: string; region: string; fit: number; worldRank: number }
 

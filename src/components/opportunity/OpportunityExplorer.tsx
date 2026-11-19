@@ -42,7 +42,11 @@ export function OpportunityExplorer({ top, summary }: Props) {
               <li key={key}><span>{WEIGHT_LABELS[key] ?? key}</span><b>{Math.round(weight * 100)}%</b></li>
             ))}
           </ul>
-          <p className="model-note">가중치는 형식별 성과 데이터가 쌓이기 전까지 설계 가정입니다. Streamlit 탐색기에서 바꿔 볼 수 있습니다.</p>
+          <p className="model-note">
+            {spec.learned
+              ? `학습 정답: ${spec.learned.target} (${spec.learned.source}). 교차 검증 순위 상관 ${spec.learned.cv_spearman.learned.toFixed(2)}, 처음의 설계 가중치 ${spec.learned.cv_spearman.design.toFixed(2)}. 실제 팝업·전시 성과가 아닌 대체 지표입니다.`
+              : '가중치는 설계 가정입니다.'}
+          </p>
         </div>
       </div>
       <WhatIf regions={summary.regions} />

@@ -89,7 +89,8 @@ def summary() -> dict:
         "r2": serving["R2"], "spearman": serving["Spearman"], "mae": serving["MAE_log"],
         "maeReduction": round(1 - serving["MAE_log"] / baseline["MAE_log"], 3),
         "scores": card["scores"],
-        "formats": {key: {"label": spec["label"], "why": spec["why"], "weights": spec["weights"]} for key, spec in FORMATS.items()},
+        "formats": {key: {"label": spec["label"], "why": spec["why"], "weights": spec["weights"],
+                          "learned": spec["learned"]} for key, spec in FORMATS.items()},
         "regions": list(REGIONS),
     }
 

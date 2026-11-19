@@ -226,10 +226,43 @@ ours = ['Seoul', 'Berlin', 'London', 'New York', 'Mexico City', 'Melbourne', 'Am
         'Chicago', 'Dubai', 'Hong Kong', 'Paris', 'Tokyo', 'Shanghai', 'Singapore']
 out[out.city.isin(ours)].sort_values('opportunity', ascending=False)[['city', 'lovability', 'predicted_lovability', 'opportunity', 'cluster']]""")
 
+md("""## 8. 형식별 가중치 학습 — 공개 관람객 데이터
+
+팝업·비상설 전시·상설 전시 적합도는 0–1로 맞춘 구성 요소(문화 매력·정주·경제·인구·기회 점수·강점 신호)의 가중합이다. 가중치를 손으로 정하지 않고, 형식마다 공개된 관람객 지표를 정답으로 학습한다.
+
+| 형식 | 정답(대체 지표) | 출처 |
+| --- | --- | --- |
+| 팝업 | 국제 방문객 수 | Euromonitor Top 100 City Destinations 2018 (일부 Mastercard 2016) |
+| 비상설 전시 | 도시 미술관 연간 관람객 합 | The Art Newspaper Visitor Figures 2025, 상위 150개 |
+| 상설 전시 | 상위 150 안의 미술관 수 | 같은 자료 |
+
+방법: 음수가 없는 최소제곱(NNLS)으로 가중치를 구하고 합을 1로 맞춘다. 반복 5겹 교차 검증에서 처음의 설계 가중치와 순위 상관(Spearman)을 비교한다. 목록에 없는 도시는 목록의 최솟값보다 아래로 둔다.""")
+code("""sys.path[:0] = ['ml/scripts', 'ml/app']
+import build_format_targets, learn_format_weights
+if not (DATA / 'format_targets_2026.csv').exists():
+    build_format_targets.main()  # 원자료를 내려받아 ml/data/private/sources에 두고 도시별 수치만 저장
+targets = pd.read_csv(DATA / 'format_targets_2026.csv')
+fw = learn_format_weights.learn(out, targets)
+(MODELS / 'format_weights.json').write_text(json.dumps(fw, ensure_ascii=False, indent=1), encoding='utf-8')
+pd.DataFrame({k: {'target': v['target'], 'listed': v['cities_listed'], 'CV rho (learned)': v['cv_spearman']['learned'],
+                  'CV rho (design)': v['cv_spearman']['design']} for k, v in fw['formats'].items()}).T""")
+code("""from formats import DESIGN_WEIGHTS
+names = ['lovability', 'livability', 'prosperity', 'population', 'opportunity', 'buzz', 'culture', 'base']
+fig, axes = plt.subplots(1, 3, figsize=(12, 3.4), sharex=True)
+for ax, (key, spec) in zip(axes, fw['formats'].items()):
+    yy = np.arange(len(names))
+    ax.barh(yy + 0.2, [spec['weights'].get(n, 0) for n in names], 0.4, color=ACCENT, label='learned')
+    ax.barh(yy - 0.2, [DESIGN_WEIGHTS[key].get(n, 0) for n in names], 0.4, color='#B9B2A4', label='design')
+    ax.set_yticks(yy, names); ax.invert_yaxis(); ax.set_title(f"{key} (CV rho {spec['cv_spearman']['learned']:.2f})")
+axes[0].legend(frameon=False)
+plt.tight_layout(); fig.savefig(FIG / 'format_weights.png', bbox_inches='tight'); plt.show()
+print('target correlation (Spearman)'); pd.DataFrame(fw['target_correlation'])""")
+
 md("""## 한계
 
 - 표본 100개 도시, 한 해(2026) 단면. 순위 데이터라 간격 정보가 없다.
 - 기회 점수는 '문화 매력이 경제 규모보다 앞선 정도'이지, 팝업 성과를 예측한 값이 아니다. 실제 팝업 방문·매출과 비교해 검증해야 한다.
+- 형식별 가중치의 정답은 방문객·미술관 관람객이라는 대체 지표다. 큰 유명 도시가 위로 오고, 비상설과 상설의 정답이 서로 매우 비슷하다(순위 상관 0.98). 실제 팝업·전시 성과로 다시 학습해야 한다(로드맵 G1).
 - 바젤·베네치아는 인구 기준(100만 명) 미달로 세계 표에 없어 이 모델의 대상이 아니다.""")
 
 nb["cells"] = cells

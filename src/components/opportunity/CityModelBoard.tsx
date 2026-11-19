@@ -50,7 +50,7 @@ export function CityModelBoard({ slug, cityNameKo }: { slug: string; cityNameKo:
               <i style={{ '--value': `${model.formats[key].fit}%` } as CSSProperties} />
             </div>
           ))}
-          <p className="model-note">100개 도시 중 순위. 형식별 가중치는 성과 데이터가 쌓이기 전까지 설계 가정입니다.</p>
+          <p className="model-note">100개 도시 중 순위. 형식별 가중치는 국제 방문객·미술관 관람객 같은 공개 지표로 학습했습니다(실제 팝업·전시 성과는 아님).</p>
         </div>
         <div className="model-panel">
           <h3>소개 글이 비슷한 도시</h3>

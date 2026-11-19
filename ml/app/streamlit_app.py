@@ -83,7 +83,10 @@ with tab0:
     key = st.radio("공간 형식", list(FORMATS), format_func=lambda k: FORMATS[k]["label"], horizontal=True)
     spec = FORMATS[key]
     st.caption(spec["why"])
-    with st.expander("가중치 조정 — 성과 데이터가 쌓이기 전까지는 설계 가정입니다"):
+    learned = spec["learned"]
+    label = (f"가중치 조정 — 기본값은 {learned['target']}로 학습 (교차 검증 순위 상관 {learned['cv_spearman']['learned']:.2f}, "
+             f"설계 가중치 {learned['cv_spearman']['design']:.2f})") if learned else "가중치 조정 — 설계 가정"
+    with st.expander(label):
         cols = st.columns(len(spec["weights"]))
         weights = {k: col.slider(COMPONENT_LABELS[k], 0.0, 1.0, float(w), 0.05, key=f"{key}-{k}")
                    for col, (k, w) in zip(cols, spec["weights"].items())}
