@@ -95,6 +95,26 @@ def check_outcomes() -> bool:
     )
 
 
+def check_themes() -> bool:
+    """Theme picks: 3 per city, best first, each with evidence phrases from the city's own record; bad city is 400/404."""
+    from app import data
+    picks = [client.get(f"/api/opportunity/themes?city={c['slug']}").json()["data"] for c in data.cities()]
+
+    def grounded(city, theme):
+        record = data.find_city(city)
+        words = " ".join([record["typeKo"], record["dnaKo"], *record["cultural"]["keywordsKo"], *record["cultural"]["institutions"],
+                          *record["cultural"]["events"], *record["industryKo"]])
+        return theme["matches"] and all(m in words for m in theme["matches"])
+
+    return (
+        all(len(p["themes"]) == 3 and [t["z"] for t in p["themes"]] == sorted((t["z"] for t in p["themes"]), reverse=True)
+            and all(grounded(p["city"], t) for t in p["themes"]) for p in picks)
+        and len({p["themes"][0]["id"] for p in picks}) >= 6  # not one theme for every city
+        and client.get("/api/opportunity/themes").status_code == 400
+        and client.get("/api/opportunity/themes?city=atlantis").status_code == 404
+    )
+
+
 def main() -> int:
     cases = json.loads((ROOT / "backend/tests/baseline/api_baseline_v0.json").read_text(encoding="utf-8"))
     failures = []
@@ -131,8 +151,11 @@ def main() -> int:
     print(f"Opportunity API (format ranking, what-if prediction, 400 on bad input): {model_ok}")
     outcomes_ok = check_outcomes()
     print(f"Outcomes API (cases normalised, evaluate, 400 on bad input): {outcomes_ok}")
+    themes_ok = check_themes()
+    print(f"Theme picks (3 per city, sorted, evidence from the city record, 6+ distinct top themes, 400/404): {themes_ok}")
     print(f"Contact delivery (mocked provider 200 → 200, 422 → 502, HTML escaped): {delivery}")
-    return 0 if not failures and not calc_diff and snap_ok and health and delivery and model_ok and outcomes_ok else 1
+    ok = not failures and not calc_diff and snap_ok and health and delivery and model_ok and outcomes_ok and themes_ok
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":

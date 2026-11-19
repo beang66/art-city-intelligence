@@ -35,7 +35,7 @@
 
 | 학습 데이터 | 모델 성능 (5겹 교차 검증) | 리포트 도시 | 화면 | FastAPI | 전환 검증 | 보안 경고 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **100개 도시** (Resonance 2026) | **R² 0.83 · Spearman 0.87** (평균 예측 대비 MAE −59%) | **18개** · 6개 차원 · 문헌 13건 | **10종** + Streamlit 6탭 | **11개** 엔드포인트 | **기존 API 93/93 일치** | **0건** |
+| **100개 도시** (Resonance 2026) | **R² 0.83 · Spearman 0.87** (평균 예측 대비 MAE −59%) | **18개** · 6개 차원 · 문헌 13건 | **10종** + Streamlit 6탭 | **12개** 엔드포인트 | **기존 API 93/93 일치** | **0건** |
 
 ### 🧱 풀스택 구성
 
@@ -46,9 +46,9 @@
 | 📦 데이터 | `backend/data/*_v1.json` — 도시·차원·관측 순위·문헌 + `provenance_v1.json`(숫자마다 할 수 있는 말)·`field_dictionary_v1.json` |
 | 🔁 화면과 API 일치 | `export_snapshot.py`가 API와 같은 함수로 `src/data/snapshot_v1.json`을 만들고, `verify_backend.py`가 둘이 같은지 검사 |
 | 🌐 모델을 쓰는 화면 | 도시 상세 '05 / OPPORTUNITY MODEL'(기회 점수·기대 vs 실제·도시 유형·형식별 적합도·비슷한 도시), `/opportunity`(형식별 상위 15개 + What-if 예측) |
-| 🤖 모델 | Colab 노트북 — scikit-learn(Ridge·랜덤 포레스트·그래디언트 부스팅)·PyTorch MLP 비교, KMeans 도시 유형, 다국어 문장 임베딩, joblib 저장 |
+| 🤖 모델 | Colab 노트북 — scikit-learn(Ridge·랜덤 포레스트·그래디언트 부스팅)·PyTorch MLP 비교, KMeans 도시 유형, 다국어 문장 임베딩(유사 도시·전시 주제 추천), joblib 저장 |
 | 📊 Streamlit | 형식별 추천(팝업·비상설·상설) · 기회 도시 순위 · 기대 vs 실제 · 도시 유형 지도 · 비슷한 도시 · What-if 예측 (Plotly) |
-| 🔐 보안 | `src/proxy.ts`가 `/admin/*`에 Basic 인증, 설정이 없으면 잠김 · 문의 입력 검사·HTML 이스케이프·봇 차단 칸 |
+| 🔐 보안 | 문의 입력 검사·HTML 이스케이프·봇 차단 칸 · 관리자 화면은 읽기 전용이라 로그인 없이 공개 |
 | ☁️ 배포 | Vercel(화면) + Render(FastAPI) + Streamlit Community Cloud(모델), Vercel이 `/api/*`를 Render로 넘김 |
 
 ### ✨ 핵심 기능
@@ -56,7 +56,7 @@
 | 🌐 탐색 | 📊 비교 | 🔎 출처 추적 | 💡 기회 |
 | :---: | :---: | :---: | :---: |
 | **지구본에서 도시 고르기** | **중앙값 대비로 읽기** | **관측값과 예시값 분리** | **도시별 공간·브랜드 제안** |
-| 드래그 회전·도시 검색<br>신호 타일 4개<br>비교군 18개 도시 | 6개 차원 막대·레이더<br>가중치 ±10% 민감도<br>유사 도시 | 발행 순위 따로 표시<br>차원별 근거 문헌<br>OBSERVED·ILLUSTRATIVE 배지 | 도시 유형·DNA<br>연계 산업<br>제안 이유 한 문장 |
+| 드래그 회전·도시 검색<br>신호 타일 4개<br>비교군 18개 도시 | 18개 도시 중 골라 비교<br>막대마다 도시 기록 근거<br>브랜드 전시 주제 추천 | 발행 순위 따로 표시<br>차원별 근거 문헌<br>OBSERVED·ILLUSTRATIVE 배지 | 도시 유형·DNA<br>연계 산업<br>제안 이유 한 문장 |
 
 ---
 
@@ -134,7 +134,7 @@
 | 시각화 | SVG · Canvas 직접 구현, `topojson-client` | 지구본(Natural Earth 110m 육지 경계), 레이더·막대·추세 차트 |
 | Backend | FastAPI, Uvicorn, Python 3.12 | 조회·메타·문의 API, 점수·중앙값·신호 순위·순위 해석 계산 |
 | 데이터 | 버전 JSON (`backend/data/*_v1.json`) | 도시 18개, 6개 차원, 관측 순위, 문헌 13건, 출처 규칙, 필드 정의 |
-| 보안 | Next.js Proxy (`src/proxy.ts`) | `/admin/*` Basic 인증, 환경 변수가 없으면 잠김 |
+| 보안 | FastAPI 입력 검사 | 문의 폼 검사·HTML 이스케이프. 관리자 화면은 읽기 전용이라 인증 없이 공개 |
 | 외부 서비스·배포 | Resend, Vercel, Render | 문의 메일 발송, 화면 배포, FastAPI 배포 |
 
 ```mermaid
@@ -144,19 +144,18 @@ flowchart TB
         AD["/admin/*"]
     end
     subgraph Vercel["▲ Vercel — Next.js"]
-        PX["🔐 Proxy<br>/admin/* Basic 인증"]
         SSG["정적 페이지 30개<br>snapshot_v1.json을 읽음"]
         RW["rewrite /api/* → API_ORIGIN"]
     end
     subgraph Render["🐍 Render — FastAPI"]
-        R1["/api/cities · indicators<br>cultural · market · meta<br>opportunity · predict"]
+        R1["/api/cities · indicators<br>cultural · market · meta<br>opportunity · predict · themes"]
         R2["/api/contact"]
-        SV["services/<br>scoring · observed · snapshot"]
+        SV["services/<br>scoring · observed · recommend · snapshot"]
     end
     D[("📦 backend/data<br>*_v1.json")]
     RS["✉️ Resend"]
     PG --> SSG
-    AD --> PX --> SSG
+    AD --> SSG
     PG -- "fetch /api/*" --> RW --> R1 & R2
     R1 --> SV --> D
     R2 --> RS
@@ -180,7 +179,7 @@ flowchart LR
 flowchart LR
     S["지구본에서<br>도시 선택"] --> T["신호 타일<br>인사이트·추세·6점 지수·대표작"]
     T --> C["도시 상세<br>관측 순위 · 6개 차원 · 추세 · 유사 도시"]
-    C --> P["비교<br>차원별 중앙값 대비"]
+    C --> P["비교<br>18개 도시 중 선택 · 근거 · 주제 추천"]
     C --> M["방법론<br>근거 문헌 · 한계"]
     P --> O["공간·브랜드 기회"]
 ```
@@ -194,6 +193,7 @@ flowchart LR
 | `GET /api/cultural` · `/api/market` | `?city=` | 기관·행사·키워드 / 작가·가격대(참고) |
 | `GET /api/opportunity` | `?format=popup\|temporary\|permanent&limit=` | 형식별 적합도 순위 (100개 도시) |
 | `POST /api/opportunity/predict` | 정주 여건·경제 활력 순위, 광역 인구, 권역 | joblib 모델이 계산한 기대 Lovability 순위. 범위 밖 입력은 400 |
+| `GET /api/opportunity/themes` | `?city=` | 어울리는 브랜드 전시 주제 3개 — 근거 문구, 18개 도시 중 순위, 볼 차원, 가장 맞는 형식. 도시 없음 400·모르는 도시 404 |
 | `POST /api/contact` | 이름·연락처·이메일 | Resend로 메일 발송, 빈 칸·이메일 형식 검사 (400), 키 없음 503, 발송 실패 502 |
 
 <a id="data"></a>
@@ -314,6 +314,25 @@ flowchart LR
 - **도시 유형 (KMeans, 실루엣 0.37로 k=3):** 세 축 모두 상위인 글로벌 허브(런던·뉴욕·파리·도쿄) / 매력이 앞선 대도시(상파울루·홍콩·이스탄불·방콕) / 살기 좋은 중형 도시(멜버른·오슬로·스톡홀름·빈)
 - **한계:** Lovability에 SNS·관광 지표가 들어 있어 관광 도시가 위로 올라온다 → Streamlit에서 강점 카테고리(Museums, Theaters & Concerts)로 거른다. 기회 점수는 '문화 매력이 기대보다 앞선 정도'이지 팝업 성과 예측이 아니며, 실제 팝업 결과로 검증해야 한다. 소개 글 임베딩은 보고서의 서술 주제(투자·인프라 등)를 함께 반영해 예술 씬의 유사도와는 다를 수 있다.
 
+<a id="themes"></a>
+### 🎯 브랜드 전시 주제 추천
+
+<p align="center">
+  <img src="docs/screenshots/compare-themes.jpg" alt="비교 화면의 브랜드 전시 주제 추천 — 서울: 디지털 패션·게임, 스트리트·서브컬처 팝업, 미디어아트·몰입형 전시와 근거" width="80%">
+</p>
+
+| 단계 | 내용 |
+| --- | --- |
+| 주제 목록 | `backend/data/themes_v1.json` — 주제 12개. 주제마다 설명문과 브랜드 분야(실제 회사가 아닌 분야)만 둠 |
+| 도시 기록 | 도시마다 유형·DNA·키워드·기관·행사·연계 산업 문구 |
+| 문장 임베딩 | `ml/scripts/theme_similarity.py` — MiniLM으로 도시 기록과 주제 설명의 코사인 유사도를 구함 |
+| 점수 | 주제마다 18개 도시 안에서 표준점수로 바꿔 순위. '다른 도시보다 이 주제에 더 가까운 정도'라서 큰 도시가 모든 주제를 가져가지 않음 |
+| 근거 | 주제와 가장 가까운 도시 기록 문구 2개 · 18개 도시 중 순위 · 기회 모델에서 가장 맞는 형식 |
+| 볼 차원 | 주제의 '중요한 것' 문장과 6개 차원 이름의 유사도로 가장 가까운 차원을 연결 (점수에는 쓰지 않음) |
+
+- **결과 예:** 서울 디지털 패션·게임(18개 도시 중 1위) · 바르셀로나 건축·디자인 쇼케이스(1위) · 암스테르담 미디어아트·몰입형 전시(1위) · 상하이 브랜드 뮤지엄(1위) · 멕시코시티 식문화·미식(1위) · 파리 럭셔리 헤리티지 아카이브(4위)
+- **한계:** 6개 차원 점수는 예시값이라 추천 점수에 넣지 않았습니다. 도시 기록 문구는 요약이라 문구 선택이 결과를 흔듭니다. 베를린·뉴욕·홍콩처럼 두드러진 주제가 없는 도시(표준점수 0.5 미만)는 화면에 '뚜렷하지 않음'으로 표시합니다. 실제 전시 성과로 검증하기 전이며, 주제별 성과 기록이 쌓이면 성과로 다시 맞춥니다.
+
 ### 🎯 형식별 적합도 — 팝업 · 비상설 전시 · 상설 전시
 
 같은 도시라도 형식에 따라 맞는 정도가 다릅니다. 구성 요소를 0–1로 맞춘 뒤 형식별 가중치로 더합니다(`ml/app/formats.py`). 가중치는 형식마다 공개된 관람객 지표를 정답으로 학습했습니다.
@@ -377,12 +396,13 @@ flowchart LR
 
 <p align="center">
   <img src="docs/screenshots/city-seoul.jpg" alt="서울 도시 상세 첫 화면" width="48%">
-  <img src="docs/screenshots/compare.jpg" alt="도시 비교 화면" width="48%">
+  <img src="docs/screenshots/compare.jpg" alt="도시 비교 — 기준 도시와 비교 도시를 고르고 막대마다 도시 기록 근거" width="48%">
 </p>
 
 - 신호 대시보드 → 관측 순위(가장 앞선 축·가장 뒤처진 축) → 6개 차원 → 추세 → 유사 도시 순서
 - 도시 유형·DNA, 위치·유산·변화 수용성·전망, 연계 산업과 기회 제안, 도시를 대표하는 작품
-- 비교 `/compare`: 차원을 고르면 도시 점수와 18개 도시 중앙값의 차이를 문장과 막대로 보여 줌
+- 비교 `/compare`: 18개 도시 중 기준 도시 하나와 비교 도시 최대 3곳을 고름. 차원을 고르면 점수·중앙값 차이·민감도(±)와 함께, 막대마다 그 도시의 기록(기관·행사·산업·작가·관측 순위)을 근거로 붙임. 공개 순위 표는 18개 도시 전체
+- 브랜드 전시 주제 추천: 기준 도시에 어울리는 주제 3개를 브랜드 분야와 함께 보여 줌 ([방식](#themes))
 
 #### 📐 6개 차원 — Six axes, one shape.
 
@@ -436,7 +456,7 @@ flowchart LR
 </p>
 
 - 방법론: 두 종류의 숫자, 차원과 근거 문헌 대응표, 처리 단계, 알려진 한계, 문헌 13건
-- 관리자: 도시별 관측 데이터 보유 상태(세계+권역 / 권역만), 지표·출처·검증 목록 (읽기 전용, Basic 인증)
+- 관리자: 도시별 관측 데이터 보유 상태(세계+권역 / 권역만), 지표·출처·검증 목록 (읽기 전용, 로그인 없이 열림)
 
 <a id="details"></a>
 ## 🧩 8. 기능별 핵심 특징과 구현 상세
@@ -449,6 +469,7 @@ flowchart LR
 | 🛰️ 관측 순위 | 세계·권역 순위와 세 축, 가장 앞선·뒤처진 축 해석 문장 | `backend/app/services/observed.py` `read_rank` · `data/observations_v1.json` · `ObservedPositionBoard.tsx` |
 | 🤖 기회 점수 모델 | 100개 도시 Lovability 기대치, out-of-fold 잔차로 기회 점수 | `ml/notebooks/art_city_opportunity_model.ipynb` · `make_pipeline(log·표준화·원-핫, GradientBoostingRegressor)` → `ml/models/lovability_model.joblib` |
 | 🧠 문장 임베딩 | 소개 글로 비슷한 도시 Top 5 | `sentence-transformers` MiniLM-L12 · 코사인 유사도 → `ml/data/similar_cities_2026.json` |
+| 🎯 전시 주제 추천 | 도시마다 어울리는 브랜드 전시 주제 3개와 근거 | `ml/scripts/theme_similarity.py`(MiniLM) → `theme_text_v1.json` · `services/recommend.py` 도시 간 표준점수 · `GET /api/opportunity/themes` |
 | 🎯 형식별 적합도 | 팝업·비상설·상설마다 공개 관람객 지표로 학습한 가중합 | `ml/app/formats.py` `components` `fit_scores` · `ml/scripts/learn_format_weights.py` NNLS + 반복 교차 검증 → `ml/models/format_weights.json` · `python ml/app/formats.py`로 가중치 합·범위·형식별 순위 차이를 assert |
 | 📊 Streamlit | 6개 탭, 필터, 형식별 가중치 조정, What-if 예측 | `ml/app/streamlit_app.py` · `st.cache_resource`로 joblib 한 번만 로드 · Plotly |
 | 📄 보고서 추출 | PDF 요약표·3단 도시 페이지를 표로 | `ml/scripts/extract_resonance.py` · pdfplumber, 열 경계 자동 탐지, 1–100 누락 assert |
@@ -459,7 +480,7 @@ flowchart LR
 | 🖼️ 대표작 | 도시별 작품의 의미·의도·도시와의 연결 | `SignatureWorkModal.tsx` · `SignatureWork` 타입 |
 | 🔌 조회 API | 잘못된 주소 이름은 400, 없는 도시는 404 | `backend/app/routers/cities.py` · `parse_slug` |
 | ✉️ 문의 | 빈 칸·이메일 형식 검사, HTML 이스케이프, 봇 차단 칸, 키가 없으면 503, 발송 실패 502 | `backend/app/routers/contact.py` · `httpx` → Resend API |
-| 🔐 관리자 인증 | `/admin/*`만 Basic 인증, 환경 변수가 없으면 잠김 | `src/proxy.ts` · `ADMIN_USER` `ADMIN_PASSWORD` |
+| 🔓 관리자 공개 | 읽기 전용 관리 화면을 로그인 없이 열람 | 쓰기 API 없음 · 편집 기능이 생기면 인증을 다시 붙임 |
 | 🇰🇷 한국어 조사 | 받침에 따라 은/는 · 이/가 · 을/를 자동 선택 | `src/lib/korean.ts` · `backend/app/korean.py` |
 
 <a id="decisions"></a>
@@ -480,10 +501,10 @@ flowchart LR
 | 학습 데이터 | Resonance 2026 상위 100개 도시 (실측 순위) | 리포트 18개 도시의 예시 점수 | 예시값으로 학습하면 모델이 돌아가도 결과에 의미가 없음. 100개 도시는 이미 확보한 보고서에서 바로 추출 가능 |
 | 모델 질문 | 기대보다 문화 매력이 앞선 정도(잔차) | 문화 매력 순위 자체를 예측 | 순위 자체는 이미 공개돼 있음. 가치는 '기대와의 차이'에서 나옴 |
 | 서빙 모델 | 그래디언트 부스팅 (joblib) | MLP (PyTorch) | 성능 차이가 잡음 수준이고, 서빙에 torch가 필요 없음 |
-| 딥러닝 위치 | 소개 글 임베딩(사전학습 모델) | 표 데이터에 깊은 신경망 | 100행 표 데이터에는 신경망이 유리하지 않음. 텍스트는 사전학습 모델이 강함 |
+| 딥러닝 위치 | 문장 임베딩(사전학습 모델) — 유사 도시, 전시 주제 추천 | 표 데이터에 깊은 신경망 | 100행 표 데이터에는 신경망이 유리하지 않음. 텍스트는 사전학습 모델이 강함 |
 | 형식별 추천 | 공개 관람객 지표로 학습한 가중합 (NNLS, 가중치 공개·조정 가능) | 손으로 정한 가중치 · 형식별 트리 모델 | 손으로 정한 가중치보다 교차 검증 순위 상관이 높음. 가중합이라 화면에서 구성 요소별 기여를 그대로 설명할 수 있음. 실제 성과가 쌓이면 정답만 바꿔 다시 학습 |
 | 서빙 도구 | Streamlit + joblib | FastAPI에 모델 엔드포인트 | 분석가가 필터·What-if를 바로 쓰는 탐색 도구가 먼저. 같은 joblib을 FastAPI에서도 불러올 수 있음 |
-| 관리자 보호 | Proxy Basic 인증 (환경 변수 계정 하나) | 회원 DB·OAuth | 관리자 화면이 읽기 전용이라 계정 하나로 충분. 편집 기능이 생기면 계정 체계로 옮김 |
+| 관리자 접근 | 로그인 없이 공개 (읽기 전용) | Basic 인증 · 회원 DB | 편집 기능이 없고, 인증 창이 다른 화면에서 뜨는 문제가 있었음. 편집이 생기면 계정 체계로 붙임 |
 | 미완성 화면 | 삭제 | '예시' 표시를 붙여 유지 | 진행률·갱신 시각 같은 가짜 상태가 실제 데이터처럼 읽힘 |
 | 제작 방식 | 기획·조사·설계는 직접, 구현은 AI 코딩 도구 후 검수 | 전부 직접 구현 | 1인 프로젝트에서 조사와 설계에 시간을 씀 |
 
@@ -503,7 +524,6 @@ art-city-intelligence/
 │  ├─ tests/baseline/              # 기존 Next.js API 응답 93건 · TS 계산 결과
 │  └─ requirements.txt
 ├─ src/                            # Next.js (Vercel)
-│  ├─ proxy.ts                     # /admin/* Basic 인증
 │  ├─ app/
 │  │  ├─ (public)/                 # overview · cities/[citySlug] · compare · methodology
 │  │  └─ (admin)/admin/            # cities · indicators · sources · validation
@@ -601,7 +621,6 @@ npm run typecheck && npm run build
 | 환경 변수 | 어디에 | 필수 | 설명 | 없을 때 동작 |
 | --- | --- | --- | --- | --- |
 | `API_ORIGIN` | Vercel | 배포 시 | FastAPI 주소 (예: `https://art-city-intelligence-api.onrender.com`) | 로컬은 `http://127.0.0.1:8000`, Vercel에서는 빌드 실패 |
-| `ADMIN_USER` · `ADMIN_PASSWORD` | Vercel | 관리자 화면을 쓸 때 | 관리자 Basic 인증 계정 | `/admin/*`가 401로 잠김 |
 | `RESEND_API_KEY` | Render | 문의 메일을 쓸 때 | Resend API 키 | 문의 전송 시 503 안내 |
 | `CONTACT_FROM_EMAIL` | Render | 문의 메일을 쓸 때 | 인증한 도메인의 보내는 주소 | Resend 기본 주소 |
 
@@ -622,7 +641,7 @@ streamlit run ml/app/streamlit_app.py          # http://localhost:8501
 ### ☁️ 방법 2. 배포 (Render + Vercel)
 
 1. **Render** — New → Blueprint로 저장소를 고르면 `render.yaml`대로 `backend/`가 배포됩니다. `RESEND_API_KEY`·`CONTACT_FROM_EMAIL`을 넣고, `https://<서비스>.onrender.com/health`가 `{"status":"ok"}`인지 확인합니다.
-2. **Vercel** — Environment Variables에 `API_ORIGIN`(Render 주소)과 관리자 계정 두 값을 넣고 다시 배포합니다.
+2. **Vercel** — Environment Variables에 `API_ORIGIN`(Render 주소)을 넣고 다시 배포합니다.
 3. **Streamlit Community Cloud** — New app → 저장소, Main file `ml/app/streamlit_app.py` (패키지는 `ml/app/requirements.txt`).
 4. `main`에 푸시하면 세 곳이 함께 배포되고, [art-city-intelligence.vercel.app](https://art-city-intelligence.vercel.app/)의 `/api/*`가 Render로 연결됩니다.
 
@@ -637,9 +656,9 @@ streamlit run ml/app/streamlit_app.py          # http://localhost:8501
 | 계산 이전 | 기존 TypeScript 계산 결과(차원 점수·신호 순위·순위 해석·중앙값 2종·지수 순위)와 Python 결과 비교 | 6/6 일치 |
 | 화면과 API 일치 | `src/data/snapshot_v1.json` = API와 같은 함수로 다시 계산한 값 | 일치 |
 | 문의 발송 | Resend를 모의 응답으로 바꿔 시험 | 200 → 200, 422 → 502, 입력의 HTML 이스케이프 확인 |
-| 타입 검사 · 빌드 | `npm run typecheck` · `npm run build` | 통과, 정적 페이지 30개(`/opportunity`·`/outcomes` 포함) · Proxy 1개 |
+| 타입 검사 · 빌드 | `npm run typecheck` · `npm run build` | 통과, 정적 페이지 30개(`/opportunity`·`/outcomes` 포함) |
 | 함께 실행 | `uvicorn` + `next start`, `/api/*` rewrite를 거쳐 요청 | 조회 200 · 없는 도시 404 · 잘못된 주소 400 · 문의 빈 칸 400, 화면 5종 200, 런던 상세 순위 해석 문장 표시 |
-| 관리자 인증 | `/admin/cities` 요청 3회 | 인증 없음 401 · 틀린 비밀번호 401 · 맞는 비밀번호 200 |
+| 관리자 공개 | `/admin/cities` 요청 | 로그인 없이 200 |
 | 의존성 보안 | `npm audit --omit=dev` | 0건 |
 | 보고서 추출 | `extract_resonance.py`의 assert (요약표 순위 1–100, 도시 페이지 100개) | 통과. 리포트 18개 도시의 관측 순위를 이 표와 대조해 오류 11곳 수정 |
 | 모델 노트북 | Windows · Python 3.14 · torch 2.15 CPU에서 `nbconvert --execute` | 처음부터 끝까지 실행, 결과 표·그림·joblib·임베딩 생성 |
@@ -649,6 +668,7 @@ streamlit run ml/app/streamlit_app.py          # http://localhost:8501
 | 성과 기록 API | `verify_backend.py` — 공개 사례 정규화, 한 건 평가, 잘못된 입력 | 8건 모두 하루 방문객·적합도 순위 계산, 비상설 6건은 기대 대비 계산·팝업 2건은 기대치 없음, 하루·㎡당 값 일치, 없는 도시·형식·뒤바뀐 날짜·음수 400 |
 | 형식 적합도 | `python ml/app/formats.py` | 가중치 합 1, 점수 0–100, 팝업과 상설 전시 상위 5개가 다름 |
 | 형식별 가중치 학습 | `learn_format_weights.py` — 20회 × 5겹 교차 검증, 처음 설계 가중치와 비교 | 순위 상관 팝업 0.70 (설계 0.61) · 비상설 0.56 (0.43) · 상설 0.58 (0.47) |
+| 전시 주제 추천 | `verify_backend.py` — 18개 도시 API 호출 | 도시마다 3개·정렬됨, 근거 문구가 모두 그 도시 기록에 있음, 1순위 주제 6종 이상(한 주제 쏠림 없음), 도시 없음 400·모르는 도시 404 |
 | 확인하지 않은 범위 | — | Render·Streamlit Cloud 배포본, Colab 런타임에서의 실행, 모바일 화면, 문의 메일 실제 발송 |
 
 <a id="retro"></a>
@@ -661,7 +681,7 @@ streamlit run ml/app/streamlit_app.py          # http://localhost:8501
 | README와 슬라이드가 예시 점수를 실측처럼 서술 | 관측값과 예시값을 문서에서 나누지 않음 | 문서를 코드에 맞춰 다시 쓰고, 화면과 같은 [해석 원칙](#interpret) 표를 둠 |
 | 작업 공간 카드에 '72% 진행', '12분 전 갱신', 데이터에 없는 리스본·밀라노 | 연결되지 않은 예시 화면 | 섹션 삭제, 'AI가 만든 문장' 문구를 실제 기능에 맞춤, '40개 후보 도시' → 18개 |
 | EN을 눌러도 언어가 바뀌지 않음 | 동작이 없는 언어 메뉴 | 메뉴와 스타일 삭제 (−44줄) |
-| 관리자 화면을 누구나 열 수 있음 | 인증 없음 | `src/proxy.ts` Basic 인증, 환경 변수가 없으면 잠김 |
+| 관리자 로그인 창이 다른 화면에서도 뜸 | Basic 인증 응답이 백그라운드 요청에도 나감 | 관리자 화면이 읽기 전용이라 인증을 없애고 공개 |
 | `npm audit` critical 1 · high 2 | `next` 16.3.5가 취약 범위, `sharp`·`source-map-js` | `next` 16.4.6 · `npm audit fix` → 0건 |
 | 서울 상세 문장이 '유연한 형식를' | 조사를 '를'로 고정 | `withObject()`로 받침에 맞춰 을/를 |
 | 지구본 위에서 휠을 굴리면 페이지가 내려가지 않음 | 휠 이벤트를 늘 막고 확대로 씀 | Ctrl/⌘ + 휠과 핀치만 확대 |
@@ -677,7 +697,7 @@ streamlit run ml/app/streamlit_app.py          # http://localhost:8501
 | 1 | 리포트 화면의 6개 차원 점수가 `지수 × 고정 가중치` | 모든 도시에서 실험 > 시장 > 영향력 순서가 같아, '순위 하나는 강점의 조합을 숨긴다'는 기획 질문에 답하지 못함 | 로드맵 1: '기관' 차원부터 도시별 문화 시설 수(인구 대비)로 교체 |
 | 2 | 기회 점수와 형식별 가중치가 실제 사업 성과로 검증되지 않음 | 모델은 '기대보다 문화 매력이 앞선 도시'를 찾을 뿐, 그 도시에서 팝업·전시가 잘 되는지는 모름. 형식별 가중치는 방문객·관람객 대체 지표로 학습해 큰 유명 도시 쪽으로 기울고, 비상설과 상설을 구분하지 못함 | 팝업·비상설·상설 1건마다 도시·형식·기간·방문·매출을 기록해 기대 대비 성과를 보고, 실제 성과로 가중치를 다시 학습 ([성과 측정 단계](#-성과-측정-단계--도시-지표에서-인지도매출까지)) |
 | 3 | 공개 저장소에 보고서 PDF 13개(약 100MB, 단행본 포함)와 작품 이미지 20점 | 발행 기관·작가에 권리가 있는 자료를 그대로 배포 | PDF는 저장소에서 빼고 링크로, 작품 이미지는 이용 허락 확인 또는 교체 |
-| 4 | 검사가 CI에 연결되지 않음 | `verify_backend.py`가 API·계산·스냅숏을 검사하지만 사람이 실행해야 하고, 관리자 인증은 아직 수동 확인 | GitHub Actions에서 `verify_backend.py`·빌드·`npm audit` 실행 |
+| 4 | 검사가 CI에 연결되지 않음 | `verify_backend.py`가 API·계산·스냅숏을 검사하지만 사람이 실행해야 함 | GitHub Actions에서 `verify_backend.py`·빌드·`npm audit` 실행 |
 
 | Keep | Problem | Try |
 | --- | --- | --- |
@@ -731,10 +751,10 @@ flowchart LR
 
 </div>
 
-비즈니스 문제 → 데이터·모델 → 화면 → 기술과 검증 → 다음 단계 순서의 HTML 슬라이드 21장(본문 20 · 부록 1, 약 14분)입니다. 기회 도시 모델(머신러닝·딥러닝), 팝업·비상설 전시·상설 전시 형식별 적합도, FastAPI 구조를 담았습니다. 방향키로 넘기고, 목차(T), 발표자 노트(P), 전체 화면(F), 캡처를 눌러 확대할 수 있습니다. 원본: [`public/slides.html`](public/slides.html)
+비즈니스 문제 → 데이터·모델 → 화면 → 기술과 검증 → 다음 단계 순서의 HTML 슬라이드 22장(본문 21 · 부록 1, 약 15분)입니다. 기회 도시 모델(머신러닝·딥러닝), 팝업·비상설 전시·상설 전시 형식별 적합도, FastAPI 구조를 담았습니다. 방향키로 넘기고, 목차(T), 발표자 노트(P), 전체 화면(F), 캡처를 눌러 확대할 수 있습니다. 원본: [`public/slides.html`](public/slides.html)
 
 <details open>
-<summary>슬라이드 21장 보기</summary>
+<summary>슬라이드 22장 보기</summary>
 
 <p align="center">
 <img src="docs/slides/01.jpg" alt="슬라이드 1" width="100%">
@@ -778,6 +798,8 @@ flowchart LR
 <img src="docs/slides/20.jpg" alt="슬라이드 20" width="100%">
 
 <img src="docs/slides/21.jpg" alt="슬라이드 21" width="100%">
+
+<img src="docs/slides/22.jpg" alt="슬라이드 22" width="100%">
 </p>
 </details>
 
