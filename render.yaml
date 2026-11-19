@@ -2,6 +2,7 @@ services:
   - type: web
     name: art-city-intelligence-api
     runtime: python
+    plan: free
     # repo root, so the API can read the trained model files in ml/
     buildCommand: pip install -r backend/requirements.txt
     startCommand: uvicorn main:app --app-dir backend --host 0.0.0.0 --port $PORT

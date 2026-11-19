@@ -381,6 +381,21 @@ flowchart LR
 - 도시 유형·DNA, 위치·유산·변화 수용성·전망, 연계 산업과 기회 제안, 도시를 대표하는 작품
 - 비교 `/compare`: 차원을 고르면 도시 점수와 18개 도시 중앙값의 차이를 문장과 막대로 보여 줌
 
+#### 📐 6개 차원 — Six axes, one shape.
+
+<p align="center">
+  <img src="docs/screenshots/city-six-axes.jpg" alt="서울 도시 상세 — Six axes, one shape. 프레임 구조, 가장 높은 차원, 중앙값 대비 위치, 차원의 근거" width="95%">
+</p>
+
+| 번호 | 영역 | 내용 |
+| :---: | --- | --- |
+| 1 | 프레임 구조 | EU C3의 세 하위지수(Creative Economy · Cultural Vibrancy · Enabling Environment) 아래 6개 차원과 가중치 |
+| 2 | 가장 높은 차원 | 반원 게이지에서 도시의 최고 차원을 강조 (서울: 실험 81.5) |
+| 3 | 중앙값 대비 위치 | 차원마다 18개 도시 중앙값(점선)과 도시 점수, 차이 |
+| 4 | 차원의 근거 | 차원 정의를 가져온 문헌 — Beckert 2013 · Montalto 2023 · Becker 1982 · OECD 2018 · Braden 2019 |
+
+차원 점수는 `ILLUSTRATIVE` 배지가 붙은 예시값이며, 실측으로 바꾸는 일은 [로드맵](#roadmap) G3에 있습니다.
+
 <details>
 <summary>서울 상세 전체 화면</summary>
 
@@ -684,32 +699,53 @@ flowchart LR
 
 </div>
 
-비즈니스 문제 → 데이터·모델 → 화면 → 기술과 검증 → 다음 단계 순서의 HTML 슬라이드 20장(본문 19 · 부록 1, 약 13분)입니다. 기회 도시 모델(머신러닝·딥러닝), 팝업·비상설 전시·상설 전시 형식별 적합도, FastAPI 구조를 담았습니다. 방향키로 넘기고, 목차(T), 발표자 노트(P), 전체 화면(F), 캡처를 눌러 확대할 수 있습니다. 원본: [`public/slides.html`](public/slides.html)
+비즈니스 문제 → 데이터·모델 → 화면 → 기술과 검증 → 다음 단계 순서의 HTML 슬라이드 21장(본문 20 · 부록 1, 약 14분)입니다. 기회 도시 모델(머신러닝·딥러닝), 팝업·비상설 전시·상설 전시 형식별 적합도, FastAPI 구조를 담았습니다. 방향키로 넘기고, 목차(T), 발표자 노트(P), 전체 화면(F), 캡처를 눌러 확대할 수 있습니다. 원본: [`public/slides.html`](public/slides.html)
 
 <details open>
-<summary>슬라이드 20장 보기</summary>
+<summary>슬라이드 21장 보기</summary>
 
 <p align="center">
-<img src="docs/slides/01.jpg" alt="슬라이드 1" width="49%">
-<img src="docs/slides/02.jpg" alt="슬라이드 2" width="49%">
-<img src="docs/slides/03.jpg" alt="슬라이드 3" width="49%">
-<img src="docs/slides/04.jpg" alt="슬라이드 4" width="49%">
-<img src="docs/slides/05.jpg" alt="슬라이드 5" width="49%">
-<img src="docs/slides/06.jpg" alt="슬라이드 6" width="49%">
-<img src="docs/slides/07.jpg" alt="슬라이드 7" width="49%">
-<img src="docs/slides/08.jpg" alt="슬라이드 8" width="49%">
-<img src="docs/slides/09.jpg" alt="슬라이드 9" width="49%">
-<img src="docs/slides/10.jpg" alt="슬라이드 10" width="49%">
-<img src="docs/slides/11.jpg" alt="슬라이드 11" width="49%">
-<img src="docs/slides/12.jpg" alt="슬라이드 12" width="49%">
-<img src="docs/slides/13.jpg" alt="슬라이드 13" width="49%">
-<img src="docs/slides/14.jpg" alt="슬라이드 14" width="49%">
-<img src="docs/slides/15.jpg" alt="슬라이드 15" width="49%">
-<img src="docs/slides/16.jpg" alt="슬라이드 16" width="49%">
-<img src="docs/slides/17.jpg" alt="슬라이드 17" width="49%">
-<img src="docs/slides/18.jpg" alt="슬라이드 18" width="49%">
-<img src="docs/slides/19.jpg" alt="슬라이드 19" width="49%">
-<img src="docs/slides/20.jpg" alt="슬라이드 20" width="49%">
+<img src="docs/slides/01.jpg" alt="슬라이드 1" width="100%">
+
+<img src="docs/slides/02.jpg" alt="슬라이드 2" width="100%">
+
+<img src="docs/slides/03.jpg" alt="슬라이드 3" width="100%">
+
+<img src="docs/slides/04.jpg" alt="슬라이드 4" width="100%">
+
+<img src="docs/slides/05.jpg" alt="슬라이드 5" width="100%">
+
+<img src="docs/slides/06.jpg" alt="슬라이드 6" width="100%">
+
+<img src="docs/slides/07.jpg" alt="슬라이드 7" width="100%">
+
+<img src="docs/slides/08.jpg" alt="슬라이드 8" width="100%">
+
+<img src="docs/slides/09.jpg" alt="슬라이드 9" width="100%">
+
+<img src="docs/slides/10.jpg" alt="슬라이드 10" width="100%">
+
+<img src="docs/slides/11.jpg" alt="슬라이드 11" width="100%">
+
+<img src="docs/slides/12.jpg" alt="슬라이드 12" width="100%">
+
+<img src="docs/slides/13.jpg" alt="슬라이드 13" width="100%">
+
+<img src="docs/slides/14.jpg" alt="슬라이드 14" width="100%">
+
+<img src="docs/slides/15.jpg" alt="슬라이드 15" width="100%">
+
+<img src="docs/slides/16.jpg" alt="슬라이드 16" width="100%">
+
+<img src="docs/slides/17.jpg" alt="슬라이드 17" width="100%">
+
+<img src="docs/slides/18.jpg" alt="슬라이드 18" width="100%">
+
+<img src="docs/slides/19.jpg" alt="슬라이드 19" width="100%">
+
+<img src="docs/slides/20.jpg" alt="슬라이드 20" width="100%">
+
+<img src="docs/slides/21.jpg" alt="슬라이드 21" width="100%">
 </p>
 </details>
 
