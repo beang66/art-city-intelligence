@@ -10,6 +10,8 @@ export type OutcomeCase = {
   brand: string
   title: string
   format: FormatKey
+  theme: string
+  note?: string
   city: string
   venue: string
   start: string
@@ -38,6 +40,7 @@ export type OutcomeSummary = {
   casesByFormat: Record<FormatKey, number>
   cases: OutcomeCase[]
   cityOptions: string[]
+  themeOptions: { id: string; labelKo: string }[]
 }
 
 export const outcomeSummary = (snapshot as unknown as { outcomes: OutcomeSummary }).outcomes

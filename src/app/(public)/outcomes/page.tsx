@@ -18,6 +18,7 @@ const STAGES = [
 export default function OutcomesPage() {
   const s = outcomeSummary
   const rows = [...s.cases].sort((a, b) => a.format.localeCompare(b.format) || b.perDay - a.perDay)
+  const themeLabel = Object.fromEntries(s.themeOptions.map((t) => [t.id, t.labelKo]))
   return (
     <>
       <section className="section page-hero compact-hero">
@@ -72,7 +73,7 @@ export default function OutcomesPage() {
             <tbody>
               {rows.map((c) => (
                 <tr key={c.id}>
-                  <td><b>{c.brand}</b><small>{c.title}</small></td>
+                  <td><b>{c.brand}</b><small>{c.title}</small><small>주제: {themeLabel[c.theme] ?? c.theme}</small></td>
                   <td>{c.city}<small>{c.venue}</small></td>
                   <td>{FORMAT_LABEL[c.format]}<small>{c.admission === 'free' ? '무료' : c.admission === 'paid' ? '유료' : ''}</small></td>
                   <td className="num">{c.days}일<small>{c.start.slice(0, 7)}</small></td>
@@ -97,7 +98,7 @@ export default function OutcomesPage() {
           <div><p className="eyebrow">04 / RECORD</p><h2>Log one,<br /><span>see where it lands.</span></h2></div>
           <p className="section-intro">우리 브랜드의 전시·팝업 한 건을 넣으면 하루 방문객으로 바꿔 같은 형식 사례 기준 기대치와 비교합니다. 형식별 10건 이상 모이면 형식 가중치를 실제 성과로 다시 학습합니다.</p>
         </div>
-        <OutcomeRecorder cities={s.cityOptions} />
+        <OutcomeRecorder cities={s.cityOptions} themes={s.themeOptions} />
       </section>
     </>
   )

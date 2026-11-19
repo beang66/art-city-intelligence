@@ -1,2 +1,2 @@
-brand,title,format,city,venue,start,end,visitors,qualifier,admission,area_m2,evidence,source_title,source_url
-예시 브랜드,예시 팝업,popup,Seoul,성수,2026-03-01,2026-03-10,20000,exact,free,300,C,,
+brand,title,format,theme,city,venue,start,end,visitors,qualifier,admission,area_m2,evidence,source_title,source_url
+예시 브랜드,예시 팝업,popup,street-subculture,Seoul,성수,2026-03-01,2026-03-10,20000,exact,free,300,C,,

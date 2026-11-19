@@ -76,7 +76,13 @@ def summary() -> dict:
         "updatedAt": _file()["updatedAt"], "note": _file()["note"], "total": len(rows),
         "signalOnly": len(rows) < SIGNAL_BELOW, "minPeers": MIN_PEERS,
         "casesByFormat": by_format, "cases": rows, "cityOptions": sorted(scores().city.tolist()),
+        "themeOptions": [{"id": t["id"], "labelKo": t["labelKo"]} for t in _themes()],
     }
+
+
+@cache
+def _themes() -> list[dict]:
+    return json.loads((DATA.parent / "themes_v1.json").read_text(encoding="utf-8"))["themes"]
 
 
 def evaluate(body: dict) -> tuple[dict | None, str | None]:
