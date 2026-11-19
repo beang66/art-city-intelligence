@@ -10,6 +10,9 @@ export type OutcomeCase = {
   brand: string
   title: string
   format: FormatKey
+  theme: string
+  kind?: 'brand' | 'fair'
+  note?: string
   city: string
   venue: string
   start: string
@@ -36,8 +39,10 @@ export type OutcomeSummary = {
   signalOnly: boolean
   minPeers: number
   casesByFormat: Record<FormatKey, number>
+  fairCount: number
   cases: OutcomeCase[]
   cityOptions: string[]
+  themeOptions: { id: string; labelKo: string }[]
 }
 
 export const outcomeSummary = (snapshot as unknown as { outcomes: OutcomeSummary }).outcomes

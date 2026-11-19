@@ -18,7 +18,7 @@ type Result = {
 }
 
 const FORMAT_LABEL: Record<FormatKey, string> = { popup: '팝업', temporary: '비상설 전시', permanent: '상설 전시' }
-const CSV_HEADER = 'brand,title,format,city,venue,start,end,visitors,qualifier,admission,area_m2,evidence,source_title,source_url'
+const CSV_HEADER = 'brand,title,format,theme,city,venue,start,end,visitors,qualifier,admission,area_m2,evidence,source_title,source_url'
 
 function csvCell(value: string): string {
   return /[",\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value
@@ -26,7 +26,7 @@ function csvCell(value: string): string {
 
 // shortcut: nothing is stored server-side; records live in the CSV the user keeps. Add a table (and auth) once
 // several people log cases (roadmap G1 → G2).
-export function OutcomeRecorder({ cities }: { cities: string[] }) {
+export function OutcomeRecorder({ cities, themes }: { cities: string[]; themes: { id: string; labelKo: string }[] }) {
   const [state, setState] = useState<{ status: 'idle' | 'loading' | 'done' | 'error'; result?: Result; csv?: string; message?: string }>({ status: 'idle' })
   const [copied, setCopied] = useState(false)
 
@@ -48,7 +48,7 @@ export function OutcomeRecorder({ cities }: { cities: string[] }) {
       })
       const body = (await response.json()) as { data?: Result; error?: string }
       if (!response.ok || !body.data) throw new Error(body.error ?? '계산하지 못했습니다.')
-      const csv = [get('brand'), get('title'), get('format'), get('city'), get('venue'), get('start'), get('end'), get('visitors'),
+      const csv = [get('brand'), get('title'), get('format'), get('theme'), get('city'), get('venue'), get('start'), get('end'), get('visitors'),
         'exact', '', area, '', '', ''].map(csvCell).join(',')
       setState({ status: 'done', result: body.data, csv })
     } catch (error) {
@@ -74,6 +74,7 @@ export function OutcomeRecorder({ cities }: { cities: string[] }) {
         <label>브랜드<input name="brand" required maxLength={80} placeholder="예: 우리 브랜드" /></label>
         <label>전시·팝업 이름<input name="title" maxLength={120} /></label>
         <label>형식<select name="format" defaultValue="popup">{FORMAT_ORDER.map((key) => <option key={key} value={key}>{FORMAT_LABEL[key]}</option>)}</select></label>
+        <label>주제<select name="theme" defaultValue={themes[0]?.id}>{themes.map((t) => <option key={t.id} value={t.id}>{t.labelKo}</option>)}</select></label>
         <label>도시<select name="city" defaultValue="Seoul">{cities.map((city) => <option key={city}>{city}</option>)}</select></label>
         <label>장소·동네<input name="venue" maxLength={120} placeholder="예: 성수" /></label>
         <label>시작일<input name="start" type="date" required /></label>
