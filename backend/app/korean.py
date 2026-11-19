@@ -8,13 +8,5 @@ def _has_final_consonant(word: str) -> bool:
     return (ord(last) - 0xAC00) % 28 != 0
 
 
-def with_topic(word: str) -> str:
-    return word + ("은" if _has_final_consonant(word) else "는")
-
-
 def with_subject(word: str) -> str:
     return word + ("이" if _has_final_consonant(word) else "가")
-
-
-def with_object(word: str) -> str:
-    return word + ("을" if _has_final_consonant(word) else "를")

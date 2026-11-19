@@ -41,6 +41,3 @@ export function getObservation(slug: string): CityObservation | undefined {
 
 /** Cities carrying at least one observed rank. */
 export const observedCityCount = Object.keys(observations).length
-
-/** Cities with a rank in the global Top 100 table. */
-export const worldRankedCityCount = Object.values(observations).filter((o) => o.world).length

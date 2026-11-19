@@ -40,11 +40,6 @@ export function getCohortMedians(): Record<IndicatorKey, number> {
   return snapshot.cohortMedians as Record<IndicatorKey, number>
 }
 
-/** Median of the illustrative Art City Index across every city. */
-export function getIndexMedian(): number {
-  return snapshot.indexMedian
-}
-
 export type SignalKey = 'market' | 'cultural' | 'opportunity'
 
 export type SignalStat = {
