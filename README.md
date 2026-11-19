@@ -140,7 +140,7 @@
 ```mermaid
 flowchart TB
     subgraph Client["🖥️ 브라우저"]
-        PG["/overview · /cities/[slug]<br>/compare · /opportunity · /methodology"]
+        PG["/overview · /cities/[slug]<br>/compare · /opportunity · /outcomes · /methodology"]
         AD["/admin/*"]
     end
     subgraph Vercel["▲ Vercel — Next.js"]
@@ -416,12 +416,13 @@ flowchart LR
 - `/opportunity`: 형식 탭(팝업 · 비상설 전시 · 상설 전시)으로 적합도 상위 15개와 가중치, What-if 폼은 FastAPI `/api/opportunity/predict`(joblib 모델)를 호출
 - 정적 수치는 빌드 전에 `export_snapshot.py`가 API와 같은 함수로 만든 스냅숏에서 읽고, What-if만 실행 중에 API를 부름
 
-### 📏 성과 기록 `/outcomes`
+### 📏 성과 기록 `/outcomes` · Opportunity 탭의 AFTER 화면
 
 <p align="center">
   <img src="docs/screenshots/web-outcomes.jpg" alt="성과 기록 — 측정 4단계, 공개 사례 8건의 하루 방문객과 기대 대비, 기록 폼" width="70%">
 </p>
 
+- **위치:** 헤더 탭은 6개(Overview · Cities · Compare · Opportunity · Methodology · Admin)로 둡니다. 실행 전 기대(`/opportunity`)와 실행 후 성과(`/outcomes`)는 한 흐름이라 Opportunity 탭 하나에 묶고, 두 화면 위 '기회 찾기 / 성과 기록' 전환으로 오갑니다
 - **측정 4단계:** 기대 → 방문 → 인지 → 매출 중 공개 데이터로 가능한 단계와 브랜드 데이터가 필요한 단계를 표시
 - **공개 사례:** 관람객 수가 발표·보도된 브랜드 전시·팝업 8건(`backend/data/exhibition_outcomes_v1.json`, 근거 A·B와 출처 링크). 하루 방문객으로 바꾸고, 같은 형식 다른 사례의 중앙값 × 도시 적합도 비율로 기대치를 만들어 비교(자기 자신은 기준에서 제외, 비교 사례 3건 미만이면 기대치 없음)
 - **기록 폼:** 도시·형식·기간·방문객·면적을 넣으면 FastAPI `/api/outcomes/evaluate`가 하루·㎡당 방문객과 기대 대비를 계산. 저장하지 않고 [기록 양식 CSV](public/templates/exhibition_outcome_template.csv) 한 줄로 복사
