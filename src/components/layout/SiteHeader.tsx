@@ -8,6 +8,7 @@ const tabs = [
   { label: 'Overview', href: '/overview', match: ['/overview', '/'] },
   { label: 'Cities', href: '/cities/seoul', match: ['/cities'] },
   { label: 'Compare', href: '/compare', match: ['/compare'] },
+  { label: 'Opportunity', href: '/opportunity', match: ['/opportunity'] },
   { label: 'Methodology', href: '/methodology', match: ['/methodology'] },
   { label: 'Admin', href: '/admin/cities', match: ['/admin'] },
 ] as const

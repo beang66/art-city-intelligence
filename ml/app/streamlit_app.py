@@ -13,12 +13,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from formats import COMPONENT_LABELS, FORMATS, fit_scores
+from formats import COMPONENT_LABELS, FORMATS, cluster_labels, fit_scores
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA, MODELS = ROOT / "ml/data", ROOT / "ml/models"
 ACCENT, SLATE, INK = "#FF5438", "#3F5570", "#141413"
-CLUSTER_NAMES = {}  # filled from medians below
 
 st.set_page_config(page_title="Art City Intelligence — 기회 도시", page_icon="🌍", layout="wide")
 
@@ -44,24 +43,10 @@ def load_similar() -> dict | None:
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
 
 
-def cluster_labels(df: pd.DataFrame) -> dict[int, str]:
-    """Names each cluster by its median profile so the labels follow whatever k the notebook chose."""
-    med = df.groupby("cluster")[["lovability", "prosperity", "population"]].median()
-    names = {}
-    for c, row in med.iterrows():
-        if row.lovability <= 15 and row.prosperity <= 15:
-            names[c] = "글로벌 허브"
-        elif row.population >= med.population.median() and row.lovability < row.prosperity:
-            names[c] = "매력 앞선 대도시"
-        else:
-            names[c] = "살기 좋은 중형 도시"
-    return {c: f"{names[c]} (#{c})" for c in names}
-
-
 df = load_scores()
 card = load_card()
 model = load_model()
-df["유형"] = df.cluster.map(cluster_labels(df))
+df["유형"] = df.cluster.map({c: f"{n} (#{c})" for c, n in cluster_labels(df).items()})
 
 st.title("🌍 기회 도시 탐색기")
 st.markdown(

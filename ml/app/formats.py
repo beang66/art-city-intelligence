@@ -40,6 +40,20 @@ COMPONENT_LABELS = {
 }
 
 
+def cluster_labels(df: pd.DataFrame) -> dict[int, str]:
+    """Names each KMeans cluster by its median profile, so labels follow whatever k the notebook chose."""
+    med = df.groupby("cluster")[["lovability", "prosperity", "population"]].median()
+    names = {}
+    for c, row in med.iterrows():
+        if row.lovability <= 15 and row.prosperity <= 15:
+            names[c] = "글로벌 허브"
+        elif row.population >= med.population.median() and row.lovability < row.prosperity:
+            names[c] = "매력 앞선 대도시"
+        else:
+            names[c] = "살기 좋은 중형 도시"
+    return {int(c): names[c] for c in names}
+
+
 def _scale(values: pd.Series) -> pd.Series:
     span = values.max() - values.min()
     return (values - values.min()) / span if span else values * 0
