@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OpportunityNav } from '@/components/opportunity/OpportunityNav'
 import { OutcomeRecorder } from '@/components/outcomes/OutcomeRecorder'
 import { FORMAT_ORDER } from '@/features/opportunity/service'
 import { outcomeSummary, reportedVisitors } from '@/features/outcomes/service'
@@ -21,6 +22,7 @@ export default function OutcomesPage() {
     <>
       <section className="section page-hero compact-hero">
         <div>
+          <OpportunityNav current="/outcomes" />
           <p className="eyebrow">01 / OUTCOMES — 성과 기록</p>
           <h1>Did it beat<br /><span>the city&apos;s baseline?</span></h1>
           <p className="lede">

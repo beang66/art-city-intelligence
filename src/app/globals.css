@@ -30,7 +30,7 @@ a { text-decoration: none; }
 .brand-mark i:nth-child(1) { top: 2px; }
 .brand-mark i:nth-child(2) { top: 12px; left: 0; }
 .brand-mark i:nth-child(3) { top: 22px; left: -4px; }
-.category-tabs { --tab-width: 96px; --header-control-height: 40px; height: var(--header-control-height); display: grid; grid-template-columns: repeat(7, var(--tab-width)); gap: 3px; background: #050506; border: 2px solid #050506; border-radius: 9px; padding: 0; overflow: hidden; }
+.category-tabs { --tab-width: 96px; --header-control-height: 40px; height: var(--header-control-height); display: grid; grid-template-columns: repeat(6, var(--tab-width)); gap: 3px; background: #050506; border: 2px solid #050506; border-radius: 9px; padding: 0; overflow: hidden; }
 .category-tabs { position: relative; }
 .tab { position: relative; width: var(--tab-width); height: 36px; padding: 0; display: grid; place-items: center; border-radius: 6px; background: #1e2025; color: #c7c9ce; font-size: 11px; font-weight: 600; white-space: nowrap; transition: color .25s ease, background .25s ease; }
 .tab > span { position: relative; z-index: 2; }
@@ -755,7 +755,7 @@ small { font-size: 14px; }
 :focus-visible { outline: 3px solid rgba(255,84,56,.55); outline-offset: 3px; }
 
 @media (max-width: 1000px) {
-  .category-tabs { --tab-width: 90px; grid-template-columns: repeat(7, var(--tab-width)); }
+  .category-tabs { --tab-width: 90px; grid-template-columns: repeat(6, var(--tab-width)); }
   .tab { width: var(--tab-width); }
   .page-hero { grid-template-columns: 1fr; padding-top: 105px; min-height: auto; }
   .page-hero.compact-hero { min-height: auto; }
@@ -997,3 +997,10 @@ small { font-size: 14px; }
 .outcome-form .model-note a { color: var(--accent); font-weight: 600; }
 @media (max-width: 900px) { .outcome-stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .outcome-stages { grid-template-columns: 1fr; } }
+
+/* Opportunity 탭 아래 기회 찾기 / 성과 기록 전환 */
+.sub-nav { margin-bottom: 22px; }
+.sub-nav a { padding: 10px 16px; font-size: 13px; color: var(--ink); text-decoration: none; }
+.sub-nav a .mono { font-size: 10px; letter-spacing: .04em; opacity: .6; margin-right: 4px; }
+.sub-nav a.selected { background: var(--dark); color: #fff; }
+.sub-nav a.selected .mono { opacity: .8; }
