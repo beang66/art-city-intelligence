@@ -1,0 +1,31 @@
+{
+  "version": "v1",
+  "updated": "2026-11-19",
+  "note": "브랜드 전시 주제 목록. 각 주제는 설명문만 가지며, 6개 차원 가중치와 도시 적합도는 ml/scripts/theme_similarity.py가 문장 임베딩으로 계산합니다. 브랜드는 실제 회사가 아니라 분야입니다.",
+  "themes": [
+    {"id": "media-art", "labelKo": "미디어아트·몰입형 전시", "label": "Media art & immersive", "brandsKo": ["전자·IT", "자동차", "통신"],
+     "text": "빛과 영상, 센서와 인터랙션으로 관객을 감싸는 몰입형 미디어아트 전시. 기술 실험과 새로운 매체, 디지털 제작 역량이 중요하다."},
+    {"id": "craft-living", "labelKo": "공예·리빙", "label": "Craft & living", "brandsKo": ["가구", "리빙·주방", "조명"],
+     "text": "장인의 손작업과 재료, 공방과 제작 현장을 보여주는 공예·리빙 전시. 지역의 제작 기반과 공예 전통, 생활 사물의 품질이 중요하다."},
+    {"id": "luxury-heritage", "labelKo": "럭셔리 헤리티지 아카이브", "label": "Luxury heritage archive", "brandsKo": ["패션 하우스", "주얼리", "시계"],
+     "text": "하우스의 역사와 아카이브, 장인 기술을 미술관 수준으로 보여주는 헤리티지 회고전. 미술관과 컬렉터, 고가 시장과 국제적 명성이 중요하다."},
+    {"id": "street-subculture", "labelKo": "스트리트·서브컬처 팝업", "label": "Street & subculture pop-up", "brandsKo": ["스포츠웨어", "스니커즈", "음료"],
+     "text": "그래피티와 음악, 스케이트와 클럽 문화 같은 하위문화를 끌어오는 짧은 팝업. 젊은 관객의 참여와 거리 문화, 자율적인 실험 공간이 중요하다."},
+    {"id": "architecture-design", "labelKo": "건축·디자인 쇼케이스", "label": "Architecture & design showcase", "brandsKo": ["가구", "건자재", "조명"],
+     "text": "건축과 산업 디자인, 디자인 위크와 비엔날레의 형식을 빌린 쇼케이스. 디자인 기관과 국제 행사, 비평과 담론의 영향력이 중요하다."},
+    {"id": "collector-edition", "labelKo": "작가 협업 에디션", "label": "Artist collaboration edition", "brandsKo": ["주류·와인", "뷰티", "패션 액세서리"],
+     "text": "현대미술 작가와 협업한 한정 에디션을 선보이고 판매하는 전시. 갤러리와 아트페어, 컬렉터 시장과 작가의 평판이 중요하다."},
+    {"id": "sustainable-material", "labelKo": "지속가능 소재·순환", "label": "Sustainable materials", "brandsKo": ["아웃도어", "소재", "패키징"],
+     "text": "재활용과 순환, 새로운 친환경 소재의 연구와 제작 과정을 보여주는 전시. 연구 기관과 실험적 제작, 시민 참여와 정책 담론이 중요하다."},
+    {"id": "hospitality-residency", "labelKo": "호텔·라이프스타일 레지던시", "label": "Hospitality residency", "brandsKo": ["호텔", "F&B", "라이프스타일"],
+     "text": "호텔과 레스토랑 공간에 작가를 머물게 하고 작품을 생활 공간에 두는 레지던시형 전시. 관광객과 방문객의 참여, 국제적 인지도가 중요하다."},
+    {"id": "sound-performance", "labelKo": "사운드·퍼포먼스", "label": "Sound & performance", "brandsKo": ["오디오", "음악 플랫폼", "가전"],
+     "text": "사운드 아트와 라이브 퍼포먼스, 공연과 페스티벌을 결합한 전시. 실험적인 예술가 공동체와 관객이 함께 만드는 현장성이 중요하다."},
+    {"id": "food-culture", "labelKo": "식문화·미식", "label": "Food culture", "brandsKo": ["F&B", "주방가전", "식품"],
+     "text": "음식과 시장, 식탁의 문화를 주제로 한 참여형 전시와 테이스팅. 지역 시장과 일상 문화, 방문객의 직접 참여가 중요하다."},
+    {"id": "brand-museum", "labelKo": "브랜드 뮤지엄(상설)", "label": "Permanent brand museum", "brandsKo": ["자동차", "패션 하우스", "식음료 헤리티지"],
+     "text": "브랜드의 역사를 상설로 보여주는 기업 박물관과 아카이브 공간. 박물관 기관의 두께와 오래 머무는 관람객, 도시의 문화적 위상이 중요하다."},
+    {"id": "digital-fashion", "labelKo": "디지털 패션·게임", "label": "Digital fashion & games", "brandsKo": ["패션 테크", "게임", "스포츠웨어"],
+     "text": "가상 의상과 게임 엔진, 아바타와 온라인 커뮤니티를 다루는 디지털 패션 전시. 기술 실험과 젊은 관객, 새로운 유통 방식이 중요하다."}
+  ]
+}

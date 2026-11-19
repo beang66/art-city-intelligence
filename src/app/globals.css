@@ -857,3 +857,41 @@ small { font-size: 14px; }
 .sub-nav a .mono { font-size: 10px; letter-spacing: .04em; opacity: .6; margin-right: 4px; }
 .sub-nav a.selected { background: var(--dark); color: #fff; }
 .sub-nav a.selected .mono { opacity: .8; }
+
+/* Compare — 도시 고르기, 막대별 근거, 브랜드 전시 추천 */
+.compare-picker { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; padding-bottom: 34px; margin-bottom: 52px; border-bottom: 1px solid var(--line); }
+.compare-picker .mono { display: block; margin-bottom: 10px; font-size: 11px; color: var(--muted); }
+.compare-picker select { width: 100%; height: 40px; padding: 0 12px; border: 1px solid var(--ink); border-radius: 8px; background: var(--paper); font: 500 14px Inter, sans-serif; }
+.compare-picker-peers div { display: flex; flex-wrap: wrap; gap: 6px; }
+.compare-picker-peers button { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); font-size: 13px; color: #45484b; }
+.compare-picker-peers button:hover { border-color: var(--ink); color: var(--ink); }
+.compare-picker-peers button.is-on { background: var(--dark); border-color: var(--dark); color: #fff; }
+.explorer-bars-head { margin-bottom: 8px; }
+.explorer-bar-value small { margin-left: 4px; font-size: 10px; color: var(--muted); }
+.explorer-bar { grid-template-columns: 150px minmax(0, 1fr) 90px; }
+.explorer-bar-evidence { grid-column: 2 / -1; margin-top: -4px; font-size: 12px; line-height: 1.6; color: #6c6f73; word-break: keep-all; }
+.theme-picks { margin-top: 64px; padding-top: 34px; border-top: 1px solid var(--line); }
+.theme-picks-head h4 { margin-top: 14px; font-size: clamp(24px, 2.4vw, 34px); font-weight: 500; letter-spacing: -.04em; }
+.theme-picks-head p:last-child { max-width: 760px; margin-top: 12px; font-size: 14px; line-height: 1.75; color: #45484b; word-break: keep-all; }
+.theme-picks ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 26px 0 0; padding: 0; list-style: none; counter-reset: pick; }
+.theme-picks li { counter-increment: pick; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
+.theme-picks li::before { content: counter(pick, decimal-leading-zero); display: block; margin-bottom: 12px; font: 11px 'DM Mono', monospace; color: var(--accent); }
+.theme-picks li.is-weak { background: transparent; }
+.theme-picks li strong { display: block; font-size: 19px; font-weight: 600; letter-spacing: -.03em; }
+.theme-brands { display: block; margin-top: 6px; font-size: 13px; color: #45484b; }
+.theme-picks dl { margin: 16px 0 0; display: grid; gap: 8px; }
+.theme-picks dl div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 8px; font-size: 12px; line-height: 1.55; }
+.theme-picks dt { font-family: 'DM Mono', monospace; color: var(--muted); }
+.theme-picks dd { margin: 0; word-break: keep-all; }
+.text-button { padding: 0; background: none; color: var(--accent); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) {
+  .compare-picker { grid-template-columns: 1fr; }
+  .theme-picks ol { grid-template-columns: 1fr; }
+}
+/* 한국어 라벨·설명은 모노 글꼴과 넓은 자간을 쓰지 않음 */
+.compare-picker .mono, .theme-picks dt { font-family: Inter, 'Pretendard', sans-serif; letter-spacing: 0; font-size: 12px; }
+.explorer-bars-note, .theme-picks-note { font-family: Inter, 'Pretendard', sans-serif; font-size: 12px; letter-spacing: 0; line-height: 1.7; color: #8a9097; word-break: keep-all; }
+.theme-picks-note { margin-top: 16px; }
+@media (max-width: 760px) {
+  .explorer-bar { grid-template-columns: 92px minmax(0, 1fr) 76px; }
+}

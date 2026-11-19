@@ -1,6 +1,6 @@
 """Everything the static pages need, computed once by the same functions the API uses."""
 from app import data
-from app.services import observed, opportunity, outcomes, scoring
+from app.services import observed, opportunity, outcomes, recommend, scoring
 
 
 def build() -> dict:
@@ -27,4 +27,5 @@ def build() -> dict:
             "cities": {city["slug"]: opportunity.city_model(city["name"]) for city in data.cities()},
         },
         "outcomes": outcomes.summary(),
+        "themes": recommend.summary(),
     }

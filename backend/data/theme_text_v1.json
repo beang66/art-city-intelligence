@@ -1,0 +1,1654 @@
+{
+ "version": "v1",
+ "updated": "2026-11-19",
+ "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+ "temperature": 0.05,
+ "weights": {
+  "media-art": {
+   "market": 0.050999999046325684,
+   "institution": 0.006000000052154064,
+   "production": 0.12700000405311584,
+   "experiment": 0.8050000071525574,
+   "participation": 0.00800000037997961,
+   "influence": 0.003000000026077032
+  },
+  "craft-living": {
+   "market": 0.10599999874830246,
+   "institution": 0.46299999952316284,
+   "production": 0.09799999743700027,
+   "experiment": 0.0,
+   "participation": 0.30300000309944153,
+   "influence": 0.029999999329447746
+  },
+  "luxury-heritage": {
+   "market": 0.22300000488758087,
+   "institution": 0.6029999852180481,
+   "production": 0.05000000074505806,
+   "experiment": 0.009999999776482582,
+   "participation": 0.032999999821186066,
+   "influence": 0.08100000023841858
+  },
+  "street-subculture": {
+   "market": 0.017999999225139618,
+   "institution": 0.07599999755620956,
+   "production": 0.006000000052154064,
+   "experiment": 0.04899999871850014,
+   "participation": 0.8479999899864197,
+   "influence": 0.003000000026077032
+  },
+  "architecture-design": {
+   "market": 0.035999998450279236,
+   "institution": 0.09399999678134918,
+   "production": 0.06400000303983688,
+   "experiment": 0.01899999938905239,
+   "participation": 0.1340000033378601,
+   "influence": 0.652999997138977
+  },
+  "collector-edition": {
+   "market": 0.28999999165534973,
+   "institution": 0.45100000500679016,
+   "production": 0.19900000095367432,
+   "experiment": 0.004000000189989805,
+   "participation": 0.05299999937415123,
+   "influence": 0.0020000000949949026
+  },
+  "sustainable-material": {
+   "market": 0.029999999329447746,
+   "institution": 0.013000000268220901,
+   "production": 0.004999999888241291,
+   "experiment": 0.7979999780654907,
+   "participation": 0.125,
+   "influence": 0.028999999165534973
+  },
+  "hospitality-residency": {
+   "market": 0.0,
+   "institution": 0.009999999776482582,
+   "production": 0.0,
+   "experiment": 0.0,
+   "participation": 0.0430000014603138,
+   "influence": 0.9470000267028809
+  },
+  "sound-performance": {
+   "market": 0.07800000160932541,
+   "institution": 0.054999999701976776,
+   "production": 0.24500000476837158,
+   "experiment": 0.01600000075995922,
+   "participation": 0.6060000061988831,
+   "influence": 0.0010000000474974513
+  },
+  "food-culture": {
+   "market": 0.017999999225139618,
+   "institution": 0.28299999237060547,
+   "production": 0.0020000000949949026,
+   "experiment": 0.0,
+   "participation": 0.6100000143051147,
+   "influence": 0.08799999952316284
+  },
+  "brand-museum": {
+   "market": 0.0,
+   "institution": 0.9900000095367432,
+   "production": 0.0,
+   "experiment": 0.0,
+   "participation": 0.008999999612569809,
+   "influence": 0.0010000000474974513
+  },
+  "digital-fashion": {
+   "market": 0.01600000075995922,
+   "institution": 0.004999999888241291,
+   "production": 0.010999999940395355,
+   "experiment": 0.9229999780654907,
+   "participation": 0.041999999433755875,
+   "influence": 0.0020000000949949026
+  }
+ },
+ "cities": {
+  "seoul": {
+   "media-art": {
+    "sim": 0.4056,
+    "matches": [
+     "디지털 물성",
+     "Seoul Mediacity Biennale"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.3946,
+    "matches": [
+     "Seoul Museum of Art",
+     "기관 규모"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.4154,
+    "matches": [
+     "Seoul Museum of Art",
+     "가구"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.4063,
+    "matches": [
+     "Seoul Mediacity Biennale",
+     "네트워크형 실험 도시"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4079,
+    "matches": [
+     "Seoul Museum of Art",
+     "기관 규모"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.3665,
+    "matches": [
+     "Seoul Museum of Art",
+     "Seoul Mediacity Biennale"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3936,
+    "matches": [
+     "디지털 물성",
+     "네트워크형 실험 도시"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.3867,
+    "matches": [
+     "네트워크형 실험 도시",
+     "가구"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.416,
+    "matches": [
+     "Seoul Museum of Art",
+     "Seoul Mediacity Biennale"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4475,
+    "matches": [
+     "Seoul Mediacity Biennale",
+     "Seoul Museum of Art"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5289,
+    "matches": [
+     "Seoul Museum of Art",
+     "Seoul Mediacity Biennale"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.4381,
+    "matches": [
+     "디지털 물성",
+     "네트워크형 실험 도시"
+    ]
+   }
+  },
+  "berlin": {
+   "media-art": {
+    "sim": 0.2786,
+    "matches": [
+     "Gallery Weekend",
+     "밀집된 제작 · 열린 네트워크"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4006,
+    "matches": [
+     "도시 공간",
+     "Berlin Art Week"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.4185,
+    "matches": [
+     "Berlin Art Week",
+     "Gallery Weekend"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2813,
+    "matches": [
+     "도시 공간",
+     "밀집된 제작 · 열린 네트워크"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.3711,
+    "matches": [
+     "Gallery Weekend",
+     "Berlin Art Week"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.3787,
+    "matches": [
+     "Gallery Weekend",
+     "Berlin Art Week"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.391,
+    "matches": [
+     "독립 제작 실험실",
+     "재사용"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4084,
+    "matches": [
+     "도시 공간",
+     "Gallery Weekend"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.3921,
+    "matches": [
+     "Gallery Weekend",
+     "Berlin Art Week"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4104,
+    "matches": [
+     "도시 공간",
+     "Gallery Weekend"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.4613,
+    "matches": [
+     "도시 공간",
+     "Gallery Weekend"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.2946,
+    "matches": [
+     "Gallery Weekend",
+     "패션"
+    ]
+   }
+  },
+  "london": {
+   "media-art": {
+    "sim": 0.2745,
+    "matches": [
+     "London Gallery Weekend",
+     "시장의 깊이 · 기관의 영향력"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.396,
+    "matches": [
+     "공공 기관",
+     "시장의 깊이 · 기관의 영향력"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5211,
+    "matches": [
+     "London Gallery Weekend",
+     "Tate Modern"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2974,
+    "matches": [
+     "시장의 깊이 · 기관의 영향력",
+     "공공 기관"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4798,
+    "matches": [
+     "London Gallery Weekend",
+     "시장의 깊이 · 기관의 영향력"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4786,
+    "matches": [
+     "London Gallery Weekend",
+     "시장의 깊이 · 기관의 영향력"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3501,
+    "matches": [
+     "공공 기관",
+     "글로벌 시장·기관 중심지"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4873,
+    "matches": [
+     "London Gallery Weekend",
+     "글로벌 시장·기관 중심지"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4029,
+    "matches": [
+     "London Gallery Weekend",
+     "공공 기관"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4991,
+    "matches": [
+     "글로벌 시장·기관 중심지",
+     "시장의 깊이 · 기관의 영향력"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5302,
+    "matches": [
+     "London Gallery Weekend",
+     "글로벌 시장·기관 중심지"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.2939,
+    "matches": [
+     "London Gallery Weekend",
+     "패션"
+    ]
+   }
+  },
+  "new-york": {
+   "media-art": {
+    "sim": 0.3091,
+    "matches": [
+     "미디어",
+     "갤러리 네트워크"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.322,
+    "matches": [
+     "New Museum",
+     "The Armory Show"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.4583,
+    "matches": [
+     "New Museum",
+     "갤러리 네트워크"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2323,
+    "matches": [
+     "시장 유동성",
+     "미디어"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4298,
+    "matches": [
+     "The Armory Show",
+     "국제적 영향력"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4365,
+    "matches": [
+     "갤러리 네트워크",
+     "New Museum"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3511,
+    "matches": [
+     "New Museum",
+     "갤러리 네트워크"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.414,
+    "matches": [
+     "갤러리 네트워크",
+     "국제적 영향력"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.3165,
+    "matches": [
+     "갤러리 네트워크",
+     "New Museum"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.3809,
+    "matches": [
+     "갤러리 네트워크",
+     "시장 유동성"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.4665,
+    "matches": [
+     "New Museum",
+     "갤러리 네트워크"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.3107,
+    "matches": [
+     "갤러리 네트워크",
+     "The Armory Show"
+    ]
+   }
+  },
+  "mexico-city": {
+   "media-art": {
+    "sim": 0.3178,
+    "matches": [
+     "Material Art Fair",
+     "재료의 문화 · 독립적 에너지"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.6001,
+    "matches": [
+     "Material Art Fair",
+     "지역 재료"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5635,
+    "matches": [
+     "Material Art Fair",
+     "재료의 문화 · 독립적 에너지"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.4288,
+    "matches": [
+     "재료의 문화 · 독립적 에너지",
+     "로컬–글로벌 생성 도시"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4286,
+    "matches": [
+     "Material Art Fair",
+     "Museo Jumex"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4897,
+    "matches": [
+     "Material Art Fair",
+     "작가 운영 공간"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4972,
+    "matches": [
+     "Material Art Fair",
+     "재료의 문화 · 독립적 에너지"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4921,
+    "matches": [
+     "작가 운영 공간",
+     "관광"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.5082,
+    "matches": [
+     "Material Art Fair",
+     "재료의 문화 · 독립적 에너지"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.594,
+    "matches": [
+     "공공적 삶",
+     "로컬–글로벌 생성 도시"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5623,
+    "matches": [
+     "Museo Jumex",
+     "Material Art Fair"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.3546,
+    "matches": [
+     "Material Art Fair",
+     "재료의 문화 · 독립적 에너지"
+    ]
+   }
+  },
+  "melbourne": {
+   "media-art": {
+    "sim": 0.398,
+    "matches": [
+     "영상 매체",
+     "Melbourne Art Fair"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4446,
+    "matches": [
+     "Melbourne Art Fair",
+     "시민 접근성 · 분산된 문화"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.4348,
+    "matches": [
+     "Melbourne Art Fair",
+     "시민 접근성 · 분산된 문화"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.3988,
+    "matches": [
+     "시민 접근성 · 분산된 문화",
+     "Melbourne Art Fair"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4095,
+    "matches": [
+     "Melbourne Art Fair",
+     "관광"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.469,
+    "matches": [
+     "Melbourne Art Fair",
+     "시민 접근성 · 분산된 문화"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4372,
+    "matches": [
+     "시민 참여 허브",
+     "시민 접근성 · 분산된 문화"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4858,
+    "matches": [
+     "시민 접근성 · 분산된 문화",
+     "관광"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.5387,
+    "matches": [
+     "Melbourne Art Fair",
+     "시민 접근성 · 분산된 문화"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.5415,
+    "matches": [
+     "시민 접근성 · 분산된 문화",
+     "시민 참여 허브"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.4507,
+    "matches": [
+     "Melbourne Art Fair",
+     "시민 접근성 · 분산된 문화"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.388,
+    "matches": [
+     "영상 매체",
+     "Melbourne Art Fair"
+    ]
+   }
+  },
+  "amsterdam": {
+   "media-art": {
+    "sim": 0.4464,
+    "matches": [
+     "EYE Filmmuseum",
+     "테크"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4704,
+    "matches": [
+     "Stedelijk Museum",
+     "Art Amsterdam"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5396,
+    "matches": [
+     "Art Amsterdam",
+     "Stedelijk Museum"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2493,
+    "matches": [
+     "기관 비평 · 공공 접근성",
+     "Art Amsterdam"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.5424,
+    "matches": [
+     "Art Amsterdam",
+     "Stedelijk Museum"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.5154,
+    "matches": [
+     "Art Amsterdam",
+     "Stedelijk Museum"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4902,
+    "matches": [
+     "Stedelijk Museum",
+     "기관 비평 · 공공 접근성"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4466,
+    "matches": [
+     "Stedelijk Museum",
+     "Art Amsterdam"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4838,
+    "matches": [
+     "Art Amsterdam",
+     "Stedelijk Museum"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4137,
+    "matches": [
+     "Stedelijk Museum",
+     "Art Amsterdam"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.4824,
+    "matches": [
+     "Stedelijk Museum",
+     "Art Amsterdam"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.3656,
+    "matches": [
+     "테크",
+     "Stedelijk Museum"
+    ]
+   }
+  },
+  "beijing": {
+   "media-art": {
+    "sim": 0.2982,
+    "matches": [
+     "테크",
+     "규모의 인프라 · 문화적 영향력"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.5135,
+    "matches": [
+     "규모의 인프라 · 문화적 영향력",
+     "CAFA Art Museum"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5443,
+    "matches": [
+     "CAFA Art Museum",
+     "Art Beijing"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2762,
+    "matches": [
+     "규모의 인프라 · 문화적 영향력",
+     "Beijing 798 Art Festival"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4652,
+    "matches": [
+     "규모의 인프라 · 문화적 영향력",
+     "건축"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4691,
+    "matches": [
+     "CAFA Art Museum",
+     "Art Beijing"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4221,
+    "matches": [
+     "규모의 인프라 · 문화적 영향력",
+     "CAFA Art Museum"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4089,
+    "matches": [
+     "규모의 인프라 · 문화적 영향력",
+     "Art Beijing"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4604,
+    "matches": [
+     "CAFA Art Museum",
+     "Beijing 798 Art Festival"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4673,
+    "matches": [
+     "규모의 인프라 · 문화적 영향력",
+     "CAFA Art Museum"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5274,
+    "matches": [
+     "규모의 인프라 · 문화적 영향력",
+     "CAFA Art Museum"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.303,
+    "matches": [
+     "테크",
+     "규모의 인프라 · 문화적 영향력"
+    ]
+   }
+  },
+  "barcelona": {
+   "media-art": {
+    "sim": 0.3584,
+    "matches": [
+     "비디오 아트",
+     "건축 문화 · 풀뿌리 에너지"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.5241,
+    "matches": [
+     "건축 문화",
+     "Art Barcelona"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.6322,
+    "matches": [
+     "건축 문화 · 풀뿌리 에너지",
+     "Art Barcelona"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.3755,
+    "matches": [
+     "Loop Festival",
+     "건축 문화"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.5687,
+    "matches": [
+     "건축 문화",
+     "Art Barcelona"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.5336,
+    "matches": [
+     "건축 문화 · 풀뿌리 에너지",
+     "Art Barcelona"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4329,
+    "matches": [
+     "건축 문화 · 풀뿌리 에너지",
+     "관광"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.5315,
+    "matches": [
+     "건축 문화 · 풀뿌리 에너지",
+     "관광"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.5617,
+    "matches": [
+     "건축 문화 · 풀뿌리 에너지",
+     "Loop Festival"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4849,
+    "matches": [
+     "건축 문화",
+     "Loop Festival"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5782,
+    "matches": [
+     "건축 문화",
+     "Art Barcelona"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.3616,
+    "matches": [
+     "비디오 아트",
+     "건축 문화"
+    ]
+   }
+  },
+  "chicago": {
+   "media-art": {
+    "sim": 0.2938,
+    "matches": [
+     "공공 접근성 · 소장품의 깊이",
+     "Art Institute of Chicago"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4512,
+    "matches": [
+     "공공 접근성 · 소장품의 깊이",
+     "건축"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5007,
+    "matches": [
+     "Art Institute of Chicago",
+     "건축"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2642,
+    "matches": [
+     "공공 접근성 · 소장품의 깊이",
+     "시민 컬렉션 선도 도시"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.3951,
+    "matches": [
+     "건축",
+     "Chicago Architecture Biennial"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4972,
+    "matches": [
+     "Art Institute of Chicago",
+     "공공 접근성 · 소장품의 깊이"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4277,
+    "matches": [
+     "공공 접근성 · 소장품의 깊이",
+     "시민 컬렉션"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4208,
+    "matches": [
+     "공공 접근성 · 소장품의 깊이",
+     "시민 컬렉션 선도 도시"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4417,
+    "matches": [
+     "Art Institute of Chicago",
+     "공공 접근성 · 소장품의 깊이"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.43,
+    "matches": [
+     "공공 접근성 · 소장품의 깊이",
+     "시민 컬렉션 선도 도시"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.508,
+    "matches": [
+     "시민 컬렉션 선도 도시",
+     "공공 접근성 · 소장품의 깊이"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.2639,
+    "matches": [
+     "공공 접근성 · 소장품의 깊이",
+     "EXPO Chicago"
+    ]
+   }
+  },
+  "dubai": {
+   "media-art": {
+    "sim": 0.229,
+    "matches": [
+     "Art Dubai",
+     "글로벌 연결 허브"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.3696,
+    "matches": [
+     "Art Dubai",
+     "Jameel Arts Centre"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.4323,
+    "matches": [
+     "Art Dubai",
+     "Louvre Abu Dhabi"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2538,
+    "matches": [
+     "자유구역 문화",
+     "자본의 이동성 · 동서 교량"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4168,
+    "matches": [
+     "Dubai Design Week",
+     "Art Dubai"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.3352,
+    "matches": [
+     "Art Dubai",
+     "Jameel Arts Centre"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3501,
+    "matches": [
+     "초고액자산가",
+     "Art Dubai"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4841,
+    "matches": [
+     "Louvre Abu Dhabi",
+     "Art Dubai"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.294,
+    "matches": [
+     "Art Dubai",
+     "Jameel Arts Centre"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4071,
+    "matches": [
+     "자유구역 문화",
+     "Art Dubai"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.4081,
+    "matches": [
+     "Louvre Abu Dhabi",
+     "Art Dubai"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.2842,
+    "matches": [
+     "Art Dubai",
+     "글로벌 연결 허브"
+    ]
+   }
+  },
+  "hong-kong": {
+   "media-art": {
+    "sim": 0.2715,
+    "matches": [
+     "Art Basel HK",
+     "Hong Kong International Art Fair"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4155,
+    "matches": [
+     "Hong Kong International Art Fair",
+     "Art Basel Hong Kong"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.4786,
+    "matches": [
+     "Art Basel Hong Kong",
+     "Art Basel HK"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2661,
+    "matches": [
+     "Hong Kong International Art Fair",
+     "Art Basel Hong Kong"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.3713,
+    "matches": [
+     "Hong Kong International Art Fair",
+     "Art Basel HK"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4551,
+    "matches": [
+     "Hong Kong International Art Fair",
+     "Art Basel HK"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3116,
+    "matches": [
+     "시장 인프라 · 동서 자본",
+     "Hong Kong International Art Fair"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.3666,
+    "matches": [
+     "Art Basel Hong Kong",
+     "Art Basel HK"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.3894,
+    "matches": [
+     "Hong Kong International Art Fair",
+     "Art Basel HK"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4028,
+    "matches": [
+     "Hong Kong International Art Fair",
+     "Art Basel Hong Kong"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.4728,
+    "matches": [
+     "Art Basel Hong Kong",
+     "Hong Kong International Art Fair"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.3043,
+    "matches": [
+     "Hong Kong International Art Fair",
+     "Art Basel Hong Kong"
+    ]
+   }
+  },
+  "paris": {
+   "media-art": {
+    "sim": 0.2239,
+    "matches": [
+     "Paris+ par Art Basel",
+     "Paris Art Week"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4745,
+    "matches": [
+     "Paris+ par Art Basel",
+     "Paris Art Week"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.6076,
+    "matches": [
+     "Paris+ par Art Basel",
+     "Paris Art Week"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2566,
+    "matches": [
+     "기관의 권위 · 문화적 정통성",
+     "역사적 시장 수도"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4407,
+    "matches": [
+     "Paris+ par Art Basel",
+     "Paris Art Week"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.5004,
+    "matches": [
+     "Paris+ par Art Basel",
+     "Paris Art Week"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3675,
+    "matches": [
+     "럭셔리 생태계",
+     "기관의 권위"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4472,
+    "matches": [
+     "Paris+ par Art Basel",
+     "Paris Art Week"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4518,
+    "matches": [
+     "Paris Art Week",
+     "Paris+ par Art Basel"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4376,
+    "matches": [
+     "기관의 권위 · 문화적 정통성",
+     "역사적 시장 수도"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5654,
+    "matches": [
+     "역사적 시장 수도",
+     "기관의 권위 · 문화적 정통성"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.2435,
+    "matches": [
+     "패션",
+     "Paris+ par Art Basel"
+    ]
+   }
+  },
+  "venice": {
+   "media-art": {
+    "sim": 0.2832,
+    "matches": [
+     "La Biennale",
+     "Venice Architecture Biennale"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.3959,
+    "matches": [
+     "건축",
+     "Venice Architecture Biennale"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5303,
+    "matches": [
+     "Venice Architecture Biennale",
+     "Venice Biennale"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2321,
+    "matches": [
+     "비엔날레 무대 도시",
+     "비엔날레 문화"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.482,
+    "matches": [
+     "국제 무대 · 큐레이터십의 권위",
+     "Venice Architecture Biennale"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4767,
+    "matches": [
+     "La Biennale",
+     "Venice Architecture Biennale"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3612,
+    "matches": [
+     "La Biennale",
+     "비엔날레 문화"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4953,
+    "matches": [
+     "국제 무대 · 큐레이터십의 권위",
+     "Venice Architecture Biennale"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4798,
+    "matches": [
+     "La Biennale",
+     "비엔날레 무대 도시"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4213,
+    "matches": [
+     "비엔날레 문화",
+     "비엔날레 무대 도시"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5178,
+    "matches": [
+     "비엔날레 무대 도시",
+     "La Biennale"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.2364,
+    "matches": [
+     "비엔날레 무대 도시",
+     "La Biennale"
+    ]
+   }
+  },
+  "basel": {
+   "media-art": {
+    "sim": 0.318,
+    "matches": [
+     "Art Basel",
+     "Liste Art Fair"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.5098,
+    "matches": [
+     "페어 인프라",
+     "Liste Art Fair"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.615,
+    "matches": [
+     "Art Basel",
+     "Liste Art Fair"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.2522,
+    "matches": [
+     "시장 인프라 · 기관의 두께",
+     "Liste Art Fair"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4413,
+    "matches": [
+     "Liste Art Fair",
+     "Kunstmuseum Basel"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.5293,
+    "matches": [
+     "Liste Art Fair",
+     "Art Basel"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4005,
+    "matches": [
+     "시장 인프라 · 기관의 두께",
+     "페어 인프라"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4142,
+    "matches": [
+     "Kunstmuseum Basel",
+     "Art Basel"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4353,
+    "matches": [
+     "Liste Art Fair",
+     "Art Basel"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4262,
+    "matches": [
+     "Liste Art Fair",
+     "시장 인프라 · 기관의 두께"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5462,
+    "matches": [
+     "Kunstmuseum Basel",
+     "Art Basel"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.2623,
+    "matches": [
+     "Liste Art Fair",
+     "Art Basel"
+    ]
+   }
+  },
+  "tokyo": {
+   "media-art": {
+    "sim": 0.3607,
+    "matches": [
+     "테크",
+     "기술 공예"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4772,
+    "matches": [
+     "Tokyo Art & Antiques",
+     "Mori Art Museum"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5215,
+    "matches": [
+     "Tokyo Art & Antiques",
+     "Mori Art Museum"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.3708,
+    "matches": [
+     "팝–테크노 문화 강국",
+     "소재 혁신 · 문화 수출력"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4496,
+    "matches": [
+     "21_21 Design Sight",
+     "Designart Tokyo"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4523,
+    "matches": [
+     "Tokyo Art & Antiques",
+     "Mori Art Museum"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.3583,
+    "matches": [
+     "기술 공예",
+     "소재 혁신 · 문화 수출력"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.3211,
+    "matches": [
+     "Mori Art Museum",
+     "Tokyo Art & Antiques"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.4591,
+    "matches": [
+     "Mori Art Museum",
+     "Tokyo Art & Antiques"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4088,
+    "matches": [
+     "소재 혁신 · 문화 수출력",
+     "팝–테크노 문화 강국"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.5138,
+    "matches": [
+     "Tokyo Art & Antiques",
+     "Mori Art Museum"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.3965,
+    "matches": [
+     "기술 공예",
+     "테크"
+    ]
+   }
+  },
+  "shanghai": {
+   "media-art": {
+    "sim": 0.3902,
+    "matches": [
+     "Power Station of Art",
+     "테크"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.5527,
+    "matches": [
+     "미술관 건립",
+     "Power Station of Art"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.7012,
+    "matches": [
+     "미술관 건립",
+     "Long Museum"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.3213,
+    "matches": [
+     "신흥 시장 가속 도시",
+     "상업적 활력"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4996,
+    "matches": [
+     "West Bund Art & Design",
+     "미술관 건립"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.6373,
+    "matches": [
+     "미술관 건립",
+     "Power Station of Art"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4158,
+    "matches": [
+     "컬렉터의 성장 · 기관의 야심",
+     "미술관 건립"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.4639,
+    "matches": [
+     "미술관 건립",
+     "신흥 시장 가속 도시"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.5121,
+    "matches": [
+     "미술관 건립",
+     "Power Station of Art"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.4538,
+    "matches": [
+     "신흥 시장 가속 도시",
+     "미술관 건립"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.66,
+    "matches": [
+     "미술관 건립",
+     "Long Museum"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.373,
+    "matches": [
+     "테크",
+     "Power Station of Art"
+    ]
+   }
+  },
+  "singapore": {
+   "media-art": {
+    "sim": 0.2972,
+    "matches": [
+     "ArtScience Museum",
+     "테크"
+    ]
+   },
+   "craft-living": {
+    "sim": 0.4202,
+    "matches": [
+     "ArtScience Museum",
+     "Art SG"
+    ]
+   },
+   "luxury-heritage": {
+    "sim": 0.5055,
+    "matches": [
+     "ArtScience Museum",
+     "National Gallery Singapore"
+    ]
+   },
+   "street-subculture": {
+    "sim": 0.187,
+    "matches": [
+     "다문화",
+     "ArtScience Museum"
+    ]
+   },
+   "architecture-design": {
+    "sim": 0.4115,
+    "matches": [
+     "ArtScience Museum",
+     "National Gallery Singapore"
+    ]
+   },
+   "collector-edition": {
+    "sim": 0.4489,
+    "matches": [
+     "ArtScience Museum",
+     "Art SG"
+    ]
+   },
+   "sustainable-material": {
+    "sim": 0.4035,
+    "matches": [
+     "ArtScience Museum",
+     "Singapore Art Week"
+    ]
+   },
+   "hospitality-residency": {
+    "sim": 0.3958,
+    "matches": [
+     "National Gallery Singapore",
+     "ArtScience Museum"
+    ]
+   },
+   "sound-performance": {
+    "sim": 0.3946,
+    "matches": [
+     "ArtScience Museum",
+     "Art SG"
+    ]
+   },
+   "food-culture": {
+    "sim": 0.36,
+    "matches": [
+     "ArtScience Museum",
+     "National Gallery Singapore"
+    ]
+   },
+   "brand-museum": {
+    "sim": 0.4675,
+    "matches": [
+     "ArtScience Museum",
+     "National Gallery Singapore"
+    ]
+   },
+   "digital-fashion": {
+    "sim": 0.3564,
+    "matches": [
+     "테크",
+     "ArtScience Museum"
+    ]
+   }
+  }
+ }
+}
