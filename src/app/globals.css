@@ -111,10 +111,6 @@ h1 span, h2 span { color: var(--accent); }
 .panel-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 13px; border-top: 1px solid var(--line); }
 .live-dot { display: inline-block; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; margin-right: 6px; }
 
-.city-b { right: 12%; top: 34%; }
-
-.city-d { right: 17%; bottom: 17%; }
-
 .globe-panel { --globe-blue: #ff5438; height: 100%; border: none; }
 .globe-stage { position: relative; flex: 1; min-height: 0; overflow: hidden; background: #ffffff; border-radius: 5px; isolation: isolate; touch-action: none; cursor: grab; }
 .globe-stage.is-dragging { cursor: grabbing; }
@@ -291,8 +287,6 @@ h1 span, h2 span { color: var(--accent); }
 .observed-rank { color: var(--accent); font-weight: 500; }
 
 /* ---------- comparison table additions ---------- */
-.bar-value .is-up { color: #1c8a4b; }
-.bar-value .is-down { color: #c53434; }
 
 /* ---------- admin ---------- */
 .admin-row-cities { grid-template-columns: 1.5fr .9fr .9fr 1.1fr 1.1fr; }
@@ -583,14 +577,9 @@ h1 span, h2 span { color: var(--accent); }
 @keyframes work-modal-in { from { opacity: 0 } to { opacity: 1 } }
 @media (prefers-reduced-motion: reduce) { .work-modal-backdrop { animation: none } }
 
-.chip { border: 1px solid var(--line); border-radius: 999px; background: transparent; padding: 8px 11px; font-size: 11px; }
-.chip.selected, .chip:hover { background: var(--dark); border-color: var(--dark); color: #fff; }
-
 .segmented { display: inline-flex; border: 1px solid var(--ink); border-radius: 8px; overflow: hidden; }
 .segmented button { background: transparent; padding: 10px 14px; font: 10px 'DM Mono'; }
 .segmented button.selected { background: var(--dark); color: #fff; }
-
-.bar-value { display: flex; justify-content: space-between; font: 10px 'DM Mono'; margin-bottom: 7px; }
 .bar-track { height: 6px; background: var(--soft); border-radius: 10px; overflow: hidden; }
 .bar-track i { display: block; height: 100%; width: var(--score); background: var(--ink); border-radius: inherit; }
 
@@ -608,22 +597,10 @@ h1 span, h2 span { color: var(--accent); }
 .footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 24px; gap: 12px; }
 .footer span:nth-child(2) { color: var(--ink); }
 
-.modal { width: min(620px, calc(100% - 32px)); border: 0; padding: 0; border-radius: 14px; box-shadow: 0 30px 90px rgba(0,0,0,.28); }
-.modal::backdrop { background: rgba(12,13,15,.58); backdrop-filter: blur(5px); }
-
-.source-list { margin: 22px 0 0; padding: 0; list-style: none; }
-.source-list li { padding: 15px 0; border-bottom: 1px solid var(--line); }
-.source-list strong { display: block; font-size: 13px; }
-.source-list small { font: 9px 'DM Mono'; color: var(--muted); }
-
 /* 10pt = 13.33px. UI copy uses a 14px minimum for readable rendering. */
 body { font-size: 16px; }
 small { font-size: 14px; }
-.brand, .tab, .accent-button, .dark-button, .outline-button,
-.eyebrow, .mono, .panel-head, .footer, .table-head, .status,
-.proof-item small, .globe-marker b, .globe-tooltip strong, .globe-tooltip span,
-.globe-guide, .globe-summary > span, .globe-summary dt, .globe-summary dd, .globe-mini-bar label, .signal-card > span, .signal-card dt, .signal-card dd,
-.step-number, .workflow-step p, .chip, .segmented button, .bar-value, .insight-cell p, .source-list strong, .source-list small{
+.brand, .tab, .accent-button, .dark-button, .outline-button, .eyebrow, .mono, .panel-head, .footer, .table-head, .status, .proof-item small, .globe-marker b, .globe-tooltip strong, .globe-tooltip span, .globe-guide, .globe-summary > span, .globe-summary dt, .globe-summary dd, .globe-mini-bar label, .signal-card > span, .signal-card dt, .signal-card dd, .step-number, .workflow-step p, .segmented button, .insight-cell p{
   font-size: 14px;
 }
 .workflow-step { min-height: 245px; }
