@@ -76,6 +76,25 @@ def check_opportunity() -> bool:
     )
 
 
+def check_outcomes() -> bool:
+    """Outcome records: every public case is normalised and placed against its format; bad input is 400."""
+    listed = client.get("/api/outcomes").json()["data"]
+    post = lambda body: client.post("/api/outcomes/evaluate", json=body)
+    good = post({"city": "Seoul", "format": "popup", "start": "2026-03-01", "end": "2026-03-10", "visitors": 20000, "areaM2": 300})
+    bad = [post({"city": "Atlantis", "format": "popup", "start": "2026-03-01", "end": "2026-03-10", "visitors": 1}),
+           post({"city": "Seoul", "format": "gallery", "start": "2026-03-01", "end": "2026-03-10", "visitors": 1}),
+           post({"city": "Seoul", "format": "popup", "start": "2026-03-10", "end": "2026-03-01", "visitors": 1}),
+           post({"city": "Seoul", "format": "popup", "start": "2026-03-01", "end": "2026-03-10", "visitors": -5})]
+    data = good.json().get("data", {})
+    return (
+        listed["total"] >= 8 and all(c["fitRank"] >= 1 and c["perDay"] > 0 for c in listed["cases"])
+        and all(c["ratio"] for c in listed["cases"] if c["format"] == "temporary")  # 6 cases → leave-one-out baseline
+        and not any(c["ratio"] for c in listed["cases"] if c["format"] == "popup")   # 2 cases → no baseline yet
+        and good.status_code == 200 and data.get("perDay") == 2000 and data.get("perDayPerM2") == 6.67
+        and all(r.status_code == 400 for r in bad)
+    )
+
+
 def main() -> int:
     cases = json.loads((ROOT / "backend/tests/baseline/api_baseline_v0.json").read_text(encoding="utf-8"))
     failures = []
@@ -110,8 +129,10 @@ def main() -> int:
     delivery = check_contact_delivery()
     model_ok = check_opportunity()
     print(f"Opportunity API (format ranking, what-if prediction, 400 on bad input): {model_ok}")
+    outcomes_ok = check_outcomes()
+    print(f"Outcomes API (cases normalised, evaluate, 400 on bad input): {outcomes_ok}")
     print(f"Contact delivery (mocked provider 200 → 200, 422 → 502, HTML escaped): {delivery}")
-    return 0 if not failures and not calc_diff and snap_ok and health and delivery and model_ok else 1
+    return 0 if not failures and not calc_diff and snap_ok and health and delivery and model_ok and outcomes_ok else 1
 
 
 if __name__ == "__main__":

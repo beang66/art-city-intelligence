@@ -972,3 +972,35 @@ small { font-size: 14px; }
 .model-result { margin-top: 14px; min-height: 22px; }
 .model-result b { color: var(--accent); font-size: 18px; }
 @media (max-width: 900px) { .model-grid { grid-template-columns: 1fr; } }
+
+/* outcomes */
+.outcome-stages { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.outcome-stages li { display: grid; gap: 8px; align-content: start; padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.outcome-stages li.current { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.outcome-stages strong { font-size: 22px; letter-spacing: -.03em; }
+.outcome-stages p { font-size: 14px; line-height: 1.6; color: #45484b; word-break: keep-all; }
+.outcome-stages small { font-size: 12px; line-height: 1.6; color: var(--muted); word-break: keep-all; }
+.outcome-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
+.outcome-table { width: 100%; min-width: 880px; border-collapse: collapse; font-size: 14px; }
+.outcome-table th { text-align: left; font: 500 11px/1 ui-monospace, monospace; letter-spacing: .06em; color: var(--muted); padding: 14px 14px 12px; border-bottom: 1px solid var(--line); text-transform: uppercase; }
+.outcome-table td { padding: 12px 14px; border-bottom: 1px solid var(--soft); vertical-align: top; }
+.outcome-table tr:last-child td { border-bottom: 0; }
+.outcome-table small { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; }
+.outcome-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.outcome-table a { color: var(--accent); font-weight: 600; }
+.outcome-table .muted { color: var(--muted); font-size: 12px; }
+.outcome-table b.up, .outcome-result b.up { color: var(--accent); }
+.outcome-table b.down, .outcome-result b.down { color: #3f5570; }
+.outcome-result { display: grid; gap: 8px; }
+.outcome-result p { font-size: 14px !important; }
+.outcome-result .outline-button { justify-self: start; }
+.outcome-form .model-note a { color: var(--accent); font-weight: 600; }
+@media (max-width: 900px) { .outcome-stages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .outcome-stages { grid-template-columns: 1fr; } }
+
+/* Opportunity 탭 아래 기회 찾기 / 성과 기록 전환 */
+.sub-nav { margin-bottom: 22px; }
+.sub-nav a { padding: 10px 16px; font-size: 13px; color: var(--ink); text-decoration: none; }
+.sub-nav a .mono { font-size: 10px; letter-spacing: .04em; opacity: .6; margin-right: 4px; }
+.sub-nav a.selected { background: var(--dark); color: #fff; }
+.sub-nav a.selected .mono { opacity: .8; }

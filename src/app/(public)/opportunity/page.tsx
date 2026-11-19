@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { OpportunityNav } from '@/components/opportunity/OpportunityNav'
 import { OpportunityExplorer } from '@/components/opportunity/OpportunityExplorer'
 import { formatTop, modelSummary } from '@/features/opportunity/service'
 
@@ -10,6 +11,7 @@ export default function OpportunityPage() {
     <>
       <section className="section page-hero compact-hero">
         <div>
+          <OpportunityNav current="/opportunity" />
           <p className="eyebrow">01 / OPPORTUNITY MODEL</p>
           <h1>Find the city<br /><span>ahead of its size.</span></h1>
           <p className="lede">
