@@ -129,7 +129,7 @@ export function SiteHeader() {
           {tabs.map((tab, index) => {
             const active = tab.match.some((prefix) => prefix === '/' ? pathname === '/' : pathname.startsWith(prefix))
             return (
-              <Link className={`tab${active ? ' active' : ''}${tabCursor.index === index ? ' cursor-active' : ''}`} data-index={index} href={tab.href} prefetch={tab.href.startsWith('/admin') ? false : undefined} aria-current={active ? 'page' : undefined} key={tab.href}>
+              <Link className={`tab${active ? ' active' : ''}${tabCursor.index === index ? ' cursor-active' : ''}`} data-index={index} href={tab.href} aria-current={active ? 'page' : undefined} key={tab.href}>
                 <span>{tab.label}</span>
               </Link>
             )

@@ -1,11 +1,21 @@
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
 
-from app.routers.cities import fail, ok
+from app.routers.cities import fail, ok, parse_slug, query
 from app.services import opportunity as model
+from app.services import recommend
 from formats import FORMATS
 
 router = APIRouter(prefix="/api/opportunity")
+
+
+@router.get("/themes")
+def themes(request: Request):
+    slug = parse_slug(query(request, "city"))
+    if not slug:
+        return fail("city is required")
+    result = recommend.for_city(slug)
+    return ok(result) if result else fail(f"unknown city: {slug}", 404)
 
 
 @router.get("")

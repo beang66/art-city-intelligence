@@ -5841,5 +5841,1102 @@
    "Washington D.C.",
    "Zürich"
   ]
+ },
+ "themes": {
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "themeCount": 12,
+  "cityCount": 18,
+  "cities": {
+   "seoul": {
+    "city": "seoul",
+    "themes": [
+     {
+      "id": "digital-fashion",
+      "labelKo": "디지털 패션·게임",
+      "label": "Digital fashion & games",
+      "brandsKo": [
+       "패션 테크",
+       "게임",
+       "스포츠웨어"
+      ],
+      "z": 2.05,
+      "cityRank": 1,
+      "dimension": "experiment",
+      "matches": [
+       "디지털 물성",
+       "네트워크형 실험 도시"
+      ]
+     },
+     {
+      "id": "street-subculture",
+      "labelKo": "스트리트·서브컬처 팝업",
+      "label": "Street & subculture pop-up",
+      "brandsKo": [
+       "스포츠웨어",
+       "스니커즈",
+       "음료"
+      ],
+      "z": 1.61,
+      "cityRank": 2,
+      "dimension": "participation",
+      "matches": [
+       "Seoul Mediacity Biennale",
+       "네트워크형 실험 도시"
+      ]
+     },
+     {
+      "id": "media-art",
+      "labelKo": "미디어아트·몰입형 전시",
+      "label": "Media art & immersive",
+      "brandsKo": [
+       "전자·IT",
+       "자동차",
+       "통신"
+      ],
+      "z": 1.44,
+      "cityRank": 2,
+      "dimension": "experiment",
+      "matches": [
+       "디지털 물성",
+       "Seoul Mediacity Biennale"
+      ]
+     }
+    ],
+    "format": {
+     "key": "temporary",
+     "rank": 10,
+     "fit": 53.0
+    }
+   },
+   "berlin": {
+    "city": "berlin",
+    "themes": [
+     {
+      "id": "sustainable-material",
+      "labelKo": "지속가능 소재·순환",
+      "label": "Sustainable materials",
+      "brandsKo": [
+       "아웃도어",
+       "소재",
+       "패키징"
+      ],
+      "z": -0.14,
+      "cityRank": 11,
+      "dimension": "experiment",
+      "matches": [
+       "독립 제작 실험실",
+       "재사용"
+      ]
+     },
+     {
+      "id": "street-subculture",
+      "labelKo": "스트리트·서브컬처 팝업",
+      "label": "Street & subculture pop-up",
+      "brandsKo": [
+       "스포츠웨어",
+       "스니커즈",
+       "음료"
+      ],
+      "z": -0.23,
+      "cityRank": 8,
+      "dimension": "participation",
+      "matches": [
+       "도시 공간",
+       "밀집된 제작 · 열린 네트워크"
+      ]
+     },
+     {
+      "id": "digital-fashion",
+      "labelKo": "디지털 패션·게임",
+      "label": "Digital fashion & games",
+      "brandsKo": [
+       "패션 테크",
+       "게임",
+       "스포츠웨어"
+      ],
+      "z": -0.53,
+      "cityRank": 12,
+      "dimension": "experiment",
+      "matches": [
+       "Gallery Weekend",
+       "패션"
+      ]
+     }
+    ],
+    "format": {
+     "key": "permanent",
+     "rank": 9,
+     "fit": 55.3
+    }
+   },
+   "london": {
+    "city": "london",
+    "themes": [
+     {
+      "id": "food-culture",
+      "labelKo": "식문화·미식",
+      "label": "Food culture",
+      "brandsKo": [
+       "F&B",
+       "주방가전",
+       "식품"
+      ],
+      "z": 0.99,
+      "cityRank": 3,
+      "dimension": "participation",
+      "matches": [
+       "글로벌 시장·기관 중심지",
+       "시장의 깊이 · 기관의 영향력"
+      ]
+     },
+     {
+      "id": "hospitality-residency",
+      "labelKo": "호텔·라이프스타일 레지던시",
+      "label": "Hospitality residency",
+      "brandsKo": [
+       "호텔",
+       "F&B",
+       "라이프스타일"
+      ],
+      "z": 0.96,
+      "cityRank": 4,
+      "dimension": "influence",
+      "matches": [
+       "London Gallery Weekend",
+       "글로벌 시장·기관 중심지"
+      ]
+     },
+     {
+      "id": "architecture-design",
+      "labelKo": "건축·디자인 쇼케이스",
+      "label": "Architecture & design showcase",
+      "brandsKo": [
+       "가구",
+       "건자재",
+       "조명"
+      ],
+      "z": 0.66,
+      "cityRank": 5,
+      "dimension": "influence",
+      "matches": [
+       "London Gallery Weekend",
+       "시장의 깊이 · 기관의 영향력"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 2,
+     "fit": 83.1
+    }
+   },
+   "new-york": {
+    "city": "new-york",
+    "themes": [
+     {
+      "id": "media-art",
+      "labelKo": "미디어아트·몰입형 전시",
+      "label": "Media art & immersive",
+      "brandsKo": [
+       "전자·IT",
+       "자동차",
+       "통신"
+      ],
+      "z": -0.18,
+      "cityRank": 9,
+      "dimension": "experiment",
+      "matches": [
+       "미디어",
+       "갤러리 네트워크"
+      ]
+     },
+     {
+      "id": "digital-fashion",
+      "labelKo": "디지털 패션·게임",
+      "label": "Digital fashion & games",
+      "brandsKo": [
+       "패션 테크",
+       "게임",
+       "스포츠웨어"
+      ],
+      "z": -0.24,
+      "cityRank": 9,
+      "dimension": "experiment",
+      "matches": [
+       "갤러리 네트워크",
+       "The Armory Show"
+      ]
+     },
+     {
+      "id": "architecture-design",
+      "labelKo": "건축·디자인 쇼케이스",
+      "label": "Architecture & design showcase",
+      "brandsKo": [
+       "가구",
+       "건자재",
+       "조명"
+      ],
+      "z": -0.29,
+      "cityRank": 10,
+      "dimension": "influence",
+      "matches": [
+       "The Armory Show",
+       "국제적 영향력"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 3,
+     "fit": 80.1
+    }
+   },
+   "mexico-city": {
+    "city": "mexico-city",
+    "themes": [
+     {
+      "id": "food-culture",
+      "labelKo": "식문화·미식",
+      "label": "Food culture",
+      "brandsKo": [
+       "F&B",
+       "주방가전",
+       "식품"
+      ],
+      "z": 2.7,
+      "cityRank": 1,
+      "dimension": "participation",
+      "matches": [
+       "공공적 삶",
+       "로컬–글로벌 생성 도시"
+      ]
+     },
+     {
+      "id": "craft-living",
+      "labelKo": "공예·리빙",
+      "label": "Craft & living",
+      "brandsKo": [
+       "가구",
+       "리빙·주방",
+       "조명"
+      ],
+      "z": 2.17,
+      "cityRank": 1,
+      "dimension": "institution",
+      "matches": [
+       "Material Art Fair",
+       "지역 재료"
+      ]
+     },
+     {
+      "id": "sustainable-material",
+      "labelKo": "지속가능 소재·순환",
+      "label": "Sustainable materials",
+      "brandsKo": [
+       "아웃도어",
+       "소재",
+       "패키징"
+      ],
+      "z": 2.08,
+      "cityRank": 1,
+      "dimension": "experiment",
+      "matches": [
+       "Material Art Fair",
+       "재료의 문화 · 독립적 에너지"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 17,
+     "fit": 44.9
+    }
+   },
+   "melbourne": {
+    "city": "melbourne",
+    "themes": [
+     {
+      "id": "food-culture",
+      "labelKo": "식문화·미식",
+      "label": "Food culture",
+      "brandsKo": [
+       "F&B",
+       "주방가전",
+       "식품"
+      ],
+      "z": 1.76,
+      "cityRank": 2,
+      "dimension": "participation",
+      "matches": [
+       "시민 접근성 · 분산된 문화",
+       "시민 참여 허브"
+      ]
+     },
+     {
+      "id": "street-subculture",
+      "labelKo": "스트리트·서브컬처 팝업",
+      "label": "Street & subculture pop-up",
+      "brandsKo": [
+       "스포츠웨어",
+       "스니커즈",
+       "음료"
+      ],
+      "z": 1.5,
+      "cityRank": 3,
+      "dimension": "participation",
+      "matches": [
+       "시민 접근성 · 분산된 문화",
+       "Melbourne Art Fair"
+      ]
+     },
+     {
+      "id": "sound-performance",
+      "labelKo": "사운드·퍼포먼스",
+      "label": "Sound & performance",
+      "brandsKo": [
+       "오디오",
+       "음악 플랫폼",
+       "가전"
+      ],
+      "z": 1.43,
+      "cityRank": 2,
+      "dimension": "participation",
+      "matches": [
+       "Melbourne Art Fair",
+       "시민 접근성 · 분산된 문화"
+      ]
+     }
+    ],
+    "format": {
+     "key": "temporary",
+     "rank": 18,
+     "fit": 43.3
+    }
+   },
+   "amsterdam": {
+    "city": "amsterdam",
+    "themes": [
+     {
+      "id": "media-art",
+      "labelKo": "미디어아트·몰입형 전시",
+      "label": "Media art & immersive",
+      "brandsKo": [
+       "전자·IT",
+       "자동차",
+       "통신"
+      ],
+      "z": 2.12,
+      "cityRank": 1,
+      "dimension": "experiment",
+      "matches": [
+       "EYE Filmmuseum",
+       "테크"
+      ]
+     },
+     {
+      "id": "sustainable-material",
+      "labelKo": "지속가능 소재·순환",
+      "label": "Sustainable materials",
+      "brandsKo": [
+       "아웃도어",
+       "소재",
+       "패키징"
+      ],
+      "z": 1.93,
+      "cityRank": 2,
+      "dimension": "experiment",
+      "matches": [
+       "Stedelijk Museum",
+       "기관 비평 · 공공 접근성"
+      ]
+     },
+     {
+      "id": "architecture-design",
+      "labelKo": "건축·디자인 쇼케이스",
+      "label": "Architecture & design showcase",
+      "brandsKo": [
+       "가구",
+       "건자재",
+       "조명"
+      ],
+      "z": 1.86,
+      "cityRank": 2,
+      "dimension": "influence",
+      "matches": [
+       "Art Amsterdam",
+       "Stedelijk Museum"
+      ]
+     }
+    ],
+    "format": {
+     "key": "temporary",
+     "rank": 14,
+     "fit": 47.2
+    }
+   },
+   "beijing": {
+    "city": "beijing",
+    "themes": [
+     {
+      "id": "craft-living",
+      "labelKo": "공예·리빙",
+      "label": "Craft & living",
+      "brandsKo": [
+       "가구",
+       "리빙·주방",
+       "조명"
+      ],
+      "z": 0.9,
+      "cityRank": 4,
+      "dimension": "institution",
+      "matches": [
+       "규모의 인프라 · 문화적 영향력",
+       "CAFA Art Museum"
+      ]
+     },
+     {
+      "id": "sustainable-material",
+      "labelKo": "지속가능 소재·순환",
+      "label": "Sustainable materials",
+      "brandsKo": [
+       "아웃도어",
+       "소재",
+       "패키징"
+      ],
+      "z": 0.51,
+      "cityRank": 6,
+      "dimension": "experiment",
+      "matches": [
+       "규모의 인프라 · 문화적 영향력",
+       "CAFA Art Museum"
+      ]
+     },
+     {
+      "id": "food-culture",
+      "labelKo": "식문화·미식",
+      "label": "Food culture",
+      "brandsKo": [
+       "F&B",
+       "주방가전",
+       "식품"
+      ],
+      "z": 0.42,
+      "cityRank": 5,
+      "dimension": "participation",
+      "matches": [
+       "규모의 인프라 · 문화적 영향력",
+       "CAFA Art Museum"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 14,
+     "fit": 49.5
+    }
+   },
+   "barcelona": {
+    "city": "barcelona",
+    "themes": [
+     {
+      "id": "architecture-design",
+      "labelKo": "건축·디자인 쇼케이스",
+      "label": "Architecture & design showcase",
+      "brandsKo": [
+       "가구",
+       "건자재",
+       "조명"
+      ],
+      "z": 2.36,
+      "cityRank": 1,
+      "dimension": "influence",
+      "matches": [
+       "건축 문화",
+       "Art Barcelona"
+      ]
+     },
+     {
+      "id": "hospitality-residency",
+      "labelKo": "호텔·라이프스타일 레지던시",
+      "label": "Hospitality residency",
+      "brandsKo": [
+       "호텔",
+       "F&B",
+       "라이프스타일"
+      ],
+      "z": 1.81,
+      "cityRank": 1,
+      "dimension": "influence",
+      "matches": [
+       "건축 문화 · 풀뿌리 에너지",
+       "관광"
+      ]
+     },
+     {
+      "id": "sound-performance",
+      "labelKo": "사운드·퍼포먼스",
+      "label": "Sound & performance",
+      "brandsKo": [
+       "오디오",
+       "음악 플랫폼",
+       "가전"
+      ],
+      "z": 1.76,
+      "cityRank": 1,
+      "dimension": "participation",
+      "matches": [
+       "건축 문화 · 풀뿌리 에너지",
+       "Loop Festival"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 4,
+     "fit": 62.0
+    }
+   },
+   "chicago": {
+    "city": "chicago",
+    "themes": [
+     {
+      "id": "sustainable-material",
+      "labelKo": "지속가능 소재·순환",
+      "label": "Sustainable materials",
+      "brandsKo": [
+       "아웃도어",
+       "소재",
+       "패키징"
+      ],
+      "z": 0.62,
+      "cityRank": 5,
+      "dimension": "experiment",
+      "matches": [
+       "공공 접근성 · 소장품의 깊이",
+       "시민 컬렉션"
+      ]
+     },
+     {
+      "id": "collector-edition",
+      "labelKo": "작가 협업 에디션",
+      "label": "Artist collaboration edition",
+      "brandsKo": [
+       "주류·와인",
+       "뷰티",
+       "패션 액세서리"
+      ],
+      "z": 0.4,
+      "cityRank": 6,
+      "dimension": "institution",
+      "matches": [
+       "Art Institute of Chicago",
+       "공공 접근성 · 소장품의 깊이"
+      ]
+     },
+     {
+      "id": "sound-performance",
+      "labelKo": "사운드·퍼포먼스",
+      "label": "Sound & performance",
+      "brandsKo": [
+       "오디오",
+       "음악 플랫폼",
+       "가전"
+      ],
+      "z": 0.01,
+      "cityRank": 10,
+      "dimension": "participation",
+      "matches": [
+       "Art Institute of Chicago",
+       "공공 접근성 · 소장품의 깊이"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 34,
+     "fit": 35.5
+    }
+   },
+   "dubai": {
+    "city": "dubai",
+    "themes": [
+     {
+      "id": "hospitality-residency",
+      "labelKo": "호텔·라이프스타일 레지던시",
+      "label": "Hospitality residency",
+      "brandsKo": [
+       "호텔",
+       "F&B",
+       "라이프스타일"
+      ],
+      "z": 0.9,
+      "cityRank": 6,
+      "dimension": "influence",
+      "matches": [
+       "Louvre Abu Dhabi",
+       "Art Dubai"
+      ]
+     },
+     {
+      "id": "architecture-design",
+      "labelKo": "건축·디자인 쇼케이스",
+      "label": "Architecture & design showcase",
+      "brandsKo": [
+       "가구",
+       "건자재",
+       "조명"
+      ],
+      "z": -0.54,
+      "cityRank": 12,
+      "dimension": "influence",
+      "matches": [
+       "Dubai Design Week",
+       "Art Dubai"
+      ]
+     },
+     {
+      "id": "street-subculture",
+      "labelKo": "스트리트·서브컬처 팝업",
+      "label": "Street & subculture pop-up",
+      "brandsKo": [
+       "스포츠웨어",
+       "스니커즈",
+       "음료"
+      ],
+      "z": -0.64,
+      "cityRank": 13,
+      "dimension": "participation",
+      "matches": [
+       "자유구역 문화",
+       "자본의 이동성 · 동서 교량"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 6,
+     "fit": 61.6
+    }
+   },
+   "hong-kong": {
+    "city": "hong-kong",
+    "themes": [
+     {
+      "id": "collector-edition",
+      "labelKo": "작가 협업 에디션",
+      "label": "Artist collaboration edition",
+      "brandsKo": [
+       "주류·와인",
+       "뷰티",
+       "패션 액세서리"
+      ],
+      "z": -0.23,
+      "cityRank": 12,
+      "dimension": "institution",
+      "matches": [
+       "Hong Kong International Art Fair",
+       "Art Basel HK"
+      ]
+     },
+     {
+      "id": "digital-fashion",
+      "labelKo": "디지털 패션·게임",
+      "label": "Digital fashion & games",
+      "brandsKo": [
+       "패션 테크",
+       "게임",
+       "스포츠웨어"
+      ],
+      "z": -0.35,
+      "cityRank": 10,
+      "dimension": "experiment",
+      "matches": [
+       "Hong Kong International Art Fair",
+       "Art Basel Hong Kong"
+      ]
+     },
+     {
+      "id": "street-subculture",
+      "labelKo": "스트리트·서브컬처 팝업",
+      "label": "Street & subculture pop-up",
+      "brandsKo": [
+       "스포츠웨어",
+       "스니커즈",
+       "음료"
+      ],
+      "z": -0.46,
+      "cityRank": 10,
+      "dimension": "participation",
+      "matches": [
+       "Hong Kong International Art Fair",
+       "Art Basel Hong Kong"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 15,
+     "fit": 47.0
+    }
+   },
+   "paris": {
+    "city": "paris",
+    "themes": [
+     {
+      "id": "luxury-heritage",
+      "labelKo": "럭셔리 헤리티지 아카이브",
+      "label": "Luxury heritage archive",
+      "brandsKo": [
+       "패션 하우스",
+       "주얼리",
+       "시계"
+      ],
+      "z": 1.09,
+      "cityRank": 4,
+      "dimension": "institution",
+      "matches": [
+       "Paris+ par Art Basel",
+       "Paris Art Week"
+      ]
+     },
+     {
+      "id": "brand-museum",
+      "labelKo": "브랜드 뮤지엄(상설)",
+      "label": "Permanent brand museum",
+      "brandsKo": [
+       "자동차",
+       "패션 하우스",
+       "식음료 헤리티지"
+      ],
+      "z": 0.92,
+      "cityRank": 3,
+      "dimension": "institution",
+      "matches": [
+       "역사적 시장 수도",
+       "기관의 권위 · 문화적 정통성"
+      ]
+     },
+     {
+      "id": "collector-edition",
+      "labelKo": "작가 협업 에디션",
+      "label": "Artist collaboration edition",
+      "brandsKo": [
+       "주류·와인",
+       "뷰티",
+       "패션 액세서리"
+      ],
+      "z": 0.45,
+      "cityRank": 5,
+      "dimension": "institution",
+      "matches": [
+       "Paris+ par Art Basel",
+       "Paris Art Week"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 1,
+     "fit": 86.8
+    }
+   },
+   "venice": {
+    "city": "venice",
+    "themes": [
+     {
+      "id": "hospitality-residency",
+      "labelKo": "호텔·라이프스타일 레지던시",
+      "label": "Hospitality residency",
+      "brandsKo": [
+       "호텔",
+       "F&B",
+       "라이프스타일"
+      ],
+      "z": 1.11,
+      "cityRank": 2,
+      "dimension": "influence",
+      "matches": [
+       "국제 무대 · 큐레이터십의 권위",
+       "Venice Architecture Biennale"
+      ]
+     },
+     {
+      "id": "architecture-design",
+      "labelKo": "건축·디자인 쇼케이스",
+      "label": "Architecture & design showcase",
+      "brandsKo": [
+       "가구",
+       "건자재",
+       "조명"
+      ],
+      "z": 0.71,
+      "cityRank": 4,
+      "dimension": "influence",
+      "matches": [
+       "국제 무대 · 큐레이터십의 권위",
+       "Venice Architecture Biennale"
+      ]
+     },
+     {
+      "id": "sound-performance",
+      "labelKo": "사운드·퍼포먼스",
+      "label": "Sound & performance",
+      "brandsKo": [
+       "오디오",
+       "음악 플랫폼",
+       "가전"
+      ],
+      "z": 0.57,
+      "cityRank": 6,
+      "dimension": "participation",
+      "matches": [
+       "La Biennale",
+       "비엔날레 무대 도시"
+      ]
+     }
+    ],
+    "format": null
+   },
+   "basel": {
+    "city": "basel",
+    "themes": [
+     {
+      "id": "luxury-heritage",
+      "labelKo": "럭셔리 헤리티지 아카이브",
+      "label": "Luxury heritage archive",
+      "brandsKo": [
+       "패션 하우스",
+       "주얼리",
+       "시계"
+      ],
+      "z": 1.19,
+      "cityRank": 3,
+      "dimension": "institution",
+      "matches": [
+       "Art Basel",
+       "Liste Art Fair"
+      ]
+     },
+     {
+      "id": "collector-edition",
+      "labelKo": "작가 협업 에디션",
+      "label": "Artist collaboration edition",
+      "brandsKo": [
+       "주류·와인",
+       "뷰티",
+       "패션 액세서리"
+      ],
+      "z": 0.89,
+      "cityRank": 3,
+      "dimension": "institution",
+      "matches": [
+       "Liste Art Fair",
+       "Art Basel"
+      ]
+     },
+     {
+      "id": "craft-living",
+      "labelKo": "공예·리빙",
+      "label": "Craft & living",
+      "brandsKo": [
+       "가구",
+       "리빙·주방",
+       "조명"
+      ],
+      "z": 0.85,
+      "cityRank": 5,
+      "dimension": "institution",
+      "matches": [
+       "페어 인프라",
+       "Liste Art Fair"
+      ]
+     }
+    ],
+    "format": null
+   },
+   "tokyo": {
+    "city": "tokyo",
+    "themes": [
+     {
+      "id": "digital-fashion",
+      "labelKo": "디지털 패션·게임",
+      "label": "Digital fashion & games",
+      "brandsKo": [
+       "패션 테크",
+       "게임",
+       "스포츠웨어"
+      ],
+      "z": 1.3,
+      "cityRank": 2,
+      "dimension": "experiment",
+      "matches": [
+       "기술 공예",
+       "테크"
+      ]
+     },
+     {
+      "id": "street-subculture",
+      "labelKo": "스트리트·서브컬처 팝업",
+      "label": "Street & subculture pop-up",
+      "brandsKo": [
+       "스포츠웨어",
+       "스니커즈",
+       "음료"
+      ],
+      "z": 1.08,
+      "cityRank": 5,
+      "dimension": "participation",
+      "matches": [
+       "팝–테크노 문화 강국",
+       "소재 혁신 · 문화 수출력"
+      ]
+     },
+     {
+      "id": "media-art",
+      "labelKo": "미디어아트·몰입형 전시",
+      "label": "Media art & immersive",
+      "brandsKo": [
+       "전자·IT",
+       "자동차",
+       "통신"
+      ],
+      "z": 0.69,
+      "cityRank": 5,
+      "dimension": "experiment",
+      "matches": [
+       "테크",
+       "기술 공예"
+      ]
+     }
+    ],
+    "format": {
+     "key": "temporary",
+     "rank": 2,
+     "fit": 74.9
+    }
+   },
+   "shanghai": {
+    "city": "shanghai",
+    "themes": [
+     {
+      "id": "brand-museum",
+      "labelKo": "브랜드 뮤지엄(상설)",
+      "label": "Permanent brand museum",
+      "brandsKo": [
+       "자동차",
+       "패션 하우스",
+       "식음료 헤리티지"
+      ],
+      "z": 2.59,
+      "cityRank": 1,
+      "dimension": "institution",
+      "matches": [
+       "미술관 건립",
+       "Long Museum"
+      ]
+     },
+     {
+      "id": "collector-edition",
+      "labelKo": "작가 협업 에디션",
+      "label": "Artist collaboration edition",
+      "brandsKo": [
+       "주류·와인",
+       "뷰티",
+       "패션 액세서리"
+      ],
+      "z": 2.52,
+      "cityRank": 1,
+      "dimension": "institution",
+      "matches": [
+       "미술관 건립",
+       "Power Station of Art"
+      ]
+     },
+     {
+      "id": "luxury-heritage",
+      "labelKo": "럭셔리 헤리티지 아카이브",
+      "label": "Luxury heritage archive",
+      "brandsKo": [
+       "패션 하우스",
+       "주얼리",
+       "시계"
+      ],
+      "z": 2.3,
+      "cityRank": 1,
+      "dimension": "institution",
+      "matches": [
+       "미술관 건립",
+       "Long Museum"
+      ]
+     }
+    ],
+    "format": {
+     "key": "popup",
+     "rank": 12,
+     "fit": 53.7
+    }
+   },
+   "singapore": {
+    "city": "singapore",
+    "themes": [
+     {
+      "id": "digital-fashion",
+      "labelKo": "디지털 패션·게임",
+      "label": "Digital fashion & games",
+      "brandsKo": [
+       "패션 테크",
+       "게임",
+       "스포츠웨어"
+      ],
+      "z": 0.58,
+      "cityRank": 7,
+      "dimension": "experiment",
+      "matches": [
+       "테크",
+       "ArtScience Museum"
+      ]
+     },
+     {
+      "id": "sustainable-material",
+      "labelKo": "지속가능 소재·순환",
+      "label": "Sustainable materials",
+      "brandsKo": [
+       "아웃도어",
+       "소재",
+       "패키징"
+      ],
+      "z": 0.12,
+      "cityRank": 8,
+      "dimension": "experiment",
+      "matches": [
+       "ArtScience Museum",
+       "Singapore Art Week"
+      ]
+     },
+     {
+      "id": "luxury-heritage",
+      "labelKo": "럭셔리 헤리티지 아카이브",
+      "label": "Luxury heritage archive",
+      "brandsKo": [
+       "패션 하우스",
+       "주얼리",
+       "시계"
+      ],
+      "z": -0.23,
+      "cityRank": 11,
+      "dimension": "institution",
+      "matches": [
+       "ArtScience Museum",
+       "National Gallery Singapore"
+      ]
+     }
+    ],
+    "format": {
+     "key": "permanent",
+     "rank": 7,
+     "fit": 59.4
+    }
+   }
+  }
  }
 }
