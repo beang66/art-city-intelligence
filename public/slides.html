@@ -213,7 +213,7 @@ table.fill{height:100%}
       <div class="card hot col" style="justify-content:space-between"><div class="stat" style="color:var(--accent)">0.83</div><div class="small">교차 검증 R²<br>평균 대비 오차 −59%</div></div>
       <div class="card col" style="justify-content:space-between"><div class="stat">3</div><div class="small">공간 형식<br>팝업·비상설·상설</div></div>
       <div class="card col" style="justify-content:space-between"><div class="stat">18</div><div class="small">리포트 도시<br>출처까지 연결</div></div>
-      <div class="card col" style="justify-content:space-between"><div class="stat">29</div><div class="small">정적 페이지<br>Next.js 빌드</div></div>
+      <div class="card col" style="justify-content:space-between"><div class="stat">30</div><div class="small">정적 페이지<br>Next.js 빌드</div></div>
       <div class="card col" style="justify-content:space-between"><div class="stat">93<small>/93</small></div><div class="small">API 전환 일치<br>자동 비교</div></div>
     </div>
   </div>
@@ -429,8 +429,8 @@ table.fill{height:100%}
   <div class="eb">Architecture — 화면 · 계산 · 학습을 나눔</div>
   <div class="t">숫자는 Python이 한 번 계산하고,<br><em>화면과 API가 같은 결과를 씁니다.</em></div>
   <div class="grow"><div class="fx" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
-    <div class="card col"><div class="k" style="color:var(--accent-dk)">Vercel · Next.js 16</div><h4 style="color:#fff">화면 29쪽</h4><p>도시 18곳 상세를 빌드 때 생성 · 스냅숏을 읽음 · <code style="background:#33353C;color:#EDEDEA">/api/*</code>를 FastAPI로 rewrite · 관리자 Basic 인증</p><ul><li><span>렌더링</span><b>정적 생성</b></li><li><span>API_ORIGIN 없음</span><b>빌드 실패</b></li><li><span>스냅숏</span><b>Python이 생성</b></li></ul></div>
-    <div class="card col"><div class="k" style="color:var(--accent-dk)">Render · FastAPI</div><h4 style="color:#fff">엔드포인트 9개</h4><p>조회 4 · 메타 · health · 문의 메일 · 형식 순위 · What-if 예측(joblib)</p><ul><li><span>기회 도시</span><b>GET /opportunity</b></li><li><span>What-if</span><b>POST /predict</b></li><li><span>문의</span><b>Resend 메일</b></li></ul></div>
+    <div class="card col"><div class="k" style="color:var(--accent-dk)">Vercel · Next.js 16</div><h4 style="color:#fff">화면 30쪽</h4><p>도시 18곳 상세를 빌드 때 생성 · 스냅숏을 읽음 · <code style="background:#33353C;color:#EDEDEA">/api/*</code>를 FastAPI로 rewrite · 관리자 Basic 인증</p><ul><li><span>렌더링</span><b>정적 생성</b></li><li><span>API_ORIGIN 없음</span><b>빌드 실패</b></li><li><span>스냅숏</span><b>Python이 생성</b></li></ul></div>
+    <div class="card col"><div class="k" style="color:var(--accent-dk)">Render · FastAPI</div><h4 style="color:#fff">엔드포인트 11개</h4><p>조회 4 · 메타 · health · 문의 메일 · 형식 순위 · What-if 예측(joblib) · 성과 기록 2</p><ul><li><span>기회 도시</span><b>GET /opportunity</b></li><li><span>What-if</span><b>POST /predict</b></li><li><span>문의</span><b>Resend 메일</b></li></ul></div>
     <div class="card col"><div class="k" style="color:var(--accent-dk)">Colab · 학습</div><h4 style="color:#fff">노트북 하나</h4><p>추출 → EDA → 모델 비교 → 군집 → 임베딩 → joblib · CSV · JSON</p><ul><li><span>회귀</span><b>R² 0.83</b></li><li><span>군집</span><b>k=3</b></li><li><span>임베딩</span><b>MiniLM 384차원</b></li></ul></div>
     <div class="card col"><div class="k" style="color:var(--accent-dk)">Streamlit · 탐색</div><h4 style="color:#fff">6개 탭</h4><p>형식별 추천 · 기회 도시 · 기대 vs 실제 · 유형 지도 · 상세 · What-if</p><ul><li><span>그림</span><b>Plotly</b></li><li><span>가중치</span><b>슬라이더 조정</b></li><li><span>배포</span><b>Streamlit Cloud</b></li></ul></div>
   </div>
@@ -488,7 +488,7 @@ table.fill{height:100%}
     <tr><td>모델 API</td><td>형식 순위 · 예측 방향 · 잘못된 입력</td><td>Streamlit과 같음 · 400</td></tr>
     <tr><td>형식 가중치</td><td>20회×5겹 교차 검증, 처음 설계 가중치와 비교</td><td>순위 상관 0.70 · 0.56 · 0.58 (설계 0.61 · 0.43 · 0.47)</td></tr>
     <tr><td>화면</td><td>헤드리스 Chromium — 형식 탭, What-if 제출, 서울·베네치아</td><td>예측 표시 · 오류 0</td></tr>
-    <tr><td>빌드 · 보안</td><td><code>npm run build</code> · <code>npm audit</code></td><td>29쪽 · 0건</td></tr>
+    <tr><td>빌드 · 보안</td><td><code>npm run build</code> · <code>npm audit</code></td><td>30쪽 · 0건</td></tr>
   </table></div>
   <div class="src">python scripts/verify_backend.py · ml/app/formats.py 자체 검사 · 2026.11.19</div>
   <div class="ft"><b>Art City Intelligence</b><span>00</span></div>

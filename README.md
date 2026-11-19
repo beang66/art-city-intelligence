@@ -35,13 +35,13 @@
 
 | 학습 데이터 | 모델 성능 (5겹 교차 검증) | 리포트 도시 | 화면 | FastAPI | 전환 검증 | 보안 경고 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **100개 도시** (Resonance 2026) | **R² 0.83 · Spearman 0.87** (평균 예측 대비 MAE −59%) | **18개** · 6개 차원 · 문헌 13건 | **9종** + Streamlit 6탭 | **7개** 엔드포인트 | **기존 API 93/93 일치** | **0건** |
+| **100개 도시** (Resonance 2026) | **R² 0.83 · Spearman 0.87** (평균 예측 대비 MAE −59%) | **18개** · 6개 차원 · 문헌 13건 | **10종** + Streamlit 6탭 | **11개** 엔드포인트 | **기존 API 93/93 일치** | **0건** |
 
 ### 🧱 풀스택 구성
 
 | 계층 | 맡은 일 |
 | --- | --- |
-| 🖥️ 리포트 화면 | Next.js 16 — 개요·도시 상세·비교·기회 도시·방법론·관리자 9종, 도시 18곳 상세를 빌드할 때 미리 생성 |
+| 🖥️ 리포트 화면 | Next.js 16 — 개요·도시 상세·비교·기회 도시·성과 기록·방법론·관리자 10종, 도시 18곳 상세를 빌드할 때 미리 생성 |
 | 🐍 계산 · API | FastAPI — 차원 점수·중앙값·신호 순위·순위 해석 계산, `GET /api/cities` · `indicators` · `cultural` · `market` · `meta`, `POST /api/contact`, `GET /health` |
 | 📦 데이터 | `backend/data/*_v1.json` — 도시·차원·관측 순위·문헌 + `provenance_v1.json`(숫자마다 할 수 있는 말)·`field_dictionary_v1.json` |
 | 🔁 화면과 API 일치 | `export_snapshot.py`가 API와 같은 함수로 `src/data/snapshot_v1.json`을 만들고, `verify_backend.py`가 둘이 같은지 검사 |
@@ -145,7 +145,7 @@ flowchart TB
     end
     subgraph Vercel["▲ Vercel — Next.js"]
         PX["🔐 Proxy<br>/admin/* Basic 인증"]
-        SSG["정적 페이지 29개<br>snapshot_v1.json을 읽음"]
+        SSG["정적 페이지 30개<br>snapshot_v1.json을 읽음"]
         RW["rewrite /api/* → API_ORIGIN"]
     end
     subgraph Render["🐍 Render — FastAPI"]
@@ -416,6 +416,17 @@ flowchart LR
 - `/opportunity`: 형식 탭(팝업 · 비상설 전시 · 상설 전시)으로 적합도 상위 15개와 가중치, What-if 폼은 FastAPI `/api/opportunity/predict`(joblib 모델)를 호출
 - 정적 수치는 빌드 전에 `export_snapshot.py`가 API와 같은 함수로 만든 스냅숏에서 읽고, What-if만 실행 중에 API를 부름
 
+### 📏 성과 기록 `/outcomes`
+
+<p align="center">
+  <img src="docs/screenshots/web-outcomes.jpg" alt="성과 기록 — 측정 4단계, 공개 사례 8건의 하루 방문객과 기대 대비, 기록 폼" width="70%">
+</p>
+
+- **측정 4단계:** 기대 → 방문 → 인지 → 매출 중 공개 데이터로 가능한 단계와 브랜드 데이터가 필요한 단계를 표시
+- **공개 사례:** 관람객 수가 발표·보도된 브랜드 전시·팝업 8건(`backend/data/exhibition_outcomes_v1.json`, 근거 A·B와 출처 링크). 하루 방문객으로 바꾸고, 같은 형식 다른 사례의 중앙값 × 도시 적합도 비율로 기대치를 만들어 비교(자기 자신은 기준에서 제외, 비교 사례 3건 미만이면 기대치 없음)
+- **기록 폼:** 도시·형식·기간·방문객·면적을 넣으면 FastAPI `/api/outcomes/evaluate`가 하루·㎡당 방문객과 기대 대비를 계산. 저장하지 않고 [기록 양식 CSV](public/templates/exhibition_outcome_template.csv) 한 줄로 복사
+- 20건 미만이라 기대 대비는 신호로만 읽고, '전시 때문에 늘었다'는 대조 도시를 둔 비교로만 말함
+
 ### 📖 방법론 · 🛠️ 관리자
 
 <p align="center">
@@ -440,6 +451,7 @@ flowchart LR
 | 🎯 형식별 적합도 | 팝업·비상설·상설마다 공개 관람객 지표로 학습한 가중합 | `ml/app/formats.py` `components` `fit_scores` · `ml/scripts/learn_format_weights.py` NNLS + 반복 교차 검증 → `ml/models/format_weights.json` · `python ml/app/formats.py`로 가중치 합·범위·형식별 순위 차이를 assert |
 | 📊 Streamlit | 6개 탭, 필터, 형식별 가중치 조정, What-if 예측 | `ml/app/streamlit_app.py` · `st.cache_resource`로 joblib 한 번만 로드 · Plotly |
 | 📄 보고서 추출 | PDF 요약표·3단 도시 페이지를 표로 | `ml/scripts/extract_resonance.py` · pdfplumber, 열 경계 자동 탐지, 1–100 누락 assert |
+| 📏 성과 기록 | 공개 사례의 하루 방문객과 기대 대비, 한 건 평가 | `backend/app/services/outcomes.py` `summary` `evaluate` · 같은 형식 중앙값 × 적합도 비율(자기 제외) · `exhibition_outcomes_v1.json` |
 | 🔁 스냅숏 | 정적 페이지가 API와 같은 계산 결과를 읽음 | `backend/scripts/export_snapshot.py` → `src/data/snapshot_v1.json` · `features/*`는 읽기만 함 |
 | 🏷️ 출처 상태 배지 | OBSERVED / ILLUSTRATIVE 구분 | `types/provenance.ts` · `components/evidence/DataBadge.tsx` |
 | 📚 문헌 대장 | 차원·화면마다 근거 문헌 연결 | `features/evidence/sources.ts` (`SourceId`, `citation`) |
@@ -624,7 +636,7 @@ streamlit run ml/app/streamlit_app.py          # http://localhost:8501
 | 계산 이전 | 기존 TypeScript 계산 결과(차원 점수·신호 순위·순위 해석·중앙값 2종·지수 순위)와 Python 결과 비교 | 6/6 일치 |
 | 화면과 API 일치 | `src/data/snapshot_v1.json` = API와 같은 함수로 다시 계산한 값 | 일치 |
 | 문의 발송 | Resend를 모의 응답으로 바꿔 시험 | 200 → 200, 422 → 502, 입력의 HTML 이스케이프 확인 |
-| 타입 검사 · 빌드 | `npm run typecheck` · `npm run build` | 통과, 정적 페이지 29개(`/opportunity` 포함) · Proxy 1개 |
+| 타입 검사 · 빌드 | `npm run typecheck` · `npm run build` | 통과, 정적 페이지 30개(`/opportunity`·`/outcomes` 포함) · Proxy 1개 |
 | 함께 실행 | `uvicorn` + `next start`, `/api/*` rewrite를 거쳐 요청 | 조회 200 · 없는 도시 404 · 잘못된 주소 400 · 문의 빈 칸 400, 화면 5종 200, 런던 상세 순위 해석 문장 표시 |
 | 관리자 인증 | `/admin/cities` 요청 3회 | 인증 없음 401 · 틀린 비밀번호 401 · 맞는 비밀번호 200 |
 | 의존성 보안 | `npm audit --omit=dev` | 0건 |
@@ -633,6 +645,7 @@ streamlit run ml/app/streamlit_app.py          # http://localhost:8501
 | Streamlit | `streamlit run` 후 6개 탭 열기, 형식 3종 전환 | 오류 없이 표시, 형식마다 다른 순위, 도시 상세에서 임베딩 기반 유사 도시 표시 |
 | 웹 모델 화면 | 헤드리스 Chromium으로 `/opportunity` 형식 탭·What-if 제출, `/cities/seoul`·`/cities/venice` 모델 섹션 | 형식 탭마다 상위 15개 표시, What-if가 rewrite를 거쳐 FastAPI 예측 표시, 서울 기회 점수·비슷한 도시 표시, 베네치아 대상 아님 안내, 페이지 오류 0 |
 | 모델 API | `verify_backend.py` — 형식 순위, What-if 예측, 잘못된 입력 | 상설 상위 3개가 Streamlit과 같음, 더 좋은 조건일수록 기대 순위가 좋아짐, 범위 밖 입력 400 |
+| 성과 기록 API | `verify_backend.py` — 공개 사례 정규화, 한 건 평가, 잘못된 입력 | 8건 모두 하루 방문객·적합도 순위 계산, 비상설 6건은 기대 대비 계산·팝업 2건은 기대치 없음, 하루·㎡당 값 일치, 없는 도시·형식·뒤바뀐 날짜·음수 400 |
 | 형식 적합도 | `python ml/app/formats.py` | 가중치 합 1, 점수 0–100, 팝업과 상설 전시 상위 5개가 다름 |
 | 형식별 가중치 학습 | `learn_format_weights.py` — 20회 × 5겹 교차 검증, 처음 설계 가중치와 비교 | 순위 상관 팝업 0.70 (설계 0.61) · 비상설 0.56 (0.43) · 상설 0.58 (0.47) |
 | 확인하지 않은 범위 | — | Render·Streamlit Cloud 배포본, Colab 런타임에서의 실행, 모바일 화면, 문의 메일 실제 발송 |
@@ -697,7 +710,7 @@ flowchart LR
 | 단계 | 질문 | 측정 | 데이터 | 상태 |
 | --- | --- | --- | --- | --- |
 | 1. 기대 | 이 도시·형식이면 얼마나 올까 | 형식별 적합도 → 기대 수준 | 공개 | 구현 (형식별 적합도) |
-| 2. 방문 | 기대보다 얼마나 왔나 | 실제 − 기대, 하루·㎡ 단위로 정규화 | 공개 보도 · 브랜드 | 성과 기록 (G1) |
+| 2. 방문 | 기대보다 얼마나 왔나 | 실제 ÷ 기대, 하루·㎡ 단위로 정규화 | 공개 보도 · 브랜드 | 구현 — 공개 사례 8건 ([`/outcomes`](https://art-city-intelligence.vercel.app/outcomes)) |
 | 3. 인지 | 그 도시에서 브랜드가 더 알려졌나 | 검색량·SNS 언급의 대조 도시 대비 변화(이중차분), 방문자/비방문자 조사 | 공개 + 조사 | 설계 |
 | 4. 매출 | 실제로 더 팔렸나 | 대조 지역 대비 매출(이중차분·합성 대조군), 쿠폰·QR 전환 | 브랜드 내부 | 파일럿 필요 |
 
